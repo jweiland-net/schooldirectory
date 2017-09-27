@@ -1,0 +1,12 @@
+<f:layout name="Default" />
+
+<f:section name="main">
+	<f:if condition="{amountOfSchools}">
+		<f:then>
+			<f:render partial="School/List" arguments="{schools: schools}" />
+		</f:then>
+		<f:else>
+			<f:translate key="noResults" />
+		</f:else>
+	</f:if>
+</f:section>

@@ -1,0 +1,30 @@
+{
+    "name": "jweiland/schooldirectory",
+    "type": "typo3-cms-extension",
+    "description": "schooldirectory",
+    "version": "2.0.0",
+    "license": "GPL-2.0+",
+    "keywords": ["typo3", "TYPO3 CMS", "school", "directory", "schooldirectory"],
+    "homepage": "http://www.jweiland.net",
+    "authors": [
+      {
+        "name": "Stefan Froemken",
+        "email": "sfroemken@jweiland.net",
+        "role": "Lead Developer"
+      }
+    ],
+    "support": {
+      "email": "projects@jweiland.net",
+      "issues": "https://github.com/jweiland-net/schooldirectory/issues",
+      "source": "https://github.com/jweiland-net/schooldirectory"
+    },
+    "require": {
+      "php": ">=7.0.0 <8.0",
+      "typo3/cms-core": ">=8.7.0,<8.8"
+    },
+    "autoload": {
+        "psr-4": {
+            "JWeiland\\Maps2\\": "Classes"
+        }
+    }
+}

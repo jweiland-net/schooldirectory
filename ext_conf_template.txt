@@ -1,0 +1,2 @@
+# cat=basic; type=int+; label = LLL:EXT:schooldirectory/Resources/Private/Language/ExtConf.xlf:poiCollectionPid
+poiCollectionPid =

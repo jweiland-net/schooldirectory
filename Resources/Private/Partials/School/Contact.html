@@ -1,0 +1,20 @@
+<f:if condition="{school.telephone}">
+	<span aria-hidden="true" class="icon-phone_pf"></span>{school.telephone}<br/>
+</f:if>
+
+<f:if condition="{school.fax}">
+	<span aria-hidden="true" class="icon-fax_pf"></span>{school.fax}<br/>
+</f:if>
+
+<f:if condition="{school.email}">
+	<span aria-hidden="true" class="icon-email"></span><f:link.email title="{school.email}" email="{school.email}"><f:translate key="tx_schooldirectory_domain_model_school.email" /></f:link.email>
+	<br/>
+</f:if>
+<f:if condition="{school.emailAlternative}">
+	<span aria-hidden="true" class="icon-email"></span><f:link.email title="{school.emailAlternative}" email="{school.emailAlternative}"><f:translate key="tx_schooldirectory_domain_model_school.email_alternative" /></f:link.email>
+	<br/>
+</f:if>
+
+<f:if condition="{school.website}">
+	<span aria-hidden="true" class="icon-earth"></span><f:link.external title="{school.website}" uri="{school.website}" target="_blank"><f:translate key="tx_schooldirectory_domain_model_school.website" /></f:link.external>
+</f:if>
