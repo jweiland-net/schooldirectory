@@ -19,7 +19,6 @@
       "source": "https://github.com/jweiland-net/schooldirectory"
     },
     "require": {
-      "php": ">=7.0.0 <8.0",
       "typo3/cms-core": ">=8.7.0,<8.8"
     },
     "autoload": {
