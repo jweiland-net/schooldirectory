@@ -23,7 +23,7 @@
     },
     "autoload": {
         "psr-4": {
-            "JWeiland\\Maps2\\": "Classes"
+            "JWeiland\\Schooldirectory\\": "Classes"
         }
     }
 }
