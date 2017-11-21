@@ -10,54 +10,60 @@
 <div class="grid_12 clearer clearfix">
 	<div class="grid_6 floatleft">
 		<div class="gridright">
-		<f:if condition="{school.images->f:count()}">
-			<figure class="gridright marginbottom2">
-				<f:render partial="School/Images" arguments="{school: school}" />
-			</figure>
-		</f:if>
+			<f:if condition="{school.images->f:count()}">
+				<figure class="gridright marginbottom2">
+					<f:render partial="School/Images" arguments="{school: school}" />
+				</figure>
+			</f:if>
 
-		<f:if condition="{school.additionalInformations}">
-			<f:format.html>{school.additionalInformations}</f:format.html>
-		</f:if>
-		<f:if condition="{school.notes}">
-			<f:format.html>{school.notes}</f:format.html>
-		</f:if>
+			<f:if condition="{school.additionalInformations}">
+				<f:format.html>{school.additionalInformations}</f:format.html>
+			</f:if>
+			<f:if condition="{school.notes}">
+				<f:format.html>{school.notes}</f:format.html>
+			</f:if>
 
-		<f:if condition="{school.types -> f:count()}">
-			<h2><f:translate key="tx_schooldirectory_domain_model_school.types"/>:</h2>
-			<f:for each="{school.types}" as="type">
-				<div class="frame-custom-40 shorten rulerafter marginbottom">
-					<div class="shortencontent shortenalways">
-						<h3 class="showmore">
-							<span aria-hidden="true" class="icon-plus"></span><span>{type.title}</span></h3>
-						<f:format.html>{type.description}</f:format.html>
+			<f:if condition="{school.types -> f:count()}">
+				<h2><f:translate key="tx_schooldirectory_domain_model_school.types"/>:</h2>
+				<f:for each="{school.types}" as="type">
+					<div class="frame-custom-40 shorten rulerafter marginbottom">
+						<div class="shortencontent shortenalways">
+							<h3 class="showmore">
+								<header>
+									<span aria-hidden="true" class="icon-plus"></span><span>{type.title}</span></h3>
+							<f:format.html>{type.description}</f:format.html>
+							</header>
 						</div>
-				</div>
-			</f:for>
-		</f:if>
-		<f:if condition="{school.profileContents -> f:count()}">
-		<h2><f:translate key="tx_schooldirectory_domain_model_school.profile_contents"/>:</h2>
-			<f:for each="{school.profileContents}" as="profileContent">
-				<div class="frame-custom-40 shorten rulerafter marginbottom">
-					<div class="shortencontent shortenalways">
-						<h3 class="showmore"><span aria-hidden="true" class="icon-plus"></span><span>{profileContent.title}</span></h3>
-						<f:format.html>{profileContent.description}</f:format.html>
 					</div>
-				</div>
-			</f:for>
-		</f:if>
-		<f:if condition="{school.careForms -> f:count()}">
-			<h2><f:translate key="tx_schooldirectory_domain_model_school.care_forms"/>:</h2>
-			<f:for each="{school.careForms}" as="careForm">
-				<div class="frame-custom-40 shorten rulerafter marginbottom">
-					<div class="shortencontent shortenalways">
-						<h3 class="showmore"><span aria-hidden="true" class="icon-plus"></span><span>{careForm.title}</span></h3>
-						<f:format.html>{careForm.description}</f:format.html>
-				</div>
-			</div>
-			</f:for>
-		</f:if>
-		&nbsp;
+				</f:for>
+			</f:if>
+			<f:if condition="{school.profileContents -> f:count()}">
+				<h2><f:translate key="tx_schooldirectory_domain_model_school.profile_contents"/>:</h2>
+				<f:for each="{school.profileContents}" as="profileContent">
+					<div class="frame-custom-40 shorten rulerafter marginbottom">
+						<div class="shortencontent shortenalways">
+							<header>
+								<h3 class="showmore"><span aria-hidden="true" class="icon-plus"></span><span>{profileContent.title}</span></h3>
+								<f:format.html>{profileContent.description}</f:format.html>
+							</header>
+						</div>
+					</div>
+				</f:for>
+			</f:if>
+			<f:if condition="{school.careForms -> f:count()}">
+				<h2><f:translate key="tx_schooldirectory_domain_model_school.care_forms"/>:</h2>
+				<f:for each="{school.careForms}" as="careForm">
+					<div class="frame-custom-40 shorten rulerafter marginbottom">
+						<div class="shortencontent shortenalways">
+							<header>
+								<h3 class="showmore"><span aria-hidden="true" class="icon-plus"></span><span>{careForm.title}</span></h3>
+								<f:format.html>{careForm.description}</f:format.html>
+							</header>
+						</div>
+					</div>
+				</f:for>
+			</f:if>
+			&nbsp;
 		</div>
 	</div>
 
@@ -75,9 +81,11 @@
 				</dd>
 				<f:if condition="{school.txMaps2Uid}">
 					<dd class="grid_4 floatleft noborder">
-						<f:link.action title="<f:translate key='LLL:fileadmin/templates/language/locallang.xml:mapview'/>" action="show" controller="PoiCollection" extensionName="maps2" pluginName="maps2" pageUid="{settings.pidOfMaps2Plugin}" arguments="{poiCollection: school.txMaps2Uid}">
-							<f:image class="floatright" src="fileadmin/templates/img/thumbmaps.png" alt="{f:translate(key: 'altTextMapImg')}"/>
-						</f:link.action>
+						<figure>
+							<f:link.action title="<f:translate key='LLL:fileadmin/templates/language/locallang.xml:mapview'/>" action="show" controller="PoiCollection" extensionName="maps2" pluginName="maps2" pageUid="{settings.pidOfMaps2Plugin}" arguments="{poiCollection: school.txMaps2Uid}">
+								<f:image class="floatright" src="fileadmin/templates/img/thumbmaps.png" alt="{f:translate(key: 'altTextMapImg')}"/>
+							</f:link.action>
+						</figure>
 					</dd>
 				</f:if>
 			</dl>
