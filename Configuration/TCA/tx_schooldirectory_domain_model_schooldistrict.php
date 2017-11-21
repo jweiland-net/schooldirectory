@@ -21,7 +21,6 @@ return [
             'endtime' => 'endtime'
         ],
         'searchFields' => 'title',
-        'dynamicConfigFile' => 'EXT:schooldirectory/Configuration/TCA/Schooldistrict.php',
         'iconfile' => 'EXT:schooldirectory/Resources/Public/Icons/tx_schooldirectory_domain_model_schooldistrict.gif'
     ],
     'interface' => [
