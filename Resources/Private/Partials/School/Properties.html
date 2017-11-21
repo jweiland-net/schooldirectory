@@ -26,7 +26,7 @@
 		<f:if condition="{school.types -> f:count()}">
 			<h2><f:translate key="tx_schooldirectory_domain_model_school.types"/>:</h2>
 			<f:for each="{school.types}" as="type">
-				<div class="csc-frame-frame4 shorten rulerafter marginbottom">
+				<div class="frame-custom-40 shorten rulerafter marginbottom">
 					<div class="shortencontent shortenalways">
 						<h3 class="showmore">
 							<span aria-hidden="true" class="icon-plus"></span><span>{type.title}</span></h3>
@@ -38,7 +38,7 @@
 		<f:if condition="{school.profileContents -> f:count()}">
 		<h2><f:translate key="tx_schooldirectory_domain_model_school.profile_contents"/>:</h2>
 			<f:for each="{school.profileContents}" as="profileContent">
-				<div class="csc-frame-frame4 shorten rulerafter marginbottom">
+				<div class="frame-custom-40 shorten rulerafter marginbottom">
 					<div class="shortencontent shortenalways">
 						<h3 class="showmore"><span aria-hidden="true" class="icon-plus"></span><span>{profileContent.title}</span></h3>
 						<f:format.html>{profileContent.description}</f:format.html>
@@ -49,7 +49,7 @@
 		<f:if condition="{school.careForms -> f:count()}">
 			<h2><f:translate key="tx_schooldirectory_domain_model_school.care_forms"/>:</h2>
 			<f:for each="{school.careForms}" as="careForm">
-				<div class="csc-frame-frame4 shorten rulerafter marginbottom">
+				<div class="frame-custom-40 shorten rulerafter marginbottom">
 					<div class="shortencontent shortenalways">
 						<h3 class="showmore"><span aria-hidden="true" class="icon-plus"></span><span>{careForm.title}</span></h3>
 						<f:format.html>{careForm.description}</f:format.html>
