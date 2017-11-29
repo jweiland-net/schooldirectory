@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2013-04-13T09:09:13Z" product-name="schooldirectory">
-		<header/>
-		<body>
+  <file source-language="en" datatype="plaintext" original="messages" date="2013-04-13T09:09:13Z" product-name="schooldirectory">
+    <header/>
+    <body>
 
-			<trans-unit id="street.description">
-				<source>Street</source>
-			</trans-unit>
-			<trans-unit id="number_from.description">
-				<source>house number from</source>
-			</trans-unit>
-			<trans-unit id="number_to.description">
-				<source>house number to</source>
-			</trans-unit>
-			<trans-unit id="district.description">
-				<source>School district</source>
-			</trans-unit>
-		</body>
-	</file>
+      <trans-unit id="street.description">
+        <source>Street</source>
+      </trans-unit>
+      <trans-unit id="number_from.description">
+        <source>house number from</source>
+      </trans-unit>
+      <trans-unit id="number_to.description">
+        <source>house number to</source>
+      </trans-unit>
+      <trans-unit id="district.description">
+        <source>School district</source>
+      </trans-unit>
+    </body>
+  </file>
 </xliff>
