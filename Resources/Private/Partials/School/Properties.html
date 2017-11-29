@@ -99,7 +99,7 @@
         <f:render partial="School/SingleLine" arguments="{field: 'profile_title', value: school.profileTitle}" />
         <f:if condition="{school.schoolWayPlan}">
           <dt><f:translate key="tx_schooldirectory_domain_model_school.school_way_plan"/>:</dt>
-          <dd><s:link.typolink parameter="{school.schoolWayPlan}">Download</s:link.typolink></dd>
+          <dd><f:link.typolink parameter="{school.schoolWayPlan}">Download</f:link.typolink></dd>
         </f:if>
 
         <f:render partial="School/SingleLine" arguments="{field: 'holder', value: school.holder.title}" />

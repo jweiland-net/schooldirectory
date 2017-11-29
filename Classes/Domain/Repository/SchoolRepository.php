@@ -143,6 +143,7 @@ class SchoolRepository extends Repository
             $replacements[] = $letter;
             $replacements[] = $letter;
         }
+        // @ToDo:
         // Ups: I have mapped district to schooldistrict
         // To solve that problem I have changed foreign_table of district in street-table to schooldistrict
         // Would be good to solve this, if we have a little bit more time

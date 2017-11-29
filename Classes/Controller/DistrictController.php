@@ -79,6 +79,7 @@ class DistrictController extends ActionController
     public function listAction($street, $number, $letter = '')
     {
         $schools = $this->schoolRepository->searchSchoolsByStreet($street, $number, $letter);
+        // I know, it's nasty, but as long as we have SQL Statements in Repository, we can't change that
         $amountOfSchools = 0;
         foreach ($schools as $school) {
             $amountOfSchools++;
