@@ -5,13 +5,21 @@
     <header/>
     <body>
 
-      <trans-unit id="plugin.school.title">
+      <trans-unit id="plugin.list.title">
         <source>Schools: List</source>
         <target>Schulen: Auflistung</target>
+      </trans-unit>
+      <trans-unit id="plugin.list.description">
+        <source>With this plugin you can show schools as list and in detail view</source>
+        <target>Mit diesem Plugin könnt Ihr Euch die Schulen in einer Listen- und Detailansicht anzeigen lassen</target>
       </trans-unit>
       <trans-unit id="plugin.search.title">
         <source>Schools: Search</source>
         <target>Schulen: Suche</target>
+      </trans-unit>
+      <trans-unit id="plugin.search.description">
+        <source>This plugin displays a search form, to search for school entries</source>
+        <target>Dieses Plugin zeigt ein Suchformular, mit dem Ihr nach Schulen suchen könnt</target>
       </trans-unit>
 
       <trans-unit id="tabs.relations">

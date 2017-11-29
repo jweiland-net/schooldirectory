@@ -4,19 +4,19 @@ if (!defined('TYPO3_MODE')) {
 }
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    'JWeiland.' . $_EXTKEY,
+    'JWeiland.schooldirectory',
     'List',
-    'LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:plugin.school.title'
+    'LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:plugin.list.title'
 );
 
 \TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
-    'JWeiland.' . $_EXTKEY,
+    'JWeiland.schooldirectory',
     'Search',
     'LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:plugin.search.title'
 );
 
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addStaticFile(
-    $_EXTKEY,
+    'schooldirectory',
     'Configuration/TypoScript',
     'School Directory'
 );

@@ -21,7 +21,7 @@ return [
             'endtime' => 'endtime'
         ],
         'searchFields' => 'title,leader,street,zip,city,telephone,telephone_alternative,email,email_alternative,website,profile_title,notes,additional_informations',
-        'iconfile' => 'EXT:schooldirectory/Resources/Public/Icons/tx_schooldirectory_domain_model_school.gif'
+        'iconfile' => 'EXT:schooldirectory/Resources/Public/Icons/tx_schooldirectory_domain_model_school.svg'
     ],
     'interface' => [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, leader, street, house_number, zip, city, district, telephone, telephone_alternative, fax, email, email_alternative, website, logo, images, amount_of_students, profile_title, school_way_plan, notes, additional_informations, holder, types, profile_contents, care_forms, school_district, tx_maps2_uid, facebook, twitter, google'
