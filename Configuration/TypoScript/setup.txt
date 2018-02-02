@@ -54,6 +54,10 @@ plugin.tx_schooldirectory {
   }
 }
 
+page.includeJSFooterlibs {
+  schooldirectory = EXT:schooldirectory/Resources/Public/JavaScript/Schooldirectory.js
+}
+
 plugin.tx_schooldirectory._CSS_DEFAULT_STYLE (
   textarea.f3-form-error {
     background-color:#FF9F9F;

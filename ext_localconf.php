@@ -43,3 +43,10 @@ $boot = function() {
 };
 $boot();
 unset($boot);
+
+$GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['schooldirectory_selector_renderTypeAction']
+    = \JWeiland\Schooldirectory\Ajax\Selector::class . '::renderTypeAction';
+$GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['schooldirectory_selector_renderCareFormAction']
+    = \JWeiland\Schooldirectory\Ajax\Selector::class . '::renderCareFormAction';
+$GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['schooldirectory_selector_renderProfileAction']
+    = \JWeiland\Schooldirectory\Ajax\Selector::class . '::renderProfileAction';

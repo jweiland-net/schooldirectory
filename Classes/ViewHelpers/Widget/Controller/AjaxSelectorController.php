@@ -17,8 +17,8 @@ namespace JWeiland\Schooldirectory\ViewHelpers\Widget\Controller;
 
 use JWeiland\Schooldirectory\Domain\Model\ProfileContent;
 use JWeiland\Schooldirectory\Domain\Repository\CareFormRepository;
+use JWeiland\Schooldirectory\Domain\Repository\ProfileContentRepository;
 use JWeiland\Schooldirectory\Domain\Repository\TypeRepository;
-use TYPO3\CMS\Extbase\Utility\DebuggerUtility;
 use TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetController;
 
 /**
@@ -73,10 +73,10 @@ class AjaxSelectorController extends AbstractWidgetController
     /**
      * injects profileContentRepository
      *
-     * @param ProfileContent $profileContentRepository
+     * @param ProfileContentRepository $profileContentRepository
      * @return void
      */
-    public function injectProfileContentRepository(ProfileContent $profileContentRepository)
+    public function injectProfileContentRepository(ProfileContentRepository $profileContentRepository)
     {
         $this->profileContentRepository = $profileContentRepository;
     }
@@ -94,83 +94,5 @@ class AjaxSelectorController extends AbstractWidgetController
         $this->view->assign('careForm', $this->widgetConfiguration['careForm']);
         $this->view->assign('profile', $this->widgetConfiguration['profile']);
         $this->view->assign('pidOfSearchPage', $this->widgetConfiguration['pidOfSearchPage']);
-    }
-
-    /**
-     * render type
-     *
-     * @return string
-     */
-    public function renderTypeAction()
-    {
-        $result = [];
-        $types = $this->typeRepository->findTypes();
-        $result['types'] = [];
-        if (is_array($types) && count($types)) {
-            foreach ($types as $type) {
-                $result['types'][] = [
-                    'uid' => $type['uid'],
-                    'title' => $type['title']
-                ];
-            }
-            $result['error'] = false;
-        } else {
-            $result['error'] = true;
-        }
-
-        return json_encode($result);
-    }
-
-    /**
-     * render care form
-     *
-     * @param integer $schoolType
-     * @return string
-     */
-    public function renderCareFormAction($schoolType)
-    {
-        $result = [];
-        $careForms = $this->careFormRepository->findByType((int)$schoolType);
-        $result['careForms'] = [];
-        if (is_array($careForms) && count($careForms)) {
-            foreach ($careForms as $careForm) {
-                $result['careForms'][] = [
-                    'uid' => $careForm['uid'],
-                    'title' => $careForm['title']
-                ];
-            }
-            $result['error'] = false;
-        } else {
-            $result['error'] = true;
-        }
-
-        return json_encode($result);
-    }
-
-    /**
-     * render profile
-     *
-     * @param integer $schoolType
-     * @param integer $schoolCareForm
-     * @return string
-     */
-    public function renderProfileAction($schoolType, $schoolCareForm)
-    {
-        $result = [];
-        $profiles = $this->profileContentRepository->findByTypeAndCareForm((int)$schoolType, (int)$schoolCareForm);
-        $result['profile'] = [];
-        if (is_array($profiles) && count($profiles)) {
-            foreach ($profiles as $profile) {
-                $result['profiles'][] = [
-                    'uid' => $profile['uid'],
-                    'title' => $profile['title']
-                ];
-            }
-            $result['error'] = false;
-        } else {
-            $result['error'] = true;
-        }
-
-        return json_encode($result);
     }
 }
