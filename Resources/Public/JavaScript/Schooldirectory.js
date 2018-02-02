@@ -1,9 +1,9 @@
 jQuery(function () {
-    var schoolData = $('#schooldirectory_data');
+    let schoolData = $('#schooldirectory_data');
 
-    var schoolType = schoolData.data('type');
-    var schoolCareForm = schoolData.data('careform');
-    var schoolProfile = schoolData.data('profile');
+    let schoolType = schoolData.data('type');
+    let schoolCareForm = schoolData.data('careform');
+    let schoolProfile = schoolData.data('profile');
 
     // hide both selectboxes at loading
     jQuery("#schoolType").hide();
@@ -33,21 +33,21 @@ jQuery(function () {
      * @return void
      */
     function showType() {
-        var ajaxUri = "index.php?eID=schooldirectory_selector_renderTypeAction";
+        let ajaxUri = "index.php?eID=schooldirectory_selector_renderTypeAction";
         jQuery.ajax({
             type: "POST", url: ajaxUri, cache: false, dataType: "json", success: function (data) {
                 if (!data.error) {
                     // add empty option
-                    $option = jQuery("<option />").attr("value", "").html("");
-                    jQuery("#schoolType select").append($option);
+                    let option = jQuery("<option />").attr("value", "").html("");
+                    jQuery("#schoolType select").append(option);
 
                     // add options from ajax request
                     jQuery.each(data.types, function (index, value) {
-                        $option = jQuery("<option />").attr("value", value.uid).html(value.title);
+                        option = jQuery("<option />").attr("value", value.uid).html(value.title);
                         if (schoolType == value.uid) {
-                            $option.attr("selected", "selected");
+                            option.attr("selected", "selected");
                         }
-                        jQuery("#schoolType select").append($option);
+                        jQuery("#schoolType select").append(option);
                     });
                     jQuery("#schoolType").show();
                 }
@@ -62,7 +62,7 @@ jQuery(function () {
      * @return void
      */
     function showCareForm(schoolType) {
-        var ajaxUri = "index.php?eID=schooldirectory_selector_renderCareFormAction";
+        let ajaxUri = "index.php?eID=schooldirectory_selector_renderCareFormAction";
         jQuery.ajax({
             type: "POST", url: ajaxUri, cache: false, dataType: "json", data: {
                 schoolType: schoolType
@@ -71,11 +71,11 @@ jQuery(function () {
                     jQuery("#schoolCareForm select option").remove();
                     jQuery("#schoolCareForm select").append(jQuery("<option />").attr("value", '0').html(''));
                     jQuery.each(data.careForms, function (index, value) {
-                        $option = jQuery("<option />").attr("value", value.uid).html(value.title);
+                        let option = jQuery("<option />").attr("value", value.uid).html(value.title);
                         if (schoolCareForm == value.uid) {
-                            $option.attr("selected", "selected");
+                            option.attr("selected", "selected");
                         }
-                        jQuery("#schoolCareForm select").append($option);
+                        jQuery("#schoolCareForm select").append(option);
                     });
                     jQuery("#schoolCareForm").show();
                 }
@@ -91,7 +91,7 @@ jQuery(function () {
      * @return void
      */
     function showProfile(schoolType, schoolCareForm) {
-        var ajaxUri = "index.php?eID=schooldirectory_selector_renderProfileAction";
+        let ajaxUri = "index.php?eID=schooldirectory_selector_renderProfileAction";
         jQuery.ajax({
             type: "POST", url: ajaxUri, cache: false, dataType: "json", data: {
                 schoolType: schoolType, schoolCareForm: schoolCareForm
@@ -100,11 +100,11 @@ jQuery(function () {
                     jQuery("#schoolProfile select option").remove();
                     jQuery("#schoolProfile select").append(jQuery("<option />").attr("value", '0').html(''));
                     jQuery.each(data.profiles, function (index, value) {
-                        $option = jQuery("<option />").attr("value", value.uid).html(value.title);
+                        let option = jQuery("<option />").attr("value", value.uid).html(value.title);
                         if (schoolProfile == value.uid) {
-                            $option.attr("selected", "selected");
+                            option.attr("selected", "selected");
                         }
-                        jQuery("#schoolProfile select").append($option);
+                        jQuery("#schoolProfile select").append(option);
                     });
                     jQuery("#schoolProfile").show();
                 }
