@@ -17,6 +17,7 @@ namespace JWeiland\Schooldirectory\Controller;
 
 use JWeiland\Schooldirectory\Domain\Model\School;
 use JWeiland\Schooldirectory\Domain\Repository\SchoolRepository;
+use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Core\Utility\MathUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
@@ -36,6 +37,13 @@ class SchoolController extends ActionController
     protected $schoolRepository;
 
     /**
+     * Page renderer
+     *
+     * @var PageRenderer
+     */
+    protected $pageRenderer;
+
+    /**
      * @var string
      */
     protected $letters = '0-9,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z';
@@ -49,6 +57,17 @@ class SchoolController extends ActionController
     public function injectSchoolRepository(SchoolRepository $schoolRepository)
     {
         $this->schoolRepository = $schoolRepository;
+    }
+
+    /**
+     * injects pageRenderer
+     *
+     * @param PageRenderer $pageRenderer
+     * @return void
+     */
+    public function injectPageRenderer(PageRenderer $pageRenderer)
+    {
+        $this->pageRenderer = $pageRenderer;
     }
 
     /**
@@ -84,6 +103,8 @@ class SchoolController extends ActionController
         }
         $this->view->assign('schools', $schools);
         $this->view->assign('glossar', $this->getGlossar());
+
+        $this->addAjax();
     }
 
     /**
@@ -143,5 +164,42 @@ class SchoolController extends ActionController
         $this->view->assign('type', $type);
         $this->view->assign('careForm', $careForm);
         $this->view->assign('profile', $profile);
+
+        $this->addAjax();
+    }
+
+    /**
+     * Adds ajax to action
+     *
+     * @return void
+     */
+    protected function addAjax()
+    {
+        $this->pageRenderer->addInlineSetting(
+            'Schooldirectory',
+            'ajaxRenderTypeAction',
+            $this->getControllerContext()->getUriBuilder()
+                ->reset()
+                ->setTargetPageType(20180202)
+                ->uriFor('renderType', [], 'Ajax')
+        );
+
+        $this->pageRenderer->addInlineSetting(
+            'Schooldirectory',
+            'ajaxRenderCareFormAction',
+            $this->getControllerContext()->getUriBuilder()
+                ->reset()
+                ->setTargetPageType(20180202)
+                ->uriFor('renderCareForm', [], 'Ajax')
+        );
+
+        $this->pageRenderer->addInlineSetting(
+            'Schooldirectory',
+            'ajaxRenderProfileAction',
+            $this->getControllerContext()->getUriBuilder()
+                ->reset()
+                ->setTargetPageType(20180202)
+                ->uriFor('renderProfile', [], 'Ajax')
+        );
     }
 }

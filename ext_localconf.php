@@ -8,11 +8,13 @@ $boot = function() {
         'JWeiland.schooldirectory',
         'List',
         [
-            'School' => 'list, show, search'
+            'School' => 'list, show, search',
+            'Ajax' => 'renderType, renderCareForm, renderProfile'
         ],
         // non-cacheable actions
         [
-            'School' => 'list, search'
+            'School' => 'list, search',
+            'Ajax' => 'renderType, renderCareForm, renderProfile'
         ]
     );
 

@@ -33,9 +33,13 @@ jQuery(function () {
      * @return void
      */
     function showType() {
-        let ajaxUri = "index.php?eID=schooldirectory_selector_renderTypeAction";
+        let ajaxUri = TYPO3.settings.Schooldirectory.ajaxRenderTypeAction;
         jQuery.ajax({
-            type: "POST", url: ajaxUri, cache: false, dataType: "json", success: function (data) {
+            type: "POST",
+            url: ajaxUri,
+            cache: false,
+            dataType: "json",
+            success: function (data) {
                 if (!data.error) {
                     // add empty option
                     let option = jQuery("<option />").attr("value", "").html("");
@@ -51,6 +55,9 @@ jQuery(function () {
                     });
                     jQuery("#schoolType").show();
                 }
+            },
+            error: function (error) {
+                console.log(error);
             }
         });
     }
@@ -62,10 +69,10 @@ jQuery(function () {
      * @return void
      */
     function showCareForm(schoolType) {
-        let ajaxUri = "index.php?eID=schooldirectory_selector_renderCareFormAction";
+        let ajaxUri = TYPO3.settings.Schooldirectory.ajaxRenderCareFormAction;
         jQuery.ajax({
             type: "POST", url: ajaxUri, cache: false, dataType: "json", data: {
-                schoolType: schoolType
+                tx_schooldirectory_list: {schoolType: schoolType}
             }, success: function (data) {
                 if (!data.error) {
                     jQuery("#schoolCareForm select option").remove();
@@ -91,10 +98,12 @@ jQuery(function () {
      * @return void
      */
     function showProfile(schoolType, schoolCareForm) {
-        let ajaxUri = "index.php?eID=schooldirectory_selector_renderProfileAction";
+        let ajaxUri = TYPO3.settings.Schooldirectory.ajaxRenderProfileAction;
         jQuery.ajax({
             type: "POST", url: ajaxUri, cache: false, dataType: "json", data: {
-                schoolType: schoolType, schoolCareForm: schoolCareForm
+                tx_schooldirectory_list: {
+                    schoolType: schoolType, careForm: schoolCareForm
+                }
             }, success: function (data) {
                 if (!data.error) {
                     jQuery("#schoolProfile select option").remove();
