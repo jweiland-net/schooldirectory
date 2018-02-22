@@ -32,6 +32,14 @@ class SchoolDistrict extends AbstractEntity
     protected $title = '';
 
     /**
+     * Care forms
+     *
+     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Schooldirectory\Domain\Model\Street>
+     * @lazy
+     */
+    protected $streets;
+
+    /**
      * Returns the title
      *
      * @return string $title
@@ -50,5 +58,27 @@ class SchoolDistrict extends AbstractEntity
     public function setTitle(string $title)
     {
         $this->title = $title;
+    }
+
+    /**
+     * Returns the streets
+     *
+     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage $streets
+     */
+    public function getStreets()
+    {
+        return $this->streets;
+    }
+
+    /**
+     * Sets the streets
+     *
+     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $streets
+     *
+     * @return void
+     */
+    public function setStreets(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $streets)
+    {
+        $this->streets = $streets;
     }
 }

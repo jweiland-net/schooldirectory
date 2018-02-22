@@ -124,39 +124,31 @@ class SchoolRepository extends Repository
     public function searchSchoolsByStreet($street, $number, $letter)
     {
         $query = $this->createQuery();
-        $addWhere = [];
-        $replacements = [];
+
+        $constraints = [];
+        $constraints[] = $query->equals('types.uid', 1);
+
         // add query for street
-        $addWhere[] = 'AND tx_schooldirectory_domain_model_street.street LIKE ?';
-        $replacements[] = $this->getUnifiedStreetname($street) . '%';
+        $constraints[] = $query->like('schoolDistrict.streets.street', $this->getUnifiedStreetname($street) . '%');
+
         // add query for number
         if (!empty($number)) {
-            $addWhere[] = 'AND tx_schooldirectory_domain_model_street.number_from <= ?';
-            $addWhere[] = 'AND tx_schooldirectory_domain_model_street.number_to >= ?';
-            $replacements[] = $number;
-            $replacements[] = $number;
+            $constraints[] = $query->lessThanOrEqual('schoolDistrict.streets.numberFrom', $number);
+            $constraints[] = $query->greaterThanOrEqual('schoolDistrict.streets.numberTo', $number);
         }
+
         // add query for letter
         if (!empty($letter)) {
-            $addWhere[] = 'AND tx_schooldirectory_domain_model_street.letter_from <= ?';
-            $addWhere[] = 'AND (tx_schooldirectory_domain_model_street.letter_to >= ? OR tx_schooldirectory_domain_model_street.letter_to = \'\')';
-            $replacements[] = $letter;
-            $replacements[] = $letter;
+            $constraints[] = $query->lessThanOrEqual('schoolDistrict.streets.letterFrom', $letter);
+
+            $orConstraint = [];
+            $orConstraint[] = $query->greaterThanOrEqual('schoolDistrict.streets.letterTo', $letter);
+            $orConstraint[] = $query->equals('schoolDistrict.streets.letterTo', '');
+
+            $constraints[] = $query->logicalOr($orConstraint);
         }
-        // @ToDo:
-        // Ups: I have mapped district to schooldistrict
-        // To solve that problem I have changed foreign_table of district in street-table to schooldistrict
-        // Would be good to solve this, if we have a little bit more time
-        // Ticket: #10124092
-        return $query->statement(
-            'SELECT tx_schooldirectory_domain_model_school.*
-            FROM tx_schooldirectory_domain_model_school
-            LEFT JOIN tx_schooldirectory_domain_model_street ON tx_schooldirectory_domain_model_street.district = tx_schooldirectory_domain_model_school.school_district
-            LEFT JOIN tx_schooldirectory_school_type_mm ON tx_schooldirectory_school_type_mm.uid_local = tx_schooldirectory_domain_model_school.uid
-            WHERE tx_schooldirectory_school_type_mm.uid_foreign = 1
-            ' . implode(LF, $addWhere),
-            $replacements
-        )->execute();
+
+        return $query->matching($query->logicalAnd($constraints))->execute();
     }
 
     /**

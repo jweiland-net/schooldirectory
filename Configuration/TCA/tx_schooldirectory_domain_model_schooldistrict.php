@@ -133,6 +133,15 @@ return [
                 'size' => 30,
                 'eval' => 'trim'
             ]
+        ],
+        'streets' => [
+            'exclude' => true,
+            'label' => 'Streets',
+            'config' => [
+                'type' => 'inline',
+                'foreign_table' => 'tx_schooldirectory_domain_model_street',
+                'foreign_field' => 'district',
+            ]
         ]
     ]
 ];
