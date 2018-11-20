@@ -77,7 +77,3 @@ if (!defined('TYPO3_MODE')) {
 \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::allowTableOnStandardPages(
     'tx_schooldirectory_domain_model_district'
 );
-
-$extConf = unserialize($_EXTCONF);
-$tsConfig = 'ext.schooldirectory.pid = ' . (int)$extConf['poiCollectionPid'];
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig($tsConfig);

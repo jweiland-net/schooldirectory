@@ -28,7 +28,6 @@ CREATE TABLE tx_schooldirectory_domain_model_school (
 	facebook varchar(255) DEFAULT '' NOT NULL,
 	twitter varchar(255) DEFAULT '' NOT NULL,
 	google varchar(255) DEFAULT '' NOT NULL,
-	tx_maps2_uid varchar(255) DEFAULT '' NOT NULL,
 	holder int(11) unsigned DEFAULT '0',
 	types int(11) unsigned DEFAULT '0' NOT NULL,
 	profile_contents int(11) unsigned DEFAULT '0' NOT NULL,
