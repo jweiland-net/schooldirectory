@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare(strict_types = 1);
 namespace JWeiland\Schooldirectory\Domain\Repository;
 
 /*
@@ -31,14 +31,13 @@ class TypeRepository extends Repository
     ];
 
     /**
-     * get all types as array
+     * Get all school types as array
      *
      * @return array
      */
-    public function findTypes()
+    public function findTypes(): array
     {
         $query = $this->createQuery();
-
         return $query->execute(true);
     }
 }

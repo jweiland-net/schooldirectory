@@ -1,8 +1,9 @@
 <?php
+declare(strict_types = 1);
 namespace JWeiland\Schooldirectory\Ajax;
 
 /*
- * This file is part of the maps2 project.
+ * This file is part of the schooldirectory project.
  *
  * It is free software; you can redistribute it and/or modify it under
  * the terms of the GNU General Public License, either version 2
@@ -32,11 +33,6 @@ class Selector
      */
     protected $objectManager;
 
-    /**
-     * Selector constructor.
-     *
-     * @throws \InvalidArgumentException
-     */
     public function __construct()
     {
         $this->objectManager = GeneralUtility::makeInstance(ObjectManager::class);
@@ -50,7 +46,7 @@ class Selector
      * @return Response
      * @throws \RuntimeException
      */
-    public function renderTypeAction(ServerRequest $request, Response $response)
+    public function renderTypeAction(ServerRequest $request, Response $response): Response
     {
         $typeRepository = $this->objectManager->get(TypeRepository::class);
 
@@ -81,7 +77,7 @@ class Selector
      * @return Response
      * @throws \RuntimeException
      */
-    public function renderCareFormAction(ServerRequest $request, Response $response)
+    public function renderCareFormAction(ServerRequest $request, Response $response): Response
     {
         $careFormRepository = $this->objectManager->get(CareFormRepository::class);
 
@@ -112,7 +108,7 @@ class Selector
      * @return Response
      * @throws \RuntimeException
      */
-    public function renderProfileAction(ServerRequest $request, Response $response)
+    public function renderProfileAction(ServerRequest $request, Response $response): Response
     {
         $profileContentRepository = $this->objectManager->get(ProfileContentRepository::class);
 

@@ -24,17 +24,12 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 class DistrictController extends ActionController
 {
     /**
-     * schoolRepository
-     *
      * @var SchoolRepository
      */
     protected $schoolRepository;
 
     /**
-     * injects schoolRepository
-     *
      * @param SchoolRepository $schoolRepository
-     * @return void
      */
     public function injectSchoolRepository(SchoolRepository $schoolRepository)
     {
@@ -42,9 +37,7 @@ class DistrictController extends ActionController
     }
 
     /**
-     * preprocessing of all actions
-     *
-     * @return void
+     * Preprocessing of all actions
      */
     public function initializeAction()
     {
@@ -56,25 +49,20 @@ class DistrictController extends ActionController
     }
 
     /**
-     * action search
      * This action shows the search form
-     *
-     * @return void
      */
     public function searchAction()
     {
     }
 
     /**
-     * action list
      * This action shows the search results in list form
      *
      * @param string $street
-     * @param integer $number
+     * @param int $number
      * @param string $letter
-     * @return void
      */
-    public function listAction($street, $number, $letter = '')
+    public function listAction(string $street, int $number, string $letter = '')
     {
         $schools = $this->schoolRepository->searchSchoolsByStreet($street, $number, $letter);
         // I know, it's nasty, but as long as we have SQL Statements in Repository, we can't change that

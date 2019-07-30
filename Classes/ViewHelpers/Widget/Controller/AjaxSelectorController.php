@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare(strict_types = 1);
 namespace JWeiland\Schooldirectory\ViewHelpers\Widget\Controller;
 
 /*
@@ -27,31 +27,22 @@ use TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetController;
 class AjaxSelectorController extends AbstractWidgetController
 {
     /**
-     * typeRepository
-     *
      * @var \JWeiland\Schooldirectory\Domain\Repository\TypeRepository
      */
     protected $typeRepository;
 
     /**
-     * careFormRepository
-     *
      * @var \JWeiland\Schooldirectory\Domain\Repository\CareFormRepository
      */
     protected $careFormRepository;
 
     /**
-     * profileContentRepository
-     *
      * @var \JWeiland\Schooldirectory\Domain\Repository\ProfileContentRepository
      */
     protected $profileContentRepository;
 
     /**
-     * injects typeRepository
-     *
      * @param TypeRepository $typeRepository
-     * @return void
      */
     public function injectTypeRepository(TypeRepository $typeRepository)
     {
@@ -59,10 +50,7 @@ class AjaxSelectorController extends AbstractWidgetController
     }
 
     /**
-     * injects careFormRepository
-     *
      * @param CareFormRepository $careFormRepository
-     * @return void
      */
     public function injectCareFormRepository(CareFormRepository $careFormRepository)
     {
@@ -70,10 +58,7 @@ class AjaxSelectorController extends AbstractWidgetController
     }
 
     /**
-     * injects profileContentRepository
-     *
      * @param ProfileContentRepository $profileContentRepository
-     * @return void
      */
     public function injectProfileContentRepository(ProfileContentRepository $profileContentRepository)
     {
@@ -81,10 +66,8 @@ class AjaxSelectorController extends AbstractWidgetController
     }
 
     /**
-     * loads index.html
-     * create selectboxes to search schools by given settings
-     *
-     * @return void
+     * Load index.html
+     * Create selectboxes to search schools by given settings
      */
     public function indexAction()
     {

@@ -34,7 +34,7 @@ jQuery(function() {
   });
 
   /**
-   * show type
+   * Show type
    *
    * @return void
    */

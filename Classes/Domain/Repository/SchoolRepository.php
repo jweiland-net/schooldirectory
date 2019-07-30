@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare(strict_types = 1);
 namespace JWeiland\Schooldirectory\Domain\Repository;
 
 /*
@@ -17,6 +17,7 @@ namespace JWeiland\Schooldirectory\Domain\Repository;
 
 use TYPO3\CMS\Backend\Utility\BackendUtility;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
+use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
@@ -32,12 +33,12 @@ class SchoolRepository extends Repository
     ];
 
     /**
-     * find all records starting with given letter
+     * Find all records starting with given letter
      *
      * @param string $letter
-     * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     * @return QueryResultInterface
      */
-    public function findByStartingLetter($letter)
+    public function findByStartingLetter(string $letter): QueryResultInterface
     {
         $query = $this->createQuery();
         $constraint = [];
@@ -60,11 +61,11 @@ class SchoolRepository extends Repository
     }
 
     /**
-     * get an array with available starting letters
+     * Get an array with available starting letters
      *
      * @return array
      */
-    public function getStartingLetters()
+    public function getStartingLetters(): array
     {
         $query = $this->createQuery();
 
@@ -82,14 +83,14 @@ class SchoolRepository extends Repository
     }
 
     /**
-     * search records
+     * Search for school records
      *
-     * @param integer $type
-     * @param integer $careForm
-     * @param integer $profile
-     * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     * @param int $type
+     * @param int $careForm
+     * @param int $profile
+     * @return QueryResultInterface
      */
-    public function searchSchools($type = 0, $careForm = 0, $profile = 0)
+    public function searchSchools(int $type = 0, int $careForm = 0, int $profile = 0): QueryResultInterface
     {
         $query = $this->createQuery();
         $constraint = [];
@@ -112,14 +113,14 @@ class SchoolRepository extends Repository
     }
 
     /**
-     * search records
+     * search for school records by school type
      *
      * @param string $street
-     * @param integer $number
+     * @param int $number
      * @param string $letter
-     * @return \TYPO3\CMS\Extbase\Persistence\QueryResultInterface
+     * @return QueryResultInterface
      */
-    public function searchSchoolsByStreet($street, $number, $letter)
+    public function searchSchoolsByStreet(string $street, int $number, string $letter): QueryResultInterface
     {
         $query = $this->createQuery();
 
@@ -127,7 +128,7 @@ class SchoolRepository extends Repository
         $constraints[] = $query->equals('types.uid', 1);
 
         // add query for street
-        $constraints[] = $query->like('schoolDistrict.streets.street', $this->getUnifiedStreetname($street) . '%');
+        $constraints[] = $query->like('schoolDistrict.streets.street', $this->sanitizeStreetName($street) . '%');
 
         // add query for number
         if (!empty($number)) {
@@ -150,13 +151,13 @@ class SchoolRepository extends Repository
     }
 
     /**
-     * get unified street name
-     * converts "Strasse" to "Str."
+     * Sanitize street name
+     * Converts f.e. "Strasse" to "Str."
      *
-     * @param $street
+     * @param string $street
      * @return string
      */
-    protected function getUnifiedStreetname($street)
+    protected function sanitizeStreetName(string $street): string
     {
         $street = strtolower(trim($street));
         $street = str_replace(array('str.', 'strasse', 'straße'), 'str', $street);

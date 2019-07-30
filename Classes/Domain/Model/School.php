@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare(strict_types = 1);
 namespace JWeiland\Schooldirectory\Domain\Model;
 
 /*
@@ -25,217 +25,156 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 class School extends AbstractEntity
 {
     /**
-     * Title
-     *
      * @var string
      */
     protected $title = '';
 
     /**
-     * Leader
-     *
      * @var string
      */
     protected $leader = '';
 
     /**
-     * Street
-     *
      * @var string
      */
     protected $street = '';
 
     /**
-     * House number
-     *
      * @var string
      */
     protected $houseNumber = '';
 
     /**
-     * Zip
-     *
      * @var string
      */
     protected $zip = '';
 
     /**
-     * City
-     *
      * @var string
      */
     protected $city = '';
 
     /**
-     * Telephone
-     *
      * @var string
      */
     protected $telephone = '';
 
     /**
-     * Telephone alternative
-     *
      * @var string
      */
     protected $telephoneAlternative = '';
 
     /**
-     * Fax
-     *
      * @var string
      */
     protected $fax = '';
 
     /**
-     * Email
-     *
      * @var string
      */
     protected $email = '';
 
     /**
-     * Email alternative
-     *
      * @var string
      */
     protected $emailAlternative = '';
 
     /**
-     * Website
-     *
      * @var string
      */
     protected $website = '';
 
     /**
-     * Logo
-     *
      * @var \JWeiland\Schooldirectory\Domain\Model\FileReference
      */
     protected $logo;
 
     /**
-     * Images
-     *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Schooldirectory\Domain\Model\FileReference>
      */
     protected $images;
 
     /**
-     * Amount of students
-     *
      * @var string
      */
     protected $amountOfStudents = '';
 
     /**
-     * Profile title
-     *
      * @var string
      */
     protected $profileTitle = '';
 
     /**
-     * School way plan
-     *
      * @var string
      */
     protected $schoolWayPlan = '';
 
     /**
-     * Notes
-     *
      * @var string
      */
     protected $notes = '';
 
     /**
-     * Additional Informations
-     *
      * @var string
      */
     protected $additionalInformations = '';
 
     /**
-     * Facebook
-     *
      * @var string
      */
     protected $facebook = '';
 
     /**
-     * Twitter
-     *
      * @var string
      */
     protected $twitter = '';
 
     /**
-     * Google
-     *
      * @var string
      */
     protected $google = '';
 
     /**
-     * TxMaps2Uid
-     *
      * @var \JWeiland\Maps2\Domain\Model\PoiCollection
      */
     protected $txMaps2Uid;
 
     /**
-     * Holder
-     *
      * @var \JWeiland\Schooldirectory\Domain\Model\Holder
      * @lazy
      */
     protected $holder;
 
     /**
-     * Types
-     *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Schooldirectory\Domain\Model\Type>
      * @lazy
      */
     protected $types;
 
     /**
-     * Profile contents
-     *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Schooldirectory\Domain\Model\ProfileContent>
      * @lazy
      */
     protected $profileContents;
 
     /**
-     * Care forms
-     *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Schooldirectory\Domain\Model\CareForm>
      * @lazy
      */
     protected $careForms;
 
     /**
-     * School district
-     *
      * @var \JWeiland\Schooldirectory\Domain\Model\SchoolDistrict
      * @lazy
      */
     protected $schoolDistrict;
 
     /**
-     * district
-     *
      * @var \JWeiland\Schooldirectory\Domain\Model\District
      * @lazy
      */
     protected $district;
 
-    /**
-     * __construct
-     */
     public function __construct()
     {
         $this->initStorageObjects();
@@ -243,8 +182,6 @@ class School extends AbstractEntity
 
     /**
      * Initializes all \TYPO3\CMS\Extbase\Persistence\ObjectStorage properties.
-     *
-     * @return void
      */
     protected function initStorageObjects()
     {
@@ -254,20 +191,15 @@ class School extends AbstractEntity
     }
 
     /**
-     * Returns the title
-     *
-     * @return string $title
+     * @return string
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
 
     /**
-     * Sets the title
-     *
      * @param string $title
-     * @return void
      */
     public function setTitle(string $title)
     {
@@ -275,20 +207,15 @@ class School extends AbstractEntity
     }
 
     /**
-     * Returns the leader
-     *
-     * @return string $leader
+     * @return string
      */
-    public function getLeader()
+    public function getLeader(): string
     {
         return $this->leader;
     }
 
     /**
-     * Sets the leader
-     *
      * @param string $leader
-     * @return void
      */
     public function setLeader(string $leader)
     {
@@ -296,20 +223,15 @@ class School extends AbstractEntity
     }
 
     /**
-     * Returns the street
-     *
-     * @return string $street
+     * @return string
      */
-    public function getStreet()
+    public function getStreet(): string
     {
         return $this->street;
     }
 
     /**
-     * Sets the street
-     *
      * @param string $street
-     * @return void
      */
     public function setStreet(string $street)
     {
@@ -317,20 +239,15 @@ class School extends AbstractEntity
     }
 
     /**
-     * Returns the zip
-     *
-     * @return string $zip
+     * @return string
      */
-    public function getZip()
+    public function getZip(): string
     {
         return $this->zip;
     }
 
     /**
-     * Sets the zip
-     *
      * @param string $zip
-     * @return void
      */
     public function setZip(string $zip)
     {
@@ -338,20 +255,15 @@ class School extends AbstractEntity
     }
 
     /**
-     * Returns the city
-     *
-     * @return string $city
+     * @return string
      */
-    public function getCity()
+    public function getCity(): string
     {
         return $this->city;
     }
 
     /**
-     * Sets the city
-     *
      * @param string $city
-     * @return void
      */
     public function setCity(string $city)
     {
@@ -359,20 +271,15 @@ class School extends AbstractEntity
     }
 
     /**
-     * Returns the telephone
-     *
-     * @return string $telephone
+     * @return string
      */
-    public function getTelephone()
+    public function getTelephone(): string
     {
         return $this->telephone;
     }
 
     /**
-     * Sets the telephone
-     *
      * @param string $telephone
-     * @return void
      */
     public function setTelephone(string $telephone)
     {
@@ -380,20 +287,15 @@ class School extends AbstractEntity
     }
 
     /**
-     * Returns the telephoneAlternative
-     *
-     * @return string $telephoneAlternative
+     * @return string
      */
-    public function getTelephoneAlternative()
+    public function getTelephoneAlternative(): string
     {
         return $this->telephoneAlternative;
     }
 
     /**
-     * Sets the telephoneAlternative
-     *
      * @param string $telephoneAlternative
-     * @return void
      */
     public function setTelephoneAlternative(string $telephoneAlternative)
     {
@@ -401,20 +303,15 @@ class School extends AbstractEntity
     }
 
     /**
-     * Returns the fax
-     *
-     * @return string $fax
+     * @return string
      */
-    public function getFax()
+    public function getFax(): string
     {
         return $this->fax;
     }
 
     /**
-     * Sets the fax
-     *
      * @param string $fax
-     * @return void
      */
     public function setFax(string $fax)
     {
@@ -422,20 +319,15 @@ class School extends AbstractEntity
     }
 
     /**
-     * Returns the email
-     *
-     * @return string $email
+     * @return string
      */
-    public function getEmail()
+    public function getEmail(): string
     {
         return $this->email;
     }
 
     /**
-     * Sets the email
-     *
      * @param string $email
-     * @return void
      */
     public function setEmail(string $email)
     {
@@ -443,20 +335,15 @@ class School extends AbstractEntity
     }
 
     /**
-     * Returns the emailAlternative
-     *
-     * @return string $emailAlternative
+     * @return string
      */
-    public function getEmailAlternative()
+    public function getEmailAlternative(): string
     {
         return $this->emailAlternative;
     }
 
     /**
-     * Sets the emailAlternative
-     *
      * @param string $emailAlternative
-     * @return void
      */
     public function setEmailAlternative(string $emailAlternative)
     {
@@ -464,20 +351,15 @@ class School extends AbstractEntity
     }
 
     /**
-     * Returns the website
-     *
-     * @return string $website
+     * @return string
      */
-    public function getWebsite()
+    public function getWebsite(): string
     {
         return $this->website;
     }
 
     /**
-     * Sets the website
-     *
      * @param string $website
-     * @return void
      */
     public function setWebsite(string $website)
     {
@@ -485,9 +367,7 @@ class School extends AbstractEntity
     }
 
     /**
-     * Returns the logo
-     *
-     * @return \JWeiland\Schooldirectory\Domain\Model\FileReference $logo
+     * @return \JWeiland\Schooldirectory\Domain\Model\FileReference|null $logo
      */
     public function getLogo()
     {
@@ -495,10 +375,7 @@ class School extends AbstractEntity
     }
 
     /**
-     * Sets the logo
-     *
-     * @param FileReference $logo
-     * @return void
+     * @param FileReference|null $logo
      */
     public function setLogo(FileReference $logo)
     {
@@ -506,20 +383,15 @@ class School extends AbstractEntity
     }
 
     /**
-     * Returns the images
-     *
-     * @return ObjectStorage $images
+     * @return ObjectStorage
      */
-    public function getImages()
+    public function getImages(): ObjectStorage
     {
         return $this->images;
     }
 
     /**
-     * Sets the images
-     *
      * @param ObjectStorage $images
-     * @return void
      */
     public function setImages(ObjectStorage $images)
     {
@@ -527,20 +399,15 @@ class School extends AbstractEntity
     }
 
     /**
-     * Returns the amountOfStudents
-     *
-     * @return string $amountOfStudents
+     * @return string
      */
-    public function getAmountOfStudents()
+    public function getAmountOfStudents(): string
     {
         return $this->amountOfStudents;
     }
 
     /**
-     * Sets the amountOfStudents
-     *
      * @param string $amountOfStudents
-     * @return void
      */
     public function setAmountOfStudents(string $amountOfStudents)
     {
@@ -548,20 +415,15 @@ class School extends AbstractEntity
     }
 
     /**
-     * Returns the profileTitle
-     *
-     * @return string $profileTitle
+     * @return string
      */
-    public function getProfileTitle()
+    public function getProfileTitle(): string
     {
         return $this->profileTitle;
     }
 
     /**
-     * Sets the profileTitle
-     *
      * @param string $profileTitle
-     * @return void
      */
     public function setProfileTitle(string $profileTitle)
     {
@@ -569,20 +431,15 @@ class School extends AbstractEntity
     }
 
     /**
-     * Returns the schoolWayPlan
-     *
-     * @return string $schoolWayPlan
+     * @return string
      */
-    public function getSchoolWayPlan()
+    public function getSchoolWayPlan(): string
     {
         return $this->schoolWayPlan;
     }
 
     /**
-     * Sets the schoolWayPlan
-     *
      * @param string $schoolWayPlan
-     * @return void
      */
     public function setSchoolWayPlan(string $schoolWayPlan)
     {
@@ -590,20 +447,15 @@ class School extends AbstractEntity
     }
 
     /**
-     * Returns the additionalInformations
-     *
-     * @return string $additionalInformations
+     * @return string
      */
-    public function getAdditionalInformations()
+    public function getAdditionalInformations(): string
     {
         return $this->additionalInformations;
     }
 
     /**
-     * Sets the additionalInformations
-     *
      * @param string $additionalInformations
-     * @return void
      */
     public function setAdditionalInformations(string $additionalInformations)
     {
@@ -611,9 +463,7 @@ class School extends AbstractEntity
     }
 
     /**
-     * Returns the facebook
-     *
-     * @return string $facebook
+     * @return string
      */
     public function getFacebook()
     {
@@ -621,10 +471,7 @@ class School extends AbstractEntity
     }
 
     /**
-     * Sets the facebook
-     *
      * @param string $facebook
-     * @return void
      */
     public function setFacebook(string $facebook)
     {
@@ -632,20 +479,15 @@ class School extends AbstractEntity
     }
 
     /**
-     * Returns the twitter
-     *
-     * @return string $twitter
+     * @return string
      */
-    public function getTwitter()
+    public function getTwitter(): string
     {
         return $this->twitter;
     }
 
     /**
-     * Sets the twitter
-     *
      * @param string $twitter
-     * @return void
      */
     public function setTwitter(string $twitter)
     {
@@ -653,20 +495,15 @@ class School extends AbstractEntity
     }
 
     /**
-     * Returns the google
-     *
-     * @return string $google
+     * @return string
      */
-    public function getGoogle()
+    public function getGoogle(): string
     {
         return $this->google;
     }
 
     /**
-     * Sets the google
-     *
      * @param string $google
-     * @return void
      */
     public function setGoogle(string $google)
     {
@@ -674,20 +511,15 @@ class School extends AbstractEntity
     }
 
     /**
-     * Returns the notes
-     *
-     * @return string $notes
+     * @return string
      */
-    public function getNotes()
+    public function getNotes(): string
     {
         return $this->notes;
     }
 
     /**
-     * Sets the notes
-     *
      * @param string $notes
-     * @return void
      */
     public function setNotes(string $notes)
     {
@@ -695,9 +527,7 @@ class School extends AbstractEntity
     }
 
     /**
-     * Returns the txMaps2Uid
-     *
-     * @return PoiCollection $txMaps2Uid
+     * @return PoiCollection|null
      */
     public function getTxMaps2Uid()
     {
@@ -705,20 +535,15 @@ class School extends AbstractEntity
     }
 
     /**
-     * Sets the txMaps2Uid
-     *
-     * @param PoiCollection $txMaps2Uid
-     * @return void
+     * @param PoiCollection|null $txMaps2Uid
      */
-    public function setTxMaps2Uid(PoiCollection $txMaps2Uid)
+    public function setTxMaps2Uid(PoiCollection $txMaps2Uid = null)
     {
         $this->txMaps2Uid = $txMaps2Uid;
     }
 
     /**
-     * Returns the holder
-     *
-     * @return Holder $holder
+     * @return Holder|null
      */
     public function getHolder()
     {
@@ -726,53 +551,23 @@ class School extends AbstractEntity
     }
 
     /**
-     * Sets the holder
-     *
-     * @param Holder $holder
-     * @return void
+     * @param Holder|null $holder
      */
-    public function setHolder(Holder $holder)
+    public function setHolder(Holder $holder = null)
     {
         $this->holder = $holder;
     }
 
     /**
-     * Adds a Type
-     *
-     * @param Type $type
-     * @return void
+     * @return ObjectStorage
      */
-    public function addType(Type $type)
-    {
-        $this->types->attach($type);
-    }
-
-    /**
-     * Removes a Type
-     *
-     * @param Type $typeToRemove The Type to be removed
-     * @return void
-     */
-    public function removeType(Type $typeToRemove)
-    {
-        $this->types->detach($typeToRemove);
-    }
-
-    /**
-     * Returns the types
-     *
-     * @return ObjectStorage<\JWeiland\Schooldirectory\Domain\Model\Type> $types
-     */
-    public function getTypes()
+    public function getTypes(): ObjectStorage
     {
         return $this->types;
     }
 
     /**
-     * Sets the types
-     *
      * @param ObjectStorage $types
-     * @return void
      */
     public function setTypes(ObjectStorage $types)
     {
@@ -780,43 +575,31 @@ class School extends AbstractEntity
     }
 
     /**
-     * Adds a ProfileContent
-     *
-     * @param ProfileContent $profileContent
-     * @return void
+     * @param Type $type
      */
-    public function addProfileContent(ProfileContent $profileContent)
+    public function addType(Type $type)
     {
-        $this->profileContents->attach($profileContent);
+        $this->types->attach($type);
     }
 
     /**
-     * Removes a ProfileContent
-     *
-     * @param ProfileContent $profileContentToRemove The ProfileContent to be
-     *     removed
-     * @return void
+     * @param Type $type
      */
-    public function removeProfileContent(ProfileContent $profileContentToRemove)
+    public function removeType(Type $type)
     {
-        $this->profileContents->detach($profileContentToRemove);
+        $this->types->detach($type);
     }
 
     /**
-     * Returns the profileContents
-     *
-     * @return ObjectStorage $profileContents
+     * @return ObjectStorage
      */
-    public function getProfileContents()
+    public function getProfileContents(): ObjectStorage
     {
         return $this->profileContents;
     }
 
     /**
-     * Sets the profileContents
-     *
      * @param ObjectStorage $profileContents
-     * @return void
      */
     public function setProfileContents(ObjectStorage $profileContents)
     {
@@ -824,42 +607,31 @@ class School extends AbstractEntity
     }
 
     /**
-     * Adds a CareForm
-     *
-     * @param CareForm $careForm
-     * @return void
+     * @param ProfileContent $profileContent
      */
-    public function addCareForm(CareForm $careForm)
+    public function addProfileContent(ProfileContent $profileContent)
     {
-        $this->careForms->attach($careForm);
+        $this->profileContents->attach($profileContent);
     }
 
     /**
-     * Removes a CareForm
-     *
-     * @param CareForm $careFormToRemove The CareForm to be removed
-     * @return void
+     * @param ProfileContent $profileContent
      */
-    public function removeCareForm(CareForm $careFormToRemove)
+    public function removeProfileContent(ProfileContent $profileContent)
     {
-        $this->careForms->detach($careFormToRemove);
+        $this->profileContents->detach($profileContent);
     }
 
     /**
-     * Returns the careForms
-     *
-     * @return ObjectStorage<\JWeiland\Schooldirectory\Domain\Model\CareForm> $careForms
+     * @return ObjectStorage
      */
-    public function getCareForms()
+    public function getCareForms(): ObjectStorage
     {
         return $this->careForms;
     }
 
     /**
-     * Sets the careForms
-     *
      * @param ObjectStorage $careForms
-     * @return void
      */
     public function setCareForms(ObjectStorage $careForms)
     {
@@ -867,9 +639,23 @@ class School extends AbstractEntity
     }
 
     /**
-     * Returns the schoolDistrict
-     *
-     * @return SchoolDistrict $schoolDistrict
+     * @param CareForm $careForm
+     */
+    public function addCareForm(CareForm $careForm)
+    {
+        $this->careForms->attach($careForm);
+    }
+
+    /**
+     * @param CareForm $careForm
+     */
+    public function removeCareForm(CareForm $careForm)
+    {
+        $this->careForms->detach($careForm);
+    }
+
+    /**
+     * @return SchoolDistrict|null
      */
     public function getSchoolDistrict()
     {
@@ -877,20 +663,15 @@ class School extends AbstractEntity
     }
 
     /**
-     * Sets the schoolDistrict
-     *
-     * @param SchoolDistrict $schoolDistrict
-     * @return void
+     * @param SchoolDistrict|null $schoolDistrict
      */
-    public function setSchoolDistrict(SchoolDistrict $schoolDistrict)
+    public function setSchoolDistrict(SchoolDistrict $schoolDistrict = null)
     {
         $this->schoolDistrict = $schoolDistrict;
     }
 
     /**
-     * Returns the district
-     *
-     * @return District $district
+     * @return District|null
      */
     public function getDistrict()
     {
@@ -898,10 +679,7 @@ class School extends AbstractEntity
     }
 
     /**
-     * Sets the district
-     *
-     * @param District $district
-     * @return void
+     * @param District|null $district
      */
     public function setDistrict(District $district)
     {
@@ -909,20 +687,15 @@ class School extends AbstractEntity
     }
 
     /**
-     * Returns the houseNumber
-     *
-     * @return string houseNumber
+     * @return string
      */
-    public function getHouseNumber()
+    public function getHouseNumber(): string
     {
         return $this->houseNumber;
     }
 
     /**
-     * Sets the houseNumber
-     *
      * @param string $houseNumber
-     * @return void
      */
     public function setHouseNumber(string $houseNumber)
     {

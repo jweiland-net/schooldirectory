@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare(strict_types = 1);
 namespace JWeiland\Schooldirectory\Domain\Repository;
 
 /*
@@ -32,12 +32,12 @@ class CareFormRepository extends Repository
     ];
 
     /**
-     * find careforms by given school type
+     * Find careforms by given school type
      *
-     * @param integer $type
+     * @param int $type
      * @return array
      */
-    public function findByType($type)
+    public function findByType(int $type): array
     {
         $query = $this->createQuery();
 

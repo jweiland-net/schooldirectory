@@ -1,4 +1,5 @@
 <?php
+declare(strict_types = 1);
 namespace JWeiland\Schooldirectory\Controller;
 
 /*
@@ -30,7 +31,7 @@ class AjaxController extends ActionController
      * @return string
      * @throws \RuntimeException
      */
-    public function renderTypeAction()
+    public function renderTypeAction(): string
     {
         $typeRepository = $this->objectManager->get(TypeRepository::class);
 
@@ -58,7 +59,7 @@ class AjaxController extends ActionController
      * @param int $schoolType
      * @return string
      */
-    public function renderCareFormAction(int $schoolType)
+    public function renderCareFormAction(int $schoolType): string
     {
         $careFormRepository = $this->objectManager->get(CareFormRepository::class);
 
@@ -87,7 +88,7 @@ class AjaxController extends ActionController
      * @param int $careForm
      * @return string
      */
-    public function renderProfileAction(int $schoolType, int $careForm)
+    public function renderProfileAction(int $schoolType, int $careForm): string
     {
         $profileContentRepository = $this->objectManager->get(ProfileContentRepository::class);
 

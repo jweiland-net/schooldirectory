@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare(strict_types = 1);
 namespace JWeiland\Schooldirectory\Domain\Model;
 
 /*
@@ -23,27 +23,20 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 class District extends AbstractEntity
 {
     /**
-     * District
-     *
      * @var string
      */
     protected $district = '';
 
     /**
-     * Returns the district
-     *
-     * @return string $title
+     * @return string
      */
-    public function getDistrict()
+    public function getDistrict(): string
     {
         return $this->district;
     }
 
     /**
-     * Sets the district
-     *
      * @param string $district
-     * @return void
      */
     public function setDistrict(string $district)
     {
