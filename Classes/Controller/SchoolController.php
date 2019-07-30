@@ -23,9 +23,7 @@ use TYPO3\CMS\Core\Utility\MathUtility;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
- * Class SchoolController
- *
- * @package JWeiland\Schooldirectory\Controller
+ * Main controller to list and show school records.
  */
 class SchoolController extends ActionController
 {

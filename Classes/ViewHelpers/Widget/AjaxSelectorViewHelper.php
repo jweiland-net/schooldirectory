@@ -19,9 +19,7 @@ use JWeiland\Schooldirectory\ViewHelpers\Widget\Controller\AjaxSelectorControlle
 use TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetViewHelper;
 
 /**
- * Class AjaxSelectorViewHelper
- *
- * @package JWeiland\Schooldirectory\ViewHelpers\Widget
+ * A ViewHelper with own template to show ajax-based selectboxes
  */
 class AjaxSelectorViewHelper extends AbstractWidgetViewHelper
 {

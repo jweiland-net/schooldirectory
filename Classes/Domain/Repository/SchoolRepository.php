@@ -20,9 +20,7 @@ use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
- * Class SchoolRepository
- *
- * @package JWeiland\Schooldirectory\Domain\Repository
+ * Main Repository to find various types of schools
  */
 class SchoolRepository extends Repository
 {

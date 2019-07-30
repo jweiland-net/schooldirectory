@@ -19,9 +19,7 @@ use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
- * Class ProfileContentRepository
- *
- * @package JWeiland\Schooldirectory\Domain\Repository
+ * Repository to find profile content by a given school type and careform
  */
 class ProfileContentRepository extends Repository
 {

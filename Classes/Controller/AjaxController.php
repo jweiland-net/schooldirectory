@@ -20,9 +20,7 @@ use JWeiland\Schooldirectory\Domain\Repository\TypeRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
- * Class AjaxController
- *
- * @package JWeiland\Schooldirectory\Controller
+ * This controller contains ajax action methods to delivers various data to fill Selectboxes in FE.
  */
 class AjaxController extends ActionController
 {

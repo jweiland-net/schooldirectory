@@ -18,9 +18,7 @@ namespace JWeiland\Schooldirectory\Domain\Model;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
- * Class District
- *
- * @package JWeiland\Schooldirectory\Domain\Model
+ * Domain model for district of a city
  */
 class District extends AbstractEntity
 {

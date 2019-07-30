@@ -16,9 +16,8 @@ namespace JWeiland\Schooldirectory\Domain\Model;
  */
 
 /**
- * Class FileReference
- *
- * @package JWeiland\Schooldirectory\Domain\Model
+ * Domain model for files
+ * ToDo: Can maybe removed
  */
 class FileReference extends \TYPO3\CMS\Extbase\Domain\Model\FileReference
 {

@@ -22,8 +22,7 @@ use JWeiland\Schooldirectory\Domain\Repository\TypeRepository;
 use TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetController;
 
 /**
- * @package schooldirectory
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
+ * With this Ajax Widget controller we will fill the ajax based selectboxes in FE
  */
 class AjaxSelectorController extends AbstractWidgetController
 {
