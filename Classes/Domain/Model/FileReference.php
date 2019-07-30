@@ -22,22 +22,16 @@ namespace JWeiland\Schooldirectory\Domain\Model;
 class FileReference extends \TYPO3\CMS\Extbase\Domain\Model\FileReference
 {
     /**
-     * title
-     *
      * @var string
      */
     protected $title = '';
 
     /**
-     * cruserId
-     *
      * @var int
      */
     protected $cruserId = 0;
 
     /**
-     * uidLocal
-     *
      * @var int
      */
     protected $uidLocal = 0;

@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare(strict_types = 1);
 namespace JWeiland\Schooldirectory\Domain\Model;
 
 /*
@@ -23,34 +23,25 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 class CareForm extends AbstractEntity
 {
     /**
-     * Title
-     *
      * @var string
      */
     protected $title = '';
 
     /**
-     * Description
-     *
      * @var string
      */
     protected $description = '';
 
     /**
-     * Returns the title
-     *
-     * @return string $title
+     * @return string
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
 
     /**
-     * Sets the title
-     *
      * @param string $title
-     * @return void
      */
     public function setTitle(string $title)
     {
@@ -58,20 +49,15 @@ class CareForm extends AbstractEntity
     }
 
     /**
-     * Returns the description
-     *
-     * @return string $description
+     * @return string
      */
-    public function getDescription()
+    public function getDescription(): string
     {
         return $this->description;
     }
 
     /**
-     * Sets the description
-     *
      * @param string $description
-     * @return void
      */
     public function setDescription(string $description)
     {

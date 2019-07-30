@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare(strict_types = 1);
 namespace JWeiland\Schooldirectory\Domain\Model;
 
 /*
@@ -16,6 +16,7 @@ namespace JWeiland\Schooldirectory\Domain\Model;
  */
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
  * Domain model for school destrict
@@ -23,35 +24,26 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 class SchoolDistrict extends AbstractEntity
 {
     /**
-     * Title
-     *
      * @var string
      */
     protected $title = '';
 
     /**
-     * Care forms
-     *
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Schooldirectory\Domain\Model\Street>
      * @lazy
      */
     protected $streets;
 
     /**
-     * Returns the title
-     *
-     * @return string $title
+     * @return string
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
 
     /**
-     * Sets the title
-     *
      * @param string $title
-     * @return void
      */
     public function setTitle(string $title)
     {
@@ -59,23 +51,17 @@ class SchoolDistrict extends AbstractEntity
     }
 
     /**
-     * Returns the streets
-     *
-     * @return \TYPO3\CMS\Extbase\Persistence\ObjectStorage $streets
+     * @return ObjectStorage
      */
-    public function getStreets()
+    public function getStreets(): ObjectStorage
     {
         return $this->streets;
     }
 
     /**
-     * Sets the streets
-     *
-     * @param \TYPO3\CMS\Extbase\Persistence\ObjectStorage $streets
-     *
-     * @return void
+     * @param ObjectStorage $streets
      */
-    public function setStreets(\TYPO3\CMS\Extbase\Persistence\ObjectStorage $streets)
+    public function setStreets(ObjectStorage $streets)
     {
         $this->streets = $streets;
     }

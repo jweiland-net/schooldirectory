@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare(strict_types = 1);
 namespace JWeiland\Schooldirectory\Domain\Model;
 
 /*
@@ -23,49 +23,36 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 class Street extends AbstractEntity
 {
     /**
-     * Street
-     *
      * @var string
      */
     protected $street = '';
 
     /**
-     * house number from
-     *
      * @var string
      */
     protected $numberFrom = '';
 
     /**
-     * house number to
-     *
      * @var string
      */
     protected $numberTo = '';
 
     /**
-     * School district
-     *
      * @var \JWeiland\Schooldirectory\Domain\Model\District
      * @lazy
      */
     protected $district;
 
     /**
-     * Returns the street
-     *
-     * @return string $street
+     * @return string
      */
-    public function getStreet()
+    public function getStreet(): string
     {
         return $this->street;
     }
 
     /**
-     * Sets the street
-     *
      * @param string $street
-     * @return void
      */
     public function setStreet(string $street)
     {
@@ -73,20 +60,15 @@ class Street extends AbstractEntity
     }
 
     /**
-     * Returns the numberFrom
-     *
-     * @return string $numberFrom
+     * @return string
      */
-    public function getNumberFrom()
+    public function getNumberFrom(): string
     {
         return $this->numberFrom;
     }
 
     /**
-     * Sets the numberFrom
-     *
      * @param string $numberFrom
-     * @return void
      */
     public function setNumberFrom(string $numberFrom)
     {
@@ -94,20 +76,15 @@ class Street extends AbstractEntity
     }
 
     /**
-     * Returns the numberTo
-     *
-     * @return string $numberTo
+     * @return string
      */
-    public function getNumberTo()
+    public function getNumberTo(): string
     {
         return $this->numberTo;
     }
 
     /**
-     * Sets the numberTo
-     *
      * @param string $numberTo
-     * @return void
      */
     public function setNumberTo(string $numberTo)
     {
@@ -115,9 +92,7 @@ class Street extends AbstractEntity
     }
 
     /**
-     * Returns the district
-     *
-     * @return District $district
+     * @return District|null
      */
     public function getDistrict()
     {
@@ -125,12 +100,9 @@ class Street extends AbstractEntity
     }
 
     /**
-     * Sets the district
-     *
-     * @param District $district
-     * @return void
+     * @param District|null $district
      */
-    public function setDistrict(District $district)
+    public function setDistrict(District $district = null)
     {
         $this->district = $district;
     }

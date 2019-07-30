@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare(strict_types = 1);
 namespace JWeiland\Schooldirectory\Domain\Repository;
 
 /*
@@ -33,11 +33,11 @@ class ProfileContentRepository extends Repository
     /**
      * find profile by given care form
      *
-     * @param integer $type
-     * @param integer $careForm
+     * @param int $type
+     * @param int $careForm
      * @return array
      */
-    public function findByTypeAndCareForm($type, $careForm)
+    public function findByTypeAndCareForm(int $type, int $careForm): array
     {
         $query = $this->createQuery();
 

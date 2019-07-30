@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare(strict_types = 1);
 namespace JWeiland\Schooldirectory\Domain\Model;
 
 /*
@@ -23,41 +23,30 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 class Holder extends AbstractEntity
 {
     /**
-     * Title
-     *
      * @var string
      */
     protected $title = '';
 
     /**
-     * Logo
-     *
      * @var \JWeiland\Schooldirectory\Domain\Model\FileReference
      */
     protected $logo;
 
     /**
-     * Website
-     *
      * @var string
      */
     protected $website;
 
     /**
-     * Returns the title
-     *
-     * @return string $title
+     * @return string
      */
-    public function getTitle()
+    public function getTitle(): string
     {
         return $this->title;
     }
 
     /**
-     * Sets the title
-     *
      * @param string $title
-     * @return void
      */
     public function setTitle(string $title)
     {
@@ -65,9 +54,7 @@ class Holder extends AbstractEntity
     }
 
     /**
-     * Returns the logo
-     *
-     * @return FileReference $logo
+     * @return FileReference|null
      */
     public function getLogo()
     {
@@ -75,31 +62,23 @@ class Holder extends AbstractEntity
     }
 
     /**
-     * Sets the logo
-     *
      * @param FileReference $logo
-     * @return void
      */
-    public function setLogo(FileReference $logo)
+    public function setLogo(FileReference $logo = null)
     {
         $this->logo = $logo;
     }
 
     /**
-     * Returns the website
-     *
-     * @return string $website
+     * @return string
      */
-    public function getWebsite()
+    public function getWebsite(): string
     {
         return $this->website;
     }
 
     /**
-     * Sets the website
-     *
      * @param string $website
-     * @return void
      */
     public function setWebsite(string $website)
     {

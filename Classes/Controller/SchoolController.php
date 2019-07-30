@@ -28,15 +28,11 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 class SchoolController extends ActionController
 {
     /**
-     * schoolRepository
-     *
      * @var SchoolRepository
      */
     protected $schoolRepository;
 
     /**
-     * Page renderer
-     *
      * @var PageRenderer
      */
     protected $pageRenderer;
@@ -47,10 +43,7 @@ class SchoolController extends ActionController
     protected $letters = '0-9,A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z';
 
     /**
-     * injects schoolRepository
-     *
      * @param SchoolRepository $schoolRepository
-     * @return void
      */
     public function injectSchoolRepository(SchoolRepository $schoolRepository)
     {
@@ -58,10 +51,7 @@ class SchoolController extends ActionController
     }
 
     /**
-     * injects pageRenderer
-     *
      * @param PageRenderer $pageRenderer
-     * @return void
      */
     public function injectPageRenderer(PageRenderer $pageRenderer)
     {
@@ -69,9 +59,7 @@ class SchoolController extends ActionController
     }
 
     /**
-     * preprocessing of all actions
-     *
-     * @return void
+     * Preprocessing of all actions
      */
     public function initializeAction()
     {
@@ -86,13 +74,12 @@ class SchoolController extends ActionController
     }
 
     /**
-     * action list
+     * Action list
      *
      * @param string $letter Show only records starting with this letter
      * @validate $letter String, StringLength(minimum=0,maximum=1)
-     * @return void
      */
-    public function listAction($letter = null)
+    public function listAction(string $letter = null)
     {
         if ($letter === null) {
             $schools = $this->schoolRepository->findAll();
@@ -106,11 +93,11 @@ class SchoolController extends ActionController
     }
 
     /**
-     * get an array with letters as keys for the glossar
+     * Get an array with letters as keys for the glossar
      *
      * @return array Array with starting letters as keys
      */
-    protected function getGlossar()
+    protected function getGlossar(): array
     {
         $glossar = [];
         $availableLetters = $this->schoolRepository->getStartingLetters();
@@ -137,10 +124,9 @@ class SchoolController extends ActionController
     }
 
     /**
-     * action show
+     * Action show
      *
      * @param School $school
-     * @return void
      */
     public function showAction(School $school)
     {
@@ -148,14 +134,13 @@ class SchoolController extends ActionController
     }
 
     /**
-     * action search
+     * Action search
      *
-     * @param integer $type
-     * @param integer $careForm
-     * @param integer $profile
-     * @return void
+     * @param int $type
+     * @param int $careForm
+     * @param int $profile
      */
-    public function searchAction($type = 0, $careForm = 0, $profile = 0)
+    public function searchAction(int $type = 0, int $careForm = 0, int $profile = 0)
     {
         $schools = $this->schoolRepository->searchSchools($type, $careForm, $profile);
         $this->view->assign('schools', $schools);
@@ -168,8 +153,6 @@ class SchoolController extends ActionController
 
     /**
      * Adds ajax to action
-     *
-     * @return void
      */
     protected function addAjax()
     {

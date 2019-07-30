@@ -1,5 +1,5 @@
 <?php
-declare(strict_types=1);
+declare(strict_types = 1);
 namespace JWeiland\Schooldirectory\ViewHelpers\Widget;
 
 /*
@@ -29,10 +29,7 @@ class AjaxSelectorViewHelper extends AbstractWidgetViewHelper
     protected $controller;
 
     /**
-     * injects controller
-     *
      * @param AjaxSelectorController $controller
-     * @return void
      */
     public function injectController(AjaxSelectorController $controller)
     {
@@ -40,17 +37,19 @@ class AjaxSelectorViewHelper extends AbstractWidgetViewHelper
     }
 
     /**
+     * Change Widget to an ajax widget
+     *
      * @var bool
      */
     protected $ajaxWidget = true;
 
     /**
-     * call the index action of the controller
+     * Call the index action of the controller
      *
-     * @param integer $type
-     * @param integer $careForm
-     * @param integer $profile
-     * @param integer $pidOfSearchPage
+     * @param int $type
+     * @param int $careForm
+     * @param int $profile
+     * @param int $pidOfSearchPage
      * @return string
      */
     public function render($type, $careForm, $profile, $pidOfSearchPage)
