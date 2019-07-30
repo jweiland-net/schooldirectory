@@ -160,7 +160,7 @@ class SchoolRepository extends Repository
     protected function sanitizeStreetName(string $street): string
     {
         $street = strtolower(trim($street));
-        $street = str_replace(array('str.', 'strasse', 'straße'), 'str', $street);
+        $street = str_replace(['str.', 'strasse', 'straße'], 'str', $street);
 
         return $street;
     }
