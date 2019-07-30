@@ -16,6 +16,7 @@ namespace JWeiland\Schooldirectory\ViewHelpers\Widget;
  */
 
 use JWeiland\Schooldirectory\ViewHelpers\Widget\Controller\AjaxSelectorController;
+use TYPO3\CMS\Extbase\Mvc\ResponseInterface;
 use TYPO3\CMS\Fluid\Core\Widget\AbstractWidgetViewHelper;
 
 /**
@@ -44,15 +45,43 @@ class AjaxSelectorViewHelper extends AbstractWidgetViewHelper
     protected $ajaxWidget = true;
 
     /**
+     * Initialize arguments.
+     */
+    public function initializeArguments()
+    {
+        parent::initializeArguments();
+        $this->registerArgument(
+            'type',
+            'int',
+            'School type to select for',
+            true
+        );
+        $this->registerArgument(
+            'careForm',
+            'int',
+            'School careform to select for',
+            true
+        );
+        $this->registerArgument(
+            'profile',
+            'int',
+            'Profile content for School to select for',
+            true
+        );
+        $this->registerArgument(
+            'pidOfSearchPage',
+            'int',
+            'PID with configured schooldirectory search plugin',
+            true
+        );
+    }
+
+    /**
      * Call the index action of the controller
      *
-     * @param int $type
-     * @param int $careForm
-     * @param int $profile
-     * @param int $pidOfSearchPage
-     * @return string
+     * @return ResponseInterface
      */
-    public function render($type, $careForm, $profile, $pidOfSearchPage)
+    public function render(): ResponseInterface
     {
         return $this->initiateSubRequest();
     }
