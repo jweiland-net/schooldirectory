@@ -15,7 +15,6 @@ namespace JWeiland\Schooldirectory\ViewHelpers\Widget\Controller;
  * The TYPO3 project - inspiring people to share!
  */
 
-use JWeiland\Schooldirectory\Domain\Model\ProfileContent;
 use JWeiland\Schooldirectory\Domain\Repository\CareFormRepository;
 use JWeiland\Schooldirectory\Domain\Repository\ProfileContentRepository;
 use JWeiland\Schooldirectory\Domain\Repository\TypeRepository;
