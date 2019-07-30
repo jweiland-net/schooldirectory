@@ -19,9 +19,7 @@ use JWeiland\Schooldirectory\Domain\Repository\SchoolRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
- * Class DistrictController
- *
- * @package JWeiland\Schooldirectory\Controller
+ * Controller to search and list districts
  */
 class DistrictController extends ActionController
 {

@@ -18,9 +18,7 @@ namespace JWeiland\Schooldirectory\Domain\Model;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
- * Class ProfileContent
- *
- * @package JWeiland\Schooldirectory\Domain\Model
+ * Domain model for profile content. It adds title and description as record to school
  */
 class ProfileContent extends AbstractEntity
 {

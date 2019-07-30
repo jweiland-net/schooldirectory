@@ -20,9 +20,7 @@ use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
- * Class CareFormRepository
- *
- * @package JWeiland\Schooldirectory\Domain\Repository
+ * Repository to find careforms by a given school type
  */
 class CareFormRepository extends Repository
 {

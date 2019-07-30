@@ -23,9 +23,7 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Object\ObjectManager;
 
 /**
- * Class RenderType
- *
- * @package JWeiland\Schooldirectory\Ajax
+ * This class delivers various data to fill the Ajax-based Selectboxes in FE.
  */
 class Selector
 {

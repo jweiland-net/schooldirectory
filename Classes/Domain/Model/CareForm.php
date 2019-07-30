@@ -18,8 +18,7 @@ namespace JWeiland\Schooldirectory\Domain\Model;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
- * @package schooldirectory
- * @license http://www.gnu.org/licenses/gpl.html GNU General Public License, version 3 or later
+ * Domain model for careforms
  */
 class CareForm extends AbstractEntity
 {

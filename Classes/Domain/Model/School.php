@@ -20,9 +20,7 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
- * Class School
- *
- * @package JWeiland\Schooldirectory\Domain\Model
+ * Main school domain model
  */
 class School extends AbstractEntity
 {
