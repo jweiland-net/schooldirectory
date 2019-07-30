@@ -15,6 +15,9 @@ namespace JWeiland\Schooldirectory\Domain\Repository;
  * The TYPO3 project - inspiring people to share!
  */
 use TYPO3\CMS\Backend\Utility\BackendUtility;
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Persistence\Generic\Query;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
@@ -39,39 +42,74 @@ class ProfileContentRepository extends Repository
      */
     public function findByTypeAndCareForm(int $type, int $careForm): array
     {
+        /** @var Query $query */
         $query = $this->createQuery();
 
-        return $query->statement(
-            '
-			SELECT DISTINCT tx_schooldirectory_domain_model_profilecontent.uid, tx_schooldirectory_domain_model_profilecontent.title
-			FROM tx_schooldirectory_domain_model_profilecontent
+        $queryBuilder = $this->getConnectionPool()->getQueryBuilderForTable('tx_schooldirectory_domain_model_profilecontent');
+        $queryBuilder
+            ->selectLiteral('DISTINCT pc.uid, pc.title')
+            ->from('tx_schooldirectory_domain_model_profilecontent', 'pc')
+            ->leftJoin(
+                'pc',
+                'tx_schooldirectory_school_profilecontent_mm',
+                'spc_mm',
+                $queryBuilder->expr()->eq(
+                    'pc.uid',
+                    $queryBuilder->quoteIdentifier('spc_mm.uid_foreign')
+                )
+            )
+            ->leftJoin(
+                'spc_mm',
+                'tx_schooldirectory_domain_model_school',
+                's',
+                $queryBuilder->expr()->eq(
+                    'spc_mm.uid_local',
+                    $queryBuilder->quoteIdentifier('s.uid')
+                )
+            )
+            ->leftJoin(
+                's',
+                'tx_schooldirectory_school_type_mm',
+                'st_mm',
+                $queryBuilder->expr()->eq(
+                    's.uid',
+                    $queryBuilder->quoteIdentifier('st_mm.uid_local')
+                )
+            )
+            ->leftJoin(
+                's',
+                'tx_schooldirectory_school_careform_mm',
+                'sc_mm',
+                $queryBuilder->expr()->eq(
+                    's.uid',
+                    $queryBuilder->quoteIdentifier('sc_mm.uid_local')
+                )
+            )
+            ->where(
+                $queryBuilder->expr()->eq(
+                    'st_mm.uid_foreign',
+                    $queryBuilder->createNamedParameter($type, \PDO::PARAM_INT)
+                )
+            )
+            ->andWhere(
+                $queryBuilder->expr()->eq(
+                    'sc_mm.uid_foreign',
+                    $queryBuilder->createNamedParameter($careForm, \PDO::PARAM_INT)
+                )
+            )
+            ->orderBy('pc.title', 'ASC')
+            ->execute();
 
-			LEFT JOIN tx_schooldirectory_school_profilecontent_mm
-			ON tx_schooldirectory_domain_model_profilecontent.uid = tx_schooldirectory_school_profilecontent_mm.uid_foreign
+        return $query->statement($queryBuilder)->execute(true);
+    }
 
-			LEFT JOIN tx_schooldirectory_domain_model_school
-			ON tx_schooldirectory_school_profilecontent_mm.uid_local = tx_schooldirectory_domain_model_school.uid
-
-			LEFT JOIN tx_schooldirectory_school_type_mm
-			ON tx_schooldirectory_domain_model_school.uid = tx_schooldirectory_school_type_mm.uid_local
-
-			LEFT JOIN tx_schooldirectory_school_careform_mm
-			ON tx_schooldirectory_domain_model_school.uid = tx_schooldirectory_school_careform_mm.uid_local
-
-			WHERE tx_schooldirectory_school_type_mm.uid_foreign = ?
-			AND tx_schooldirectory_school_careform_mm.uid_foreign = ?' . BackendUtility::BEenableFields(
-                'tx_schooldirectory_domain_model_profilecontent'
-            ) . BackendUtility::deleteClause(
-                'tx_schooldirectory_domain_model_profilecontent'
-            ) . BackendUtility::BEenableFields('tx_schooldirectory_domain_model_school') . BackendUtility::deleteClause(
-                'tx_schooldirectory_domain_model_school'
-            ) . '
-			ORDER BY tx_schooldirectory_domain_model_profilecontent.title ASC
-		',
-            [
-                $type,
-                $careForm
-            ]
-        )->execute(true);
+    /**
+     * Get TYPO3s Connection Pool
+     *
+     * @return ConnectionPool
+     */
+    protected function getConnectionPool(): ConnectionPool
+    {
+        return GeneralUtility::makeInstance(ConnectionPool::class);
     }
 }
