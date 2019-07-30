@@ -16,6 +16,9 @@ namespace JWeiland\Schooldirectory\Domain\Repository;
  */
 
 use TYPO3\CMS\Backend\Utility\BackendUtility;
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Persistence\Generic\Query;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
@@ -39,34 +42,59 @@ class CareFormRepository extends Repository
      */
     public function findByType(int $type): array
     {
+        /** @var Query $query */
         $query = $this->createQuery();
 
-        return $query->statement(
-            '
-			SELECT DISTINCT tx_schooldirectory_domain_model_careform.uid, tx_schooldirectory_domain_model_careform.title
-			FROM tx_schooldirectory_domain_model_careform
+        $queryBuilder = $this->getConnectionPool()->getQueryBuilderForTable('tx_schooldirectory_domain_model_careform');
+        $queryBuilder
+            ->selectLiteral('DISTINCT c.uid, c.title')
+            ->from('tx_schooldirectory_domain_model_careform', 'c')
+            ->leftJoin(
+                'c',
+                'tx_schooldirectory_school_careform_mm',
+                'sc_mm',
+                $queryBuilder->expr()->eq(
+                    'c.uid',
+                    $queryBuilder->quoteIdentifier('sc_mm.uid_foreign')
+                )
+            )
+            ->leftJoin(
+                'sc_mm',
+                'tx_schooldirectory_domain_model_school',
+                's',
+                $queryBuilder->expr()->eq(
+                    'sc_mm.uid_local',
+                    $queryBuilder->quoteIdentifier('s.uid')
+                )
+            )
+            ->leftJoin(
+                's',
+                'tx_schooldirectory_school_type_mm',
+                'st_mm',
+                $queryBuilder->expr()->eq(
+                    's.uid',
+                    $queryBuilder->quoteIdentifier('st_mm.uid_local')
+                )
+            )
+            ->where(
+                $queryBuilder->expr()->eq(
+                    'st_mm.uid_foreign',
+                    $queryBuilder->createNamedParameter($type, \PDO::PARAM_INT)
+                )
+            )
+            ->orderBy('c.title', 'ASC')
+            ->execute();
 
-			LEFT JOIN tx_schooldirectory_school_careform_mm
-			ON tx_schooldirectory_domain_model_careform.uid = tx_schooldirectory_school_careform_mm.uid_foreign
+        return $query->statement($queryBuilder)->execute(true);
+    }
 
-			LEFT JOIN tx_schooldirectory_domain_model_school
-			ON tx_schooldirectory_school_careform_mm.uid_local = tx_schooldirectory_domain_model_school.uid
-
-			LEFT JOIN tx_schooldirectory_school_type_mm
-			ON tx_schooldirectory_domain_model_school.uid = tx_schooldirectory_school_type_mm.uid_local
-
-			WHERE tx_schooldirectory_school_type_mm.uid_foreign = ?' . BackendUtility::BEenableFields(
-                'tx_schooldirectory_domain_model_careform'
-            ) . BackendUtility::deleteClause(
-                'tx_schooldirectory_domain_model_careform'
-            ) . BackendUtility::BEenableFields('tx_schooldirectory_domain_model_school') . BackendUtility::deleteClause(
-                'tx_schooldirectory_domain_model_school'
-            ) . '
-			ORDER BY tx_schooldirectory_domain_model_careform.title ASC
-		',
-            [
-                $type
-            ]
-        )->execute(true);
+    /**
+     * Get TYPO3s Connection Pool
+     *
+     * @return ConnectionPool
+     */
+    protected function getConnectionPool(): ConnectionPool
+    {
+        return GeneralUtility::makeInstance(ConnectionPool::class);
     }
 }

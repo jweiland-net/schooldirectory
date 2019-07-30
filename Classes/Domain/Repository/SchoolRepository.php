@@ -16,6 +16,9 @@ namespace JWeiland\Schooldirectory\Domain\Repository;
  */
 
 use TYPO3\CMS\Backend\Utility\BackendUtility;
+use TYPO3\CMS\Core\Database\ConnectionPool;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Persistence\Generic\Query;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
@@ -67,19 +70,17 @@ class SchoolRepository extends Repository
      */
     public function getStartingLetters(): array
     {
+        /** @var Query $query */
         $query = $this->createQuery();
 
-        return $query->statement(
-            '
-			SELECT UPPER(LEFT(title, 1)) AS letter
-			FROM tx_schooldirectory_domain_model_school
-			WHERE 1=1' . BackendUtility::BEenableFields(
-                'tx_schooldirectory_domain_model_school'
-            ) . BackendUtility::deleteClause('tx_schooldirectory_domain_model_school') . '
-			GROUP BY letter
-			ORDER BY letter;
-		'
-        )->execute(true);
+        $queryBuilder = $this->getConnectionPool()->getQueryBuilderForTable('tx_schooldirectory_domain_model_school');
+        $queryBuilder
+            ->selectLiteral('UPPER(LEFT(title, 1)) AS letter')
+            ->from('tx_schooldirectory_domain_model_school')
+            ->add('groupBy', 'letter')
+            ->add('orderBy', 'letter');
+
+        return $query->statement($queryBuilder)->execute(true);
     }
 
     /**
@@ -163,5 +164,15 @@ class SchoolRepository extends Repository
         $street = str_replace(['str.', 'strasse', 'straße'], 'str', $street);
 
         return $street;
+    }
+
+    /**
+     * Get TYPO3s Connection Pool
+     *
+     * @return ConnectionPool
+     */
+    protected function getConnectionPool(): ConnectionPool
+    {
+        return GeneralUtility::makeInstance(ConnectionPool::class);
     }
 }
