@@ -1,7 +1,7 @@
 {
     "name": "jweiland/schooldirectory",
     "type": "typo3-cms-extension",
-    "description": "schooldirectory",
+    "description": "This is a TYPO3 extension to manage schools",
     "license": "GPL-2.0-or-later",
     "keywords": ["typo3", "TYPO3 CMS", "school", "directory", "schooldirectory"],
     "homepage": "http://www.jweiland.net",
