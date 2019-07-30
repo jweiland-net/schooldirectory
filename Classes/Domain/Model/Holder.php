@@ -15,6 +15,7 @@ namespace JWeiland\Schooldirectory\Domain\Model;
  * The TYPO3 project - inspiring people to share!
  */
 
+use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
 /**
@@ -28,14 +29,14 @@ class Holder extends AbstractEntity
     protected $title = '';
 
     /**
-     * @var \JWeiland\Schooldirectory\Domain\Model\FileReference
+     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
      */
     protected $logo;
 
     /**
      * @var string
      */
-    protected $website;
+    protected $website = '';
 
     /**
      * @return string
