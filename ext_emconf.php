@@ -2,7 +2,7 @@
 
 $EM_CONF[$_EXTKEY] = [
     'title' => 'School Directory',
-    'description' => 'schooldirectory',
+    'description' => 'This is a TYPO3 extension to manage schools',
     'category' => 'plugin',
     'author' => 'Stefan Froemken',
     'author_email' => 'froemken@gmail.com',
