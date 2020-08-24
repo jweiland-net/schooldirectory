@@ -1,18 +1,13 @@
 <?php
-namespace JWeiland\Schooldirectory\Tests\Unit\Domain\Model;
 
 /*
- * This file is part of the schooldirectory project..
- *
- * It is free software; you can redistribute it and/or modify it under
- * the terms of the GNU General Public License, either version 2
- * of the License, or any later version.
+ * This file is part of the package jweiland/schooldirectory.
  *
  * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- * The TYPO3 project - inspiring people to share!
+ * LICENSE file that was distributed with this source code.
  */
+
+namespace JWeiland\Schooldirectory\Tests\Unit\Domain\Model;
 
 use JWeiland\Schooldirectory\Domain\Model\District;
 use JWeiland\Schooldirectory\Domain\Model\Street;
@@ -49,7 +44,7 @@ class StreetTest extends UnitTestCase
      */
     public function getStreetInitiallyReturnsEmptyString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getStreet()
         );
@@ -62,7 +57,7 @@ class StreetTest extends UnitTestCase
     {
         $this->subject->setStreet('foo bar');
 
-        $this->assertSame(
+        self::assertSame(
             'foo bar',
             $this->subject->getStreet()
         );
@@ -74,7 +69,7 @@ class StreetTest extends UnitTestCase
     public function setStreetWithIntegerResultsInString()
     {
         $this->subject->setStreet(123);
-        $this->assertSame('123', $this->subject->getStreet());
+        self::assertSame('123', $this->subject->getStreet());
     }
 
     /**
@@ -83,7 +78,7 @@ class StreetTest extends UnitTestCase
     public function setStreetWithBooleanResultsInString()
     {
         $this->subject->setStreet(true);
-        $this->assertSame('1', $this->subject->getStreet());
+        self::assertSame('1', $this->subject->getStreet());
     }
 
     /**
@@ -91,7 +86,7 @@ class StreetTest extends UnitTestCase
      */
     public function getNumberFromInitiallyReturnsEmptyString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getNumberFrom()
         );
@@ -104,7 +99,7 @@ class StreetTest extends UnitTestCase
     {
         $this->subject->setNumberFrom('foo bar');
 
-        $this->assertSame(
+        self::assertSame(
             'foo bar',
             $this->subject->getNumberFrom()
         );
@@ -116,7 +111,7 @@ class StreetTest extends UnitTestCase
     public function setNumberFromWithIntegerResultsInString()
     {
         $this->subject->setNumberFrom(123);
-        $this->assertSame('123', $this->subject->getNumberFrom());
+        self::assertSame('123', $this->subject->getNumberFrom());
     }
 
     /**
@@ -125,7 +120,7 @@ class StreetTest extends UnitTestCase
     public function setNumberFromWithBooleanResultsInString()
     {
         $this->subject->setNumberFrom(true);
-        $this->assertSame('1', $this->subject->getNumberFrom());
+        self::assertSame('1', $this->subject->getNumberFrom());
     }
 
     /**
@@ -133,7 +128,7 @@ class StreetTest extends UnitTestCase
      */
     public function getNumberToInitiallyReturnsEmptyString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getNumberTo()
         );
@@ -146,7 +141,7 @@ class StreetTest extends UnitTestCase
     {
         $this->subject->setNumberTo('foo bar');
 
-        $this->assertSame(
+        self::assertSame(
             'foo bar',
             $this->subject->getNumberTo()
         );
@@ -158,7 +153,7 @@ class StreetTest extends UnitTestCase
     public function setNumberToWithIntegerResultsInString()
     {
         $this->subject->setNumberTo(123);
-        $this->assertSame('123', $this->subject->getNumberTo());
+        self::assertSame('123', $this->subject->getNumberTo());
     }
 
     /**
@@ -167,7 +162,7 @@ class StreetTest extends UnitTestCase
     public function setNumberToWithBooleanResultsInString()
     {
         $this->subject->setNumberTo(true);
-        $this->assertSame('1', $this->subject->getNumberTo());
+        self::assertSame('1', $this->subject->getNumberTo());
     }
 
     /**
@@ -175,7 +170,7 @@ class StreetTest extends UnitTestCase
      */
     public function getDistrictInitiallyReturnsNull()
     {
-        $this->assertNull($this->subject->getDistrict());
+        self::assertNull($this->subject->getDistrict());
     }
 
     /**
@@ -186,7 +181,7 @@ class StreetTest extends UnitTestCase
         $instance = new District();
         $this->subject->setDistrict($instance);
 
-        $this->assertSame(
+        self::assertSame(
             $instance,
             $this->subject->getDistrict()
         );

@@ -1,19 +1,15 @@
 <?php
-declare(strict_types = 1);
-namespace JWeiland\Schooldirectory\Domain\Model;
+
+declare(strict_types=1);
 
 /*
- * This file is part of the TYPO3 CMS project.
- *
- * It is free software; you can redistribute it and/or modify it under
- * the terms of the GNU General Public License, either version 2
- * of the License, or any later version.
+ * This file is part of the package jweiland/schooldirectory.
  *
  * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- * The TYPO3 project - inspiring people to share!
+ * LICENSE file that was distributed with this source code.
  */
+
+namespace JWeiland\Schooldirectory\Domain\Model;
 
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
@@ -49,7 +45,7 @@ class Holder extends AbstractEntity
     /**
      * @param string $title
      */
-    public function setTitle(string $title)
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }
@@ -57,7 +53,7 @@ class Holder extends AbstractEntity
     /**
      * @return FileReference|null
      */
-    public function getLogo()
+    public function getLogo(): ?FileReference
     {
         return $this->logo;
     }
@@ -65,7 +61,7 @@ class Holder extends AbstractEntity
     /**
      * @param FileReference $logo
      */
-    public function setLogo(FileReference $logo = null)
+    public function setLogo(FileReference $logo = null): void
     {
         $this->logo = $logo;
     }
@@ -81,7 +77,7 @@ class Holder extends AbstractEntity
     /**
      * @param string $website
      */
-    public function setWebsite(string $website)
+    public function setWebsite(string $website): void
     {
         $this->website = $website;
     }

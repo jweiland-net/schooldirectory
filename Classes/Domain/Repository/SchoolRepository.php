@@ -1,19 +1,15 @@
 <?php
-declare(strict_types = 1);
-namespace JWeiland\Schooldirectory\Domain\Repository;
+
+declare(strict_types=1);
 
 /*
- * This file is part of the TYPO3 CMS project.
- *
- * It is free software; you can redistribute it and/or modify it under
- * the terms of the GNU General Public License, either version 2
- * of the License, or any later version.
+ * This file is part of the package jweiland/schooldirectory.
  *
  * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- * The TYPO3 project - inspiring people to share!
+ * LICENSE file that was distributed with this source code.
  */
+
+namespace JWeiland\Schooldirectory\Domain\Repository;
 
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
@@ -60,26 +56,6 @@ class SchoolRepository extends Repository
         }
 
         return $query->matching($query->logicalOr($constraint))->execute();
-    }
-
-    /**
-     * Get an array with available starting letters
-     *
-     * @return array
-     */
-    public function getStartingLetters(): array
-    {
-        /** @var Query $query */
-        $query = $this->createQuery();
-
-        $queryBuilder = $this->getConnectionPool()->getQueryBuilderForTable('tx_schooldirectory_domain_model_school');
-        $queryBuilder
-            ->selectLiteral('UPPER(LEFT(title, 1)) AS letter')
-            ->from('tx_schooldirectory_domain_model_school')
-            ->add('groupBy', 'letter')
-            ->add('orderBy', 'letter');
-
-        return $query->statement($queryBuilder)->execute(true);
     }
 
     /**
@@ -163,6 +139,32 @@ class SchoolRepository extends Repository
         $street = str_replace(['str.', 'strasse', 'straße'], 'str', $street);
 
         return $street;
+    }
+
+    /**
+     * @return QueryBuilder
+     */
+    public function getQueryBuilderToFindAllEntries(): QueryBuilder
+    {
+        $table = 'tx_schooldirectory_domain_model_school';
+        $query = $this->createQuery();
+        $queryBuilder = $this->getConnectionPool()->getQueryBuilderForTable($table);
+        $queryBuilder->setRestrictions(GeneralUtility::makeInstance(FrontendRestrictionContainer::class));
+
+        // Do not set any SELECT, ORDER BY, GROUP BY statement. It will be set by glossary2 API
+        $queryBuilder
+            ->from($table)
+            ->where(
+                $queryBuilder->expr()->in(
+                    'pid',
+                    $queryBuilder->createNamedParameter(
+                        $query->getQuerySettings()->getStoragePageIds(),
+                        Connection::PARAM_INT_ARRAY
+                    )
+                )
+            );
+
+        return $queryBuilder;
     }
 
     /**

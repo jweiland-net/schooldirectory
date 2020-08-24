@@ -1,19 +1,15 @@
 <?php
+
 declare(strict_types=1);
-namespace JWeiland\Schooldirectory\Controller;
 
 /*
- * This file is part of the TYPO3 CMS project.
- *
- * It is free software; you can redistribute it and/or modify it under
- * the terms of the GNU General Public License, either version 2
- * of the License, or any later version.
+ * This file is part of the package jweiland/schooldirectory.
  *
  * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- * The TYPO3 project - inspiring people to share!
+ * LICENSE file that was distributed with this source code.
  */
+
+namespace JWeiland\Schooldirectory\Controller;
 
 use JWeiland\Schooldirectory\Domain\Repository\SchoolRepository;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
@@ -31,7 +27,7 @@ class DistrictController extends ActionController
     /**
      * @param SchoolRepository $schoolRepository
      */
-    public function injectSchoolRepository(SchoolRepository $schoolRepository)
+    public function injectSchoolRepository(SchoolRepository $schoolRepository): void
     {
         $this->schoolRepository = $schoolRepository;
     }
@@ -39,7 +35,7 @@ class DistrictController extends ActionController
     /**
      * Preprocessing of all actions
      */
-    public function initializeAction()
+    public function initializeAction(): void
     {
         // if this value was not set, then it will be filled with 0
         // but that is not good, because UriBuilder accepts 0 as pid, so it's better to set it to NULL
@@ -51,7 +47,7 @@ class DistrictController extends ActionController
     /**
      * This action shows the search form
      */
-    public function searchAction()
+    public function searchAction(): void
     {
     }
 
@@ -62,7 +58,7 @@ class DistrictController extends ActionController
      * @param int $number
      * @param string $letter
      */
-    public function listAction(string $street, int $number, string $letter = '')
+    public function listAction(string $street, int $number, string $letter = ''): void
     {
         $schools = $this->schoolRepository->searchSchoolsByStreet($street, $number, $letter);
         // I know, it's nasty, but as long as we have SQL Statements in Repository, we can't change that

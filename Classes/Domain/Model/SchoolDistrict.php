@@ -1,19 +1,15 @@
 <?php
-declare(strict_types = 1);
-namespace JWeiland\Schooldirectory\Domain\Model;
+
+declare(strict_types=1);
 
 /*
- * This file is part of the TYPO3 CMS project.
- *
- * It is free software; you can redistribute it and/or modify it under
- * the terms of the GNU General Public License, either version 2
- * of the License, or any later version.
+ * This file is part of the package jweiland/schooldirectory.
  *
  * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- * The TYPO3 project - inspiring people to share!
+ * LICENSE file that was distributed with this source code.
  */
+
+namespace JWeiland\Schooldirectory\Domain\Model;
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
@@ -42,7 +38,7 @@ class SchoolDistrict extends AbstractEntity
     /**
      * Initializes all \TYPO3\CMS\Extbase\Persistence\ObjectStorage properties.
      */
-    protected function initStorageObjects()
+    protected function initStorageObjects(): void
     {
         $this->streets = new ObjectStorage();
     }
@@ -58,7 +54,7 @@ class SchoolDistrict extends AbstractEntity
     /**
      * @param string $title
      */
-    public function setTitle(string $title)
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }
@@ -74,7 +70,7 @@ class SchoolDistrict extends AbstractEntity
     /**
      * @param ObjectStorage $streets
      */
-    public function setStreets(ObjectStorage $streets)
+    public function setStreets(ObjectStorage $streets): void
     {
         $this->streets = $streets;
     }
@@ -82,7 +78,7 @@ class SchoolDistrict extends AbstractEntity
     /**
      * @param Street $street
      */
-    public function addStreet(Street $street)
+    public function addStreet(Street $street): void
     {
         $this->streets->attach($street);
     }
@@ -90,7 +86,7 @@ class SchoolDistrict extends AbstractEntity
     /**
      * @param Street $street
      */
-    public function removeStreet(Street $street)
+    public function removeStreet(Street $street): void
     {
         $this->streets->detach($street);
     }

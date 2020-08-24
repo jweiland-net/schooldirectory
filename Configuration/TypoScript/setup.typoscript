@@ -16,18 +16,6 @@ plugin.tx_schooldirectory {
 
   persistence {
     storagePid = {$plugin.tx_schooldirectory.persistence.storagePid}
-    classes {
-      JWeiland\Schooldirectory\Domain\Model\FileReference {
-        mapping {
-          tableName = sys_file_reference
-        }
-      }
-    }
-  }
-
-  features {
-    # uncomment the following line to enable the new Property Mapper.
-    rewrittenPropertyMapper = 1
   }
 
   settings {

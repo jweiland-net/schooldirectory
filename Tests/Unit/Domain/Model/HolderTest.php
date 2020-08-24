@@ -1,18 +1,13 @@
 <?php
-namespace JWeiland\Schooldirectory\Tests\Unit\Domain\Model;
 
 /*
- * This file is part of the schooldirectory project..
- *
- * It is free software; you can redistribute it and/or modify it under
- * the terms of the GNU General Public License, either version 2
- * of the License, or any later version.
+ * This file is part of the package jweiland/schooldirectory.
  *
  * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- * The TYPO3 project - inspiring people to share!
+ * LICENSE file that was distributed with this source code.
  */
+
+namespace JWeiland\Schooldirectory\Tests\Unit\Domain\Model;
 
 use JWeiland\Schooldirectory\Domain\Model\Holder;
 use Nimut\TestingFramework\TestCase\UnitTestCase;
@@ -49,7 +44,7 @@ class HolderTest extends UnitTestCase
      */
     public function getTitleInitiallyReturnsEmptyString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getTitle()
         );
@@ -62,7 +57,7 @@ class HolderTest extends UnitTestCase
     {
         $this->subject->setTitle('foo bar');
 
-        $this->assertSame(
+        self::assertSame(
             'foo bar',
             $this->subject->getTitle()
         );
@@ -74,7 +69,7 @@ class HolderTest extends UnitTestCase
     public function setTitleWithIntegerResultsInString()
     {
         $this->subject->setTitle(123);
-        $this->assertSame('123', $this->subject->getTitle());
+        self::assertSame('123', $this->subject->getTitle());
     }
 
     /**
@@ -83,7 +78,7 @@ class HolderTest extends UnitTestCase
     public function setTitleWithBooleanResultsInString()
     {
         $this->subject->setTitle(true);
-        $this->assertSame('1', $this->subject->getTitle());
+        self::assertSame('1', $this->subject->getTitle());
     }
 
     /**
@@ -91,7 +86,7 @@ class HolderTest extends UnitTestCase
      */
     public function getLogoInitiallyReturnsNull()
     {
-        $this->assertNull($this->subject->getLogo());
+        self::assertNull($this->subject->getLogo());
     }
 
     /**
@@ -102,7 +97,7 @@ class HolderTest extends UnitTestCase
         $instance = new FileReference();
         $this->subject->setLogo($instance);
 
-        $this->assertSame(
+        self::assertSame(
             $instance,
             $this->subject->getLogo()
         );
@@ -113,7 +108,7 @@ class HolderTest extends UnitTestCase
      */
     public function getWebsiteInitiallyReturnsEmptyString()
     {
-        $this->assertSame(
+        self::assertSame(
             '',
             $this->subject->getWebsite()
         );
@@ -126,7 +121,7 @@ class HolderTest extends UnitTestCase
     {
         $this->subject->setWebsite('foo bar');
 
-        $this->assertSame(
+        self::assertSame(
             'foo bar',
             $this->subject->getWebsite()
         );
@@ -138,7 +133,7 @@ class HolderTest extends UnitTestCase
     public function setWebsiteWithIntegerResultsInString()
     {
         $this->subject->setWebsite(123);
-        $this->assertSame('123', $this->subject->getWebsite());
+        self::assertSame('123', $this->subject->getWebsite());
     }
 
     /**
@@ -147,6 +142,6 @@ class HolderTest extends UnitTestCase
     public function setWebsiteWithBooleanResultsInString()
     {
         $this->subject->setWebsite(true);
-        $this->assertSame('1', $this->subject->getWebsite());
+        self::assertSame('1', $this->subject->getWebsite());
     }
 }

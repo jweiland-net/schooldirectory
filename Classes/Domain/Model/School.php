@@ -1,19 +1,15 @@
 <?php
-declare(strict_types = 1);
-namespace JWeiland\Schooldirectory\Domain\Model;
+
+declare(strict_types=1);
 
 /*
- * This file is part of the TYPO3 CMS project.
- *
- * It is free software; you can redistribute it and/or modify it under
- * the terms of the GNU General Public License, either version 2
- * of the License, or any later version.
+ * This file is part of the package jweiland/schooldirectory.
  *
  * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- * The TYPO3 project - inspiring people to share!
+ * LICENSE file that was distributed with this source code.
  */
+
+namespace JWeiland\Schooldirectory\Domain\Model;
 
 use JWeiland\Maps2\Domain\Model\PoiCollection;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
@@ -184,7 +180,7 @@ class School extends AbstractEntity
     /**
      * Initializes all \TYPO3\CMS\Extbase\Persistence\ObjectStorage properties.
      */
-    protected function initStorageObjects()
+    protected function initStorageObjects(): void
     {
         $this->images = new ObjectStorage();
         $this->types = new ObjectStorage();
@@ -203,7 +199,7 @@ class School extends AbstractEntity
     /**
      * @param string $title
      */
-    public function setTitle(string $title)
+    public function setTitle(string $title): void
     {
         $this->title = $title;
     }
@@ -219,7 +215,7 @@ class School extends AbstractEntity
     /**
      * @param string $leader
      */
-    public function setLeader(string $leader)
+    public function setLeader(string $leader): void
     {
         $this->leader = $leader;
     }
@@ -235,7 +231,7 @@ class School extends AbstractEntity
     /**
      * @param string $street
      */
-    public function setStreet(string $street)
+    public function setStreet(string $street): void
     {
         $this->street = $street;
     }
@@ -251,7 +247,7 @@ class School extends AbstractEntity
     /**
      * @param string $zip
      */
-    public function setZip(string $zip)
+    public function setZip(string $zip): void
     {
         $this->zip = $zip;
     }
@@ -267,7 +263,7 @@ class School extends AbstractEntity
     /**
      * @param string $city
      */
-    public function setCity(string $city)
+    public function setCity(string $city): void
     {
         $this->city = $city;
     }
@@ -283,7 +279,7 @@ class School extends AbstractEntity
     /**
      * @param string $telephone
      */
-    public function setTelephone(string $telephone)
+    public function setTelephone(string $telephone): void
     {
         $this->telephone = $telephone;
     }
@@ -299,7 +295,7 @@ class School extends AbstractEntity
     /**
      * @param string $telephoneAlternative
      */
-    public function setTelephoneAlternative(string $telephoneAlternative)
+    public function setTelephoneAlternative(string $telephoneAlternative): void
     {
         $this->telephoneAlternative = $telephoneAlternative;
     }
@@ -315,7 +311,7 @@ class School extends AbstractEntity
     /**
      * @param string $fax
      */
-    public function setFax(string $fax)
+    public function setFax(string $fax): void
     {
         $this->fax = $fax;
     }
@@ -331,7 +327,7 @@ class School extends AbstractEntity
     /**
      * @param string $email
      */
-    public function setEmail(string $email)
+    public function setEmail(string $email): void
     {
         $this->email = $email;
     }
@@ -347,7 +343,7 @@ class School extends AbstractEntity
     /**
      * @param string $emailAlternative
      */
-    public function setEmailAlternative(string $emailAlternative)
+    public function setEmailAlternative(string $emailAlternative): void
     {
         $this->emailAlternative = $emailAlternative;
     }
@@ -363,7 +359,7 @@ class School extends AbstractEntity
     /**
      * @param string $website
      */
-    public function setWebsite(string $website)
+    public function setWebsite(string $website): void
     {
         $this->website = $website;
     }
@@ -371,7 +367,7 @@ class School extends AbstractEntity
     /**
      * @return FileReference|null $logo
      */
-    public function getLogo()
+    public function getLogo(): ?FileReference
     {
         return $this->logo;
     }
@@ -379,7 +375,7 @@ class School extends AbstractEntity
     /**
      * @param FileReference|null $logo
      */
-    public function setLogo(FileReference $logo)
+    public function setLogo(FileReference $logo): void
     {
         $this->logo = $logo;
     }
@@ -395,7 +391,7 @@ class School extends AbstractEntity
     /**
      * @param ObjectStorage $images
      */
-    public function setImages(ObjectStorage $images)
+    public function setImages(ObjectStorage $images): void
     {
         $this->images = $images;
     }
@@ -403,7 +399,7 @@ class School extends AbstractEntity
     /**
      * @param FileReference $image
      */
-    public function addImage(FileReference $image)
+    public function addImage(FileReference $image): void
     {
         $this->images->attach($image);
     }
@@ -411,7 +407,7 @@ class School extends AbstractEntity
     /**
      * @param FileReference $image
      */
-    public function removeImage(FileReference $image)
+    public function removeImage(FileReference $image): void
     {
         $this->images->detach($image);
     }
@@ -427,7 +423,7 @@ class School extends AbstractEntity
     /**
      * @param string $amountOfStudents
      */
-    public function setAmountOfStudents(string $amountOfStudents)
+    public function setAmountOfStudents(string $amountOfStudents): void
     {
         $this->amountOfStudents = $amountOfStudents;
     }
@@ -443,7 +439,7 @@ class School extends AbstractEntity
     /**
      * @param string $profileTitle
      */
-    public function setProfileTitle(string $profileTitle)
+    public function setProfileTitle(string $profileTitle): void
     {
         $this->profileTitle = $profileTitle;
     }
@@ -459,7 +455,7 @@ class School extends AbstractEntity
     /**
      * @param string $schoolWayPlan
      */
-    public function setSchoolWayPlan(string $schoolWayPlan)
+    public function setSchoolWayPlan(string $schoolWayPlan): void
     {
         $this->schoolWayPlan = $schoolWayPlan;
     }
@@ -475,7 +471,7 @@ class School extends AbstractEntity
     /**
      * @param string $additionalInformations
      */
-    public function setAdditionalInformations(string $additionalInformations)
+    public function setAdditionalInformations(string $additionalInformations): void
     {
         $this->additionalInformations = $additionalInformations;
     }
@@ -483,7 +479,7 @@ class School extends AbstractEntity
     /**
      * @return string
      */
-    public function getFacebook()
+    public function getFacebook(): string
     {
         return $this->facebook;
     }
@@ -491,7 +487,7 @@ class School extends AbstractEntity
     /**
      * @param string $facebook
      */
-    public function setFacebook(string $facebook)
+    public function setFacebook(string $facebook): void
     {
         $this->facebook = $facebook;
     }
@@ -507,7 +503,7 @@ class School extends AbstractEntity
     /**
      * @param string $twitter
      */
-    public function setTwitter(string $twitter)
+    public function setTwitter(string $twitter): void
     {
         $this->twitter = $twitter;
     }
@@ -523,7 +519,7 @@ class School extends AbstractEntity
     /**
      * @param string $google
      */
-    public function setGoogle(string $google)
+    public function setGoogle(string $google): void
     {
         $this->google = $google;
     }
@@ -539,7 +535,7 @@ class School extends AbstractEntity
     /**
      * @param string $notes
      */
-    public function setNotes(string $notes)
+    public function setNotes(string $notes): void
     {
         $this->notes = $notes;
     }
@@ -547,7 +543,7 @@ class School extends AbstractEntity
     /**
      * @return PoiCollection|null
      */
-    public function getTxMaps2Uid()
+    public function getTxMaps2Uid(): ?PoiCollection
     {
         return $this->txMaps2Uid;
     }
@@ -555,7 +551,7 @@ class School extends AbstractEntity
     /**
      * @param PoiCollection|null $txMaps2Uid
      */
-    public function setTxMaps2Uid(PoiCollection $txMaps2Uid = null)
+    public function setTxMaps2Uid(PoiCollection $txMaps2Uid = null): void
     {
         $this->txMaps2Uid = $txMaps2Uid;
     }
@@ -563,7 +559,7 @@ class School extends AbstractEntity
     /**
      * @return Holder|null
      */
-    public function getHolder()
+    public function getHolder(): ?Holder
     {
         return $this->holder;
     }
@@ -571,7 +567,7 @@ class School extends AbstractEntity
     /**
      * @param Holder|null $holder
      */
-    public function setHolder(Holder $holder = null)
+    public function setHolder(Holder $holder = null): void
     {
         $this->holder = $holder;
     }
@@ -587,7 +583,7 @@ class School extends AbstractEntity
     /**
      * @param ObjectStorage $types
      */
-    public function setTypes(ObjectStorage $types)
+    public function setTypes(ObjectStorage $types): void
     {
         $this->types = $types;
     }
@@ -595,7 +591,7 @@ class School extends AbstractEntity
     /**
      * @param Type $type
      */
-    public function addType(Type $type)
+    public function addType(Type $type): void
     {
         $this->types->attach($type);
     }
@@ -603,7 +599,7 @@ class School extends AbstractEntity
     /**
      * @param Type $type
      */
-    public function removeType(Type $type)
+    public function removeType(Type $type): void
     {
         $this->types->detach($type);
     }
@@ -619,7 +615,7 @@ class School extends AbstractEntity
     /**
      * @param ObjectStorage $profileContents
      */
-    public function setProfileContents(ObjectStorage $profileContents)
+    public function setProfileContents(ObjectStorage $profileContents): void
     {
         $this->profileContents = $profileContents;
     }
@@ -627,7 +623,7 @@ class School extends AbstractEntity
     /**
      * @param ProfileContent $profileContent
      */
-    public function addProfileContent(ProfileContent $profileContent)
+    public function addProfileContent(ProfileContent $profileContent): void
     {
         $this->profileContents->attach($profileContent);
     }
@@ -635,7 +631,7 @@ class School extends AbstractEntity
     /**
      * @param ProfileContent $profileContent
      */
-    public function removeProfileContent(ProfileContent $profileContent)
+    public function removeProfileContent(ProfileContent $profileContent): void
     {
         $this->profileContents->detach($profileContent);
     }
@@ -651,7 +647,7 @@ class School extends AbstractEntity
     /**
      * @param ObjectStorage $careForms
      */
-    public function setCareForms(ObjectStorage $careForms)
+    public function setCareForms(ObjectStorage $careForms): void
     {
         $this->careForms = $careForms;
     }
@@ -659,7 +655,7 @@ class School extends AbstractEntity
     /**
      * @param CareForm $careForm
      */
-    public function addCareForm(CareForm $careForm)
+    public function addCareForm(CareForm $careForm): void
     {
         $this->careForms->attach($careForm);
     }
@@ -667,7 +663,7 @@ class School extends AbstractEntity
     /**
      * @param CareForm $careForm
      */
-    public function removeCareForm(CareForm $careForm)
+    public function removeCareForm(CareForm $careForm): void
     {
         $this->careForms->detach($careForm);
     }
@@ -675,7 +671,7 @@ class School extends AbstractEntity
     /**
      * @return SchoolDistrict|null
      */
-    public function getSchoolDistrict()
+    public function getSchoolDistrict(): ?SchoolDistrict
     {
         return $this->schoolDistrict;
     }
@@ -683,7 +679,7 @@ class School extends AbstractEntity
     /**
      * @param SchoolDistrict|null $schoolDistrict
      */
-    public function setSchoolDistrict(SchoolDistrict $schoolDistrict = null)
+    public function setSchoolDistrict(SchoolDistrict $schoolDistrict = null): void
     {
         $this->schoolDistrict = $schoolDistrict;
     }
@@ -691,7 +687,7 @@ class School extends AbstractEntity
     /**
      * @return District|null
      */
-    public function getDistrict()
+    public function getDistrict(): ?District
     {
         return $this->district;
     }
@@ -699,7 +695,7 @@ class School extends AbstractEntity
     /**
      * @param District|null $district
      */
-    public function setDistrict(District $district)
+    public function setDistrict(District $district): void
     {
         $this->district = $district;
     }
@@ -715,7 +711,7 @@ class School extends AbstractEntity
     /**
      * @param string $houseNumber
      */
-    public function setHouseNumber(string $houseNumber)
+    public function setHouseNumber(string $houseNumber): void
     {
         $this->houseNumber = $houseNumber;
     }

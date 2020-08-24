@@ -1,19 +1,15 @@
 <?php
-declare(strict_types = 1);
-namespace JWeiland\Schooldirectory\Domain\Model;
+
+declare(strict_types=1);
 
 /*
- * This file is part of the TYPO3 CMS project.
- *
- * It is free software; you can redistribute it and/or modify it under
- * the terms of the GNU General Public License, either version 2
- * of the License, or any later version.
+ * This file is part of the package jweiland/schooldirectory.
  *
  * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- * The TYPO3 project - inspiring people to share!
+ * LICENSE file that was distributed with this source code.
  */
+
+namespace JWeiland\Schooldirectory\Domain\Model;
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 
@@ -54,7 +50,7 @@ class Street extends AbstractEntity
     /**
      * @param string $street
      */
-    public function setStreet(string $street)
+    public function setStreet(string $street): void
     {
         $this->street = $street;
     }
@@ -70,7 +66,7 @@ class Street extends AbstractEntity
     /**
      * @param string $numberFrom
      */
-    public function setNumberFrom(string $numberFrom)
+    public function setNumberFrom(string $numberFrom): void
     {
         $this->numberFrom = $numberFrom;
     }
@@ -86,7 +82,7 @@ class Street extends AbstractEntity
     /**
      * @param string $numberTo
      */
-    public function setNumberTo(string $numberTo)
+    public function setNumberTo(string $numberTo): void
     {
         $this->numberTo = $numberTo;
     }
@@ -94,7 +90,7 @@ class Street extends AbstractEntity
     /**
      * @return District|null
      */
-    public function getDistrict()
+    public function getDistrict(): ?District
     {
         return $this->district;
     }
@@ -102,7 +98,7 @@ class Street extends AbstractEntity
     /**
      * @param District|null $district
      */
-    public function setDistrict(District $district = null)
+    public function setDistrict(District $district = null): void
     {
         $this->district = $district;
     }

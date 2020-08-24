@@ -1,19 +1,15 @@
 <?php
-declare(strict_types = 1);
-namespace JWeiland\Schooldirectory\ViewHelpers\Widget\Controller;
+
+declare(strict_types=1);
 
 /*
- * This file is part of the TYPO3 CMS project.
- *
- * It is free software; you can redistribute it and/or modify it under
- * the terms of the GNU General Public License, either version 2
- * of the License, or any later version.
+ * This file is part of the package jweiland/schooldirectory.
  *
  * For the full copyright and license information, please read the
- * LICENSE.txt file that was distributed with this source code.
- *
- * The TYPO3 project - inspiring people to share!
+ * LICENSE file that was distributed with this source code.
  */
+
+namespace JWeiland\Schooldirectory\ViewHelpers\Widget\Controller;
 
 use JWeiland\Schooldirectory\Domain\Repository\CareFormRepository;
 use JWeiland\Schooldirectory\Domain\Repository\ProfileContentRepository;
@@ -43,7 +39,7 @@ class AjaxSelectorController extends AbstractWidgetController
     /**
      * @param TypeRepository $typeRepository
      */
-    public function injectTypeRepository(TypeRepository $typeRepository)
+    public function injectTypeRepository(TypeRepository $typeRepository): void
     {
         $this->typeRepository = $typeRepository;
     }
@@ -51,7 +47,7 @@ class AjaxSelectorController extends AbstractWidgetController
     /**
      * @param CareFormRepository $careFormRepository
      */
-    public function injectCareFormRepository(CareFormRepository $careFormRepository)
+    public function injectCareFormRepository(CareFormRepository $careFormRepository): void
     {
         $this->careFormRepository = $careFormRepository;
     }
@@ -59,7 +55,7 @@ class AjaxSelectorController extends AbstractWidgetController
     /**
      * @param ProfileContentRepository $profileContentRepository
      */
-    public function injectProfileContentRepository(ProfileContentRepository $profileContentRepository)
+    public function injectProfileContentRepository(ProfileContentRepository $profileContentRepository): void
     {
         $this->profileContentRepository = $profileContentRepository;
     }
@@ -68,7 +64,7 @@ class AjaxSelectorController extends AbstractWidgetController
      * Load index.html
      * Create selectboxes to search schools by given settings
      */
-    public function indexAction()
+    public function indexAction(): void
     {
         $this->view->assign('types', $this->typeRepository->findAll());
         $this->view->assign('type', $this->widgetConfiguration['type']);
