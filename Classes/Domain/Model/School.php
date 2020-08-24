@@ -138,37 +138,37 @@ class School extends AbstractEntity
 
     /**
      * @var \JWeiland\Schooldirectory\Domain\Model\Holder
-     * @lazy
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
     protected $holder;
 
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Schooldirectory\Domain\Model\Type>
-     * @lazy
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
     protected $types;
 
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Schooldirectory\Domain\Model\ProfileContent>
-     * @lazy
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
     protected $profileContents;
 
     /**
      * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Schooldirectory\Domain\Model\CareForm>
-     * @lazy
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
     protected $careForms;
 
     /**
      * @var \JWeiland\Schooldirectory\Domain\Model\SchoolDistrict
-     * @lazy
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
     protected $schoolDistrict;
 
     /**
      * @var \JWeiland\Schooldirectory\Domain\Model\District
-     * @lazy
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
     protected $district;
 

@@ -35,7 +35,7 @@ class Street extends AbstractEntity
 
     /**
      * @var \JWeiland\Schooldirectory\Domain\Model\District
-     * @lazy
+     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
     protected $district;
 
