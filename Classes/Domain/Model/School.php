@@ -14,6 +14,7 @@ namespace JWeiland\Schooldirectory\Domain\Model;
 use JWeiland\Maps2\Domain\Model\PoiCollection;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
@@ -557,9 +558,9 @@ class School extends AbstractEntity
     }
 
     /**
-     * @return Holder|null
+     * @return Holder|null|LazyLoadingProxy
      */
-    public function getHolder(): ?Holder
+    public function getHolder()
     {
         return $this->holder;
     }
@@ -669,9 +670,9 @@ class School extends AbstractEntity
     }
 
     /**
-     * @return SchoolDistrict|null
+     * @return SchoolDistrict|null|LazyLoadingProxy
      */
-    public function getSchoolDistrict(): ?SchoolDistrict
+    public function getSchoolDistrict()
     {
         return $this->schoolDistrict;
     }
@@ -685,9 +686,9 @@ class School extends AbstractEntity
     }
 
     /**
-     * @return District|null
+     * @return District|null|LazyLoadingProxy
      */
-    public function getDistrict(): ?District
+    public function getDistrict()
     {
         return $this->district;
     }

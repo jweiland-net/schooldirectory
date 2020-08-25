@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace JWeiland\Schooldirectory\Domain\Model;
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
+use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 
 /**
  * Domain model for street for school.
@@ -88,9 +89,9 @@ class Street extends AbstractEntity
     }
 
     /**
-     * @return District|null
+     * @return District|null|LazyLoadingProxy
      */
-    public function getDistrict(): ?District
+    public function getDistrict()
     {
         return $this->district;
     }
