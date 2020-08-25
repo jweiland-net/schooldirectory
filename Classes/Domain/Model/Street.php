@@ -89,7 +89,7 @@ class Street extends AbstractEntity
     }
 
     /**
-     * @return District|null|LazyLoadingProxy
+     * @return District|LazyLoadingProxy|null
      */
     public function getDistrict()
     {

@@ -558,7 +558,7 @@ class School extends AbstractEntity
     }
 
     /**
-     * @return Holder|null|LazyLoadingProxy
+     * @return Holder|LazyLoadingProxy|null
      */
     public function getHolder()
     {
@@ -670,7 +670,7 @@ class School extends AbstractEntity
     }
 
     /**
-     * @return SchoolDistrict|null|LazyLoadingProxy
+     * @return SchoolDistrict|LazyLoadingProxy|null
      */
     public function getSchoolDistrict()
     {
@@ -686,7 +686,7 @@ class School extends AbstractEntity
     }
 
     /**
-     * @return District|null|LazyLoadingProxy
+     * @return District|LazyLoadingProxy|null
      */
     public function getDistrict()
     {
