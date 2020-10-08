@@ -12,7 +12,6 @@ declare(strict_types=1);
 namespace JWeiland\Schooldirectory\Domain\Model;
 
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
-use TYPO3\CMS\Extbase\Persistence\Generic\LazyLoadingProxy;
 
 /**
  * Domain model for street for school.
@@ -36,70 +35,45 @@ class Street extends AbstractEntity
 
     /**
      * @var \JWeiland\Schooldirectory\Domain\Model\District
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
      */
     protected $district;
 
-    /**
-     * @return string
-     */
     public function getStreet(): string
     {
         return $this->street;
     }
 
-    /**
-     * @param string $street
-     */
     public function setStreet(string $street): void
     {
         $this->street = $street;
     }
 
-    /**
-     * @return string
-     */
     public function getNumberFrom(): string
     {
         return $this->numberFrom;
     }
 
-    /**
-     * @param string $numberFrom
-     */
     public function setNumberFrom(string $numberFrom): void
     {
         $this->numberFrom = $numberFrom;
     }
 
-    /**
-     * @return string
-     */
     public function getNumberTo(): string
     {
         return $this->numberTo;
     }
 
-    /**
-     * @param string $numberTo
-     */
     public function setNumberTo(string $numberTo): void
     {
         $this->numberTo = $numberTo;
     }
 
-    /**
-     * @return District|LazyLoadingProxy|null
-     */
-    public function getDistrict()
+    public function getDistrict(): ?District
     {
         return $this->district;
     }
 
-    /**
-     * @param District|null $district
-     */
-    public function setDistrict(District $district = null): void
+    public function setDistrict(?District $district): void
     {
         $this->district = $district;
     }

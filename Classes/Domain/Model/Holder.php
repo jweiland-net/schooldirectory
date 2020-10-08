@@ -34,49 +34,31 @@ class Holder extends AbstractEntity
      */
     protected $website = '';
 
-    /**
-     * @return string
-     */
     public function getTitle(): string
     {
         return $this->title;
     }
 
-    /**
-     * @param string $title
-     */
     public function setTitle(string $title): void
     {
         $this->title = $title;
     }
 
-    /**
-     * @return FileReference|null
-     */
     public function getLogo(): ?FileReference
     {
         return $this->logo;
     }
 
-    /**
-     * @param FileReference $logo
-     */
-    public function setLogo(FileReference $logo = null): void
+    public function setLogo(?FileReference $logo): void
     {
         $this->logo = $logo;
     }
 
-    /**
-     * @return string
-     */
     public function getWebsite(): string
     {
         return $this->website;
     }
 
-    /**
-     * @param string $website
-     */
     public function setWebsite(string $website): void
     {
         $this->website = $website;

@@ -25,9 +25,6 @@ class AjaxSelectorViewHelper extends AbstractWidgetViewHelper
      */
     protected $controller;
 
-    /**
-     * @param AjaxSelectorController $controller
-     */
     public function injectController(AjaxSelectorController $controller): void
     {
         $this->controller = $controller;
@@ -40,9 +37,6 @@ class AjaxSelectorViewHelper extends AbstractWidgetViewHelper
      */
     protected $ajaxWidget = true;
 
-    /**
-     * Initialize arguments.
-     */
     public function initializeArguments(): void
     {
         parent::initializeArguments();

@@ -32,60 +32,34 @@ class SchoolDistrict extends AbstractEntity
 
     public function __construct()
     {
-        $this->initStorageObjects();
-    }
-
-    /**
-     * Initializes all \TYPO3\CMS\Extbase\Persistence\ObjectStorage properties.
-     */
-    protected function initStorageObjects(): void
-    {
         $this->streets = new ObjectStorage();
     }
 
-    /**
-     * @return string
-     */
     public function getTitle(): string
     {
         return $this->title;
     }
 
-    /**
-     * @param string $title
-     */
     public function setTitle(string $title): void
     {
         $this->title = $title;
     }
 
-    /**
-     * @return ObjectStorage
-     */
     public function getStreets(): ObjectStorage
     {
         return $this->streets;
     }
 
-    /**
-     * @param ObjectStorage $streets
-     */
     public function setStreets(ObjectStorage $streets): void
     {
         $this->streets = $streets;
     }
 
-    /**
-     * @param Street $street
-     */
     public function addStreet(Street $street): void
     {
         $this->streets->attach($street);
     }
 
-    /**
-     * @param Street $street
-     */
     public function removeStreet(Street $street): void
     {
         $this->streets->detach($street);

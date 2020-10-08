@@ -24,9 +24,6 @@ class DistrictController extends ActionController
      */
     protected $schoolRepository;
 
-    /**
-     * @param SchoolRepository $schoolRepository
-     */
     public function injectSchoolRepository(SchoolRepository $schoolRepository): void
     {
         $this->schoolRepository = $schoolRepository;

@@ -170,11 +170,6 @@ class SchoolRepository extends Repository
         return $queryBuilder;
     }
 
-    /**
-     * Get TYPO3s Connection Pool
-     *
-     * @return ConnectionPool
-     */
     protected function getConnectionPool(): ConnectionPool
     {
         return GeneralUtility::makeInstance(ConnectionPool::class);

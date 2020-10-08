@@ -36,25 +36,16 @@ class AjaxSelectorController extends AbstractWidgetController
      */
     protected $profileContentRepository;
 
-    /**
-     * @param TypeRepository $typeRepository
-     */
     public function injectTypeRepository(TypeRepository $typeRepository): void
     {
         $this->typeRepository = $typeRepository;
     }
 
-    /**
-     * @param CareFormRepository $careFormRepository
-     */
     public function injectCareFormRepository(CareFormRepository $careFormRepository): void
     {
         $this->careFormRepository = $careFormRepository;
     }
 
-    /**
-     * @param ProfileContentRepository $profileContentRepository
-     */
     public function injectProfileContentRepository(ProfileContentRepository $profileContentRepository): void
     {
         $this->profileContentRepository = $profileContentRepository;
