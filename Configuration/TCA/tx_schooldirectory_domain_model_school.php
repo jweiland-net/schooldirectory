@@ -26,8 +26,9 @@ return [
     ],
     'types' => [
         '1' => [
-            'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, path_segment, leader,
-            street, house_number, zip, city, district, telephone, telephone_alternative, fax, email, email_alternative,
+            'showitem' => '--palette--;;languageHidden, title, path_segment, leader,
+            --palette--;;streetNumber, --palette--;;zipCity,
+            district, --palette--;;telephone, fax, --palette--;;email,
             website, logo, images, amount_of_students, profile_title, school_way_plan, notes, additional_informations,
             --div--;LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:tabs.relations, holder, types,
             profile_contents, care_forms, school_district,
@@ -37,6 +38,11 @@ return [
         ]
     ],
     'palettes' => [
+        'languageHidden' => ['showitem' => 'sys_language_uid, l10n_parent, hidden'],
+        'streetNumber' => ['showitem' => 'street, house_number'],
+        'zipCity' => ['showitem' => 'zip, city'],
+        'telephone' => ['showitem' => 'telephone, telephone_alternative'],
+        'email' => ['showitem' => 'email, email_alternative'],
         'access' => [
             'showitem' => 'starttime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel,endtime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel',
         ]

@@ -20,7 +20,7 @@
 				<source>Relations</source>
 			</trans-unit>
 			<trans-unit id="tabs.social">
-				<source>Social</source>
+				<source>Social Media</source>
 			</trans-unit>
 
 			<trans-unit id="tx_schooldirectory_domain_model_school">

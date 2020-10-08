@@ -27,8 +27,8 @@
 				<target>Verknüpfungen</target>
 			</trans-unit>
 			<trans-unit id="tabs.social">
-				<source>Social</source>
-				<target>Social Media, Verknüpfungen</target>
+				<source>Social Media</source>
+				<target>Social Media</target>
 			</trans-unit>
 
 			<trans-unit id="tx_schooldirectory_domain_model_school">
