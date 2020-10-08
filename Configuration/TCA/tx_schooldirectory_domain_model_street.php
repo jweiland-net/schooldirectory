@@ -26,13 +26,17 @@ return [
     ],
     'types' => [
         '1' => [
-            'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden,
-            street, number_from, letter_from, number_to, letter_to, district,
+            'showitem' => '--palette--;;languageHidden, --palette--;;streetDistrict,
+            --palette--;;numberFromTo, --palette--;;letterFromTo, 
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access, 
             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access'
         ]
     ],
     'palettes' => [
+        'languageHidden' => ['showitem' => 'sys_language_uid, l10n_parent, hidden'],
+        'streetDistrict' => ['showitem' => 'street, district'],
+        'numberFromTo' => ['showitem' => 'number_from, number_to'],
+        'letterFromTo' => ['showitem' => 'letter_from, letter_to'],
         'access' => [
             'showitem' => 'starttime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel,endtime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel',
         ]
@@ -155,7 +159,7 @@ return [
             'label' => 'LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:tx_schooldirectory_domain_model_street.number_from',
             'config' => [
                 'type' => 'input',
-                'size' => 11,
+                'size' => 7,
                 'eval' => 'int'
             ]
         ],
@@ -164,7 +168,7 @@ return [
             'label' => 'LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:tx_schooldirectory_domain_model_street.letter_from',
             'config' => [
                 'type' => 'input',
-                'size' => 5,
+                'size' => 7,
                 'eval' => 'trim'
             ]
         ],
@@ -173,7 +177,7 @@ return [
             'label' => 'LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:tx_schooldirectory_domain_model_street.number_to',
             'config' => [
                 'type' => 'input',
-                'size' => 11,
+                'size' => 7,
                 'eval' => 'int'
             ]
         ],
@@ -182,7 +186,7 @@ return [
             'label' => 'LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:tx_schooldirectory_domain_model_street.letter_to',
             'config' => [
                 'type' => 'input',
-                'size' => 5,
+                'size' => 7,
                 'eval' => 'trim'
             ]
         ],
