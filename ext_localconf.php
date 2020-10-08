@@ -46,4 +46,6 @@ call_user_func(function () {
         = \JWeiland\Schooldirectory\Ajax\Selector::class . '::renderCareFormAction';
     $GLOBALS['TYPO3_CONF_VARS']['FE']['eID_include']['schooldirectory_selector_renderProfileAction']
         = \JWeiland\Schooldirectory\Ajax\Selector::class . '::renderProfileAction';
+
+    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['schoolUpdateSlug'] = \JWeiland\Schooldirectory\Updater\SchoolSlugUpdater::class;
 });

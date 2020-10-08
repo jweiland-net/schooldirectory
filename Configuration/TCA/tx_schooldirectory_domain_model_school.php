@@ -22,11 +22,11 @@ return [
         'iconfile' => 'EXT:schooldirectory/Resources/Public/Icons/tx_schooldirectory_domain_model_school.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, leader, street, house_number, zip, city, district, telephone, telephone_alternative, fax, email, email_alternative, website, logo, images, amount_of_students, profile_title, school_way_plan, notes, additional_informations, holder, types, profile_contents, care_forms, school_district, facebook, twitter, google'
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, path_segment, leader, street, house_number, zip, city, district, telephone, telephone_alternative, fax, email, email_alternative, website, logo, images, amount_of_students, profile_title, school_way_plan, notes, additional_informations, holder, types, profile_contents, care_forms, school_district, facebook, twitter, google'
     ],
     'types' => [
         '1' => [
-            'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, leader,
+            'showitem' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, path_segment, leader,
             street, house_number, zip, city, district, telephone, telephone_alternative, fax, email, email_alternative,
             website, logo, images, amount_of_students, profile_title, school_way_plan, notes, additional_informations,
             --div--;LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:tabs.relations, holder, types,
@@ -152,6 +152,26 @@ return [
                 'type' => 'input',
                 'size' => 30,
                 'eval' => 'trim'
+            ]
+        ],
+        'path_segment' => [
+            'exclude' => true,
+            'label' => 'LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:tx_schooldirectory_domain_model_school.path_segment',
+            'displayCond' => 'VERSION:IS:false',
+            'config' => [
+                'type' => 'slug',
+                'size' => 50,
+                'generatorOptions' => [
+                    'fields' => ['title'],
+                    // As pageSlug may contain slashes, we have to remove page slug
+                    'prefixParentPageSlug' => false,
+                    'replacements' => [
+                        '/' => '-'
+                    ],
+                ],
+                'fallbackCharacter' => '-',
+                'eval' => 'uniqueInSite',
+                'default' => ''
             ]
         ],
         'leader' => [
