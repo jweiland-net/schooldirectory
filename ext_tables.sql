@@ -7,6 +7,7 @@ CREATE TABLE tx_schooldirectory_domain_model_school (
 	pid int(11) DEFAULT '0' NOT NULL,
 
 	title varchar(255) DEFAULT '' NOT NULL,
+	path_segment varchar(2048) DEFAULT '' NOT NULL,
 	leader varchar(255) DEFAULT '' NOT NULL,
 	street varchar(255) DEFAULT '' NOT NULL,
 	house_number varchar(255) DEFAULT '' NOT NULL,

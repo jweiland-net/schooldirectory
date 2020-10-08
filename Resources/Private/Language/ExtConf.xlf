@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-  <file source-language="en" datatype="plaintext" original="messages" date="2013-03-28T08:36:00Z" product-name="schooldirectory">
-    <header/>
-    <body>
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-03-28T08:36:00Z" product-name="schooldirectory">
+		<header/>
+		<body>
 
-      <trans-unit id="poiCollectionPid" xml:space="preserve">
-        <source>PID for poiCollections: Define a storage pid where to store records of type Point of Interest.</source>
-      </trans-unit>
+			<trans-unit id="poiCollectionPid" xml:space="preserve">
+				<source>PID for poiCollections: Define a storage pid where to store records of type Point of Interest.</source>
+			</trans-unit>
 
-    </body>
-  </file>
+		</body>
+	</file>
 </xliff>

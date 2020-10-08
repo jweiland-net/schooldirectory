@@ -1,256 +1,260 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-  <file source-language="en" datatype="plaintext" original="messages" date="2013-04-13T09:09:13Z"
-      product-name="schooldirectory">
-    <header/>
-    <body>
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-04-13T09:09:13Z"
+			product-name="schooldirectory">
+		<header/>
+		<body>
 
-      <trans-unit id="plugin.list.title">
-        <source>Schools: List</source>
-        <target>Schulen: Auflistung</target>
-      </trans-unit>
-      <trans-unit id="plugin.list.description">
-        <source>With this plugin you can show schools as list and in detail view</source>
-        <target>Mit diesem Plugin könnt Ihr Euch die Schulen in einer Listen- und Detailansicht anzeigen lassen</target>
-      </trans-unit>
-      <trans-unit id="plugin.search.title">
-        <source>Schools: Search</source>
-        <target>Schulen: Suche</target>
-      </trans-unit>
-      <trans-unit id="plugin.search.description">
-        <source>This plugin displays a search form, to search for school entries</source>
-        <target>Dieses Plugin zeigt ein Suchformular, mit dem Ihr nach Schulen suchen könnt</target>
-      </trans-unit>
+			<trans-unit id="plugin.list.title">
+				<source>Schools: List</source>
+				<target>Schulen: Auflistung</target>
+			</trans-unit>
+			<trans-unit id="plugin.list.description">
+				<source>With this plugin you can show schools as list and in detail view</source>
+				<target>Mit diesem Plugin könnt Ihr Euch die Schulen in einer Listen- und Detailansicht anzeigen lassen</target>
+			</trans-unit>
+			<trans-unit id="plugin.search.title">
+				<source>Schools: Search</source>
+				<target>Schulen: Suche</target>
+			</trans-unit>
+			<trans-unit id="plugin.search.description">
+				<source>This plugin displays a search form, to search for school entries</source>
+				<target>Dieses Plugin zeigt ein Suchformular, mit dem Ihr nach Schulen suchen könnt</target>
+			</trans-unit>
 
-      <trans-unit id="tabs.relations">
-        <source>Relations</source>
-        <target>Verknüpfungen</target>
-      </trans-unit>
-      <trans-unit id="tabs.social">
-        <source>Social</source>
-        <target>Social Media, Verknüpfungen</target>
-      </trans-unit>
+			<trans-unit id="tabs.relations">
+				<source>Relations</source>
+				<target>Verknüpfungen</target>
+			</trans-unit>
+			<trans-unit id="tabs.social">
+				<source>Social</source>
+				<target>Social Media, Verknüpfungen</target>
+			</trans-unit>
 
-      <trans-unit id="tx_schooldirectory_domain_model_school">
-        <source>School</source>
-        <target>Schulen</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.title">
-        <source>Title</source>
-        <target>Titel</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.leader">
-        <source>Leader</source>
-        <target>Leitung</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.street">
-        <source>Street</source>
-        <target>Straße</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.house_number">
-        <source>House Number</source>
-        <target>Hausnummer</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.zip">
-        <source>Zip</source>
-        <target>Postleitzahl</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.city">
-        <source>City</source>
-        <target>Ort</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.telephone">
-        <source>Telephone</source>
-        <target>Telefon 1</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.telephone_alternative">
-        <source>Telephone Alternative</source>
-        <target>Telefon 2</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.fax">
-        <source>Fax</source>
-        <target>Fax</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.email">
-        <source>Email</source>
-        <target>E-Mail Verwaltung</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.email_alternative">
-        <source>Email Alternative</source>
-        <target>E-Mail Schule</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.website">
-        <source>Website</source>
-        <target>Webseite</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.logo">
-        <source>Logo</source>
-        <target>Logo</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.images">
-        <source>Images</source>
-        <target>Bilder (max. 5)</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.amount_of_students">
-        <source>Amount Of Students</source>
-        <target>Schülerzahl</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.profile_title">
-        <source>Profile</source>
-        <target>Profil</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.school_way_plan">
-        <source>School Way Plan</source>
-        <target>Schulwegeplan (PDF)</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.notes">
-        <source>Notes</source>
-        <target>Bemerkungen</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.additional_informations">
-        <source>Additional Informations</source>
-        <target>zusätzliche Informationen</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.facebook">
-        <source>Facebook</source>
-        <target>Facebook</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.twitter">
-        <source>Twitter</source>
-        <target>Twitter</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.google">
-        <source>Google+</source>
-        <target>Google+</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.holder">
-        <source>Holder</source>
-        <target>Schulträger</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.types">
-        <source>Types</source>
-        <target>Schultyp</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.profile_contents">
-        <source>Profile Contents</source>
-        <target>Schulprofil Inhalt</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.care_forms">
-        <source>Care Forms</source>
-        <target>Betreuungsformen</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.school_district">
-        <source>School District</source>
-        <target>Schulbezirk</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.district">
-        <source>District</source>
-        <target>Stadtteil</target>
-      </trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school">
+				<source>School</source>
+				<target>Schulen</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.title">
+				<source>Title</source>
+				<target>Titel</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.path_segment">
+				<source>Segment for URL</source>
+				<target>Abschnitt für URL</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.leader">
+				<source>Leader</source>
+				<target>Leitung</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.street">
+				<source>Street</source>
+				<target>Straße</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.house_number">
+				<source>House Number</source>
+				<target>Hausnummer</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.zip">
+				<source>Zip</source>
+				<target>Postleitzahl</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.city">
+				<source>City</source>
+				<target>Ort</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.telephone">
+				<source>Telephone</source>
+				<target>Telefon 1</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.telephone_alternative">
+				<source>Telephone Alternative</source>
+				<target>Telefon 2</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.fax">
+				<source>Fax</source>
+				<target>Fax</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.email">
+				<source>Email</source>
+				<target>E-Mail Verwaltung</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.email_alternative">
+				<source>Email Alternative</source>
+				<target>E-Mail Schule</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.website">
+				<source>Website</source>
+				<target>Webseite</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.logo">
+				<source>Logo</source>
+				<target>Logo</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.images">
+				<source>Images</source>
+				<target>Bilder (max. 5)</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.amount_of_students">
+				<source>Amount Of Students</source>
+				<target>Schülerzahl</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.profile_title">
+				<source>Profile</source>
+				<target>Profil</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.school_way_plan">
+				<source>School Way Plan</source>
+				<target>Schulwegeplan (PDF)</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.notes">
+				<source>Notes</source>
+				<target>Bemerkungen</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.additional_informations">
+				<source>Additional Informations</source>
+				<target>zusätzliche Informationen</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.facebook">
+				<source>Facebook</source>
+				<target>Facebook</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.twitter">
+				<source>Twitter</source>
+				<target>Twitter</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.google">
+				<source>Google+</source>
+				<target>Google+</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.holder">
+				<source>Holder</source>
+				<target>Schulträger</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.types">
+				<source>Types</source>
+				<target>Schultyp</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.profile_contents">
+				<source>Profile Contents</source>
+				<target>Schulprofil Inhalt</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.care_forms">
+				<source>Care Forms</source>
+				<target>Betreuungsformen</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.school_district">
+				<source>School District</source>
+				<target>Schulbezirk</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_school.district">
+				<source>District</source>
+				<target>Stadtteil</target>
+			</trans-unit>
 
-      <trans-unit id="tx_schooldirectory_domain_model_holder">
-        <source>Holder</source>
-        <target>Schulträger</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_holder.title">
-        <source>Title</source>
-        <target>Name des Trägers</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_holder.logo">
-        <source>Logo</source>
-        <target>Logo</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_holder.website">
-        <source>Website</source>
-        <target>Webseite</target>
-      </trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_holder">
+				<source>Holder</source>
+				<target>Schulträger</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_holder.title">
+				<source>Title</source>
+				<target>Name des Trägers</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_holder.logo">
+				<source>Logo</source>
+				<target>Logo</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_holder.website">
+				<source>Website</source>
+				<target>Webseite</target>
+			</trans-unit>
 
-      <trans-unit id="tx_schooldirectory_domain_model_type">
-        <source>Type</source>
-        <target>Schultyp</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_type.title">
-        <source>Title</source>
-        <target>Bezeichnung</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_type.description">
-        <source>Description</source>
-        <target>Beschreibung</target>
-      </trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_type">
+				<source>Type</source>
+				<target>Schultyp</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_type.title">
+				<source>Title</source>
+				<target>Bezeichnung</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_type.description">
+				<source>Description</source>
+				<target>Beschreibung</target>
+			</trans-unit>
 
-      <trans-unit id="tx_schooldirectory_domain_model_profilecontent">
-        <source>Profile Content</source>
-        <target>Schulprofil Inhalt</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_profilecontent.title">
-        <source>Title</source>
-        <target>Bezeichnung</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_profilecontent.description">
-        <source>Description</source>
-        <target>Beschreibung</target>
-      </trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_profilecontent">
+				<source>Profile Content</source>
+				<target>Schulprofil Inhalt</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_profilecontent.title">
+				<source>Title</source>
+				<target>Bezeichnung</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_profilecontent.description">
+				<source>Description</source>
+				<target>Beschreibung</target>
+			</trans-unit>
 
-      <trans-unit id="tx_schooldirectory_domain_model_careform">
-        <source>Care Form</source>
-        <target>Betreuungsformen</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_careform.title">
-        <source>Title</source>
-        <target>Bezeichnung</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_careform.description">
-        <source>Description</source>
-        <target>Beschreibung</target>
-      </trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_careform">
+				<source>Care Form</source>
+				<target>Betreuungsformen</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_careform.title">
+				<source>Title</source>
+				<target>Bezeichnung</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_careform.description">
+				<source>Description</source>
+				<target>Beschreibung</target>
+			</trans-unit>
 
-      <trans-unit id="tx_schooldirectory_domain_model_schooldistrict">
-        <source>School District (school)</source>
-        <target>Schulbezirk (Schule)</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_schooldistrict.title">
-        <source>Title</source>
-        <target>Bezeichnung</target>
-      </trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_schooldistrict">
+				<source>School District (school)</source>
+				<target>Schulbezirk (Schule)</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_schooldistrict.title">
+				<source>Title</source>
+				<target>Bezeichnung</target>
+			</trans-unit>
 
-      <trans-unit id="tx_schooldirectory_domain_model_street">
-        <source>Street</source>
-        <target>Straßen</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_street.street">
-        <source>Street</source>
-        <target>Straße</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_street.number_from">
-        <source>Number From</source>
-        <target>Hausnummer von</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_street.letter_from">
-        <source>Letter From</source>
-        <target>Buchstabe von</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_street.number_to">
-        <source>Number To</source>
-        <target>Hausnummer bis</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_street.letter_to">
-        <source>Letter To</source>
-        <target>Buchstabe bis</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_street.district">
-        <source>District</source>
-        <target>Schulbezirk</target>
-      </trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_street">
+				<source>Street</source>
+				<target>Straßen</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_street.street">
+				<source>Street</source>
+				<target>Straße</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_street.number_from">
+				<source>Number From</source>
+				<target>Hausnummer von</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_street.letter_from">
+				<source>Letter From</source>
+				<target>Buchstabe von</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_street.number_to">
+				<source>Number To</source>
+				<target>Hausnummer bis</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_street.letter_to">
+				<source>Letter To</source>
+				<target>Buchstabe bis</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_street.district">
+				<source>District</source>
+				<target>Schulbezirk</target>
+			</trans-unit>
 
-      <trans-unit id="tx_schooldirectory_domain_model_district">
-        <source>District (school)</source>
-        <target>Stadtteil (Schule)</target>
-      </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_district.district">
-        <source>Title</source>
-        <target>Bezeichnung</target>
-      </trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_district">
+				<source>District (school)</source>
+				<target>Stadtteil (Schule)</target>
+			</trans-unit>
+			<trans-unit id="tx_schooldirectory_domain_model_district.district">
+				<source>Title</source>
+				<target>Bezeichnung</target>
+			</trans-unit>
 
-    </body>
-  </file>
+		</body>
+	</file>
 </xliff>
