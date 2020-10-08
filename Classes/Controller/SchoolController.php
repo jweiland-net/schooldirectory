@@ -65,17 +65,18 @@ class SchoolController extends ActionController
     /**
      * Action list
      *
-     * @param string|null $letter Show only records starting with this letter
+     * @param string $letter Show only records starting with this letter
      * @TYPO3\CMS\Extbase\Annotation\Validate("StringLength", param="letter", options={"minimum": 0, "maximum": 3})
      */
-    public function listAction(?string $letter = null): void
+    public function listAction(string $letter = ''): void
     {
-        if ($letter === null) {
+        if ($letter === '') {
             $schools = $this->schoolRepository->findAll();
         } else {
             $schools = $this->schoolRepository->findByStartingLetter($letter);
         }
         $this->view->assign('schools', $schools);
+        $this->view->assign('letter', $letter);
         $this->view->assign('glossar', $this->glossaryService->buildGlossary(
             $this->schoolRepository->getQueryBuilderToFindAllEntries(),
             [
@@ -91,10 +92,12 @@ class SchoolController extends ActionController
      * Action show
      *
      * @param School $school
+     * @param string $letter
      */
-    public function showAction(School $school): void
+    public function showAction(School $school, string $letter = ''): void
     {
         $this->view->assign('school', $school);
+        $this->view->assign('letter', $letter);
     }
 
     /**
