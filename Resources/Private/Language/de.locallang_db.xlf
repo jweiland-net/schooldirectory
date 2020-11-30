@@ -123,9 +123,9 @@
 				<source>Twitter</source>
 				<target>Twitter</target>
 			</trans-unit>
-			<trans-unit id="tx_schooldirectory_domain_model_school.google">
-				<source>Google+</source>
-				<target>Google+</target>
+			<trans-unit id="tx_schooldirectory_domain_model_school.instagram">
+				<source>Instagram</source>
+				<target>Instagram</target>
 			</trans-unit>
 			<trans-unit id="tx_schooldirectory_domain_model_school.holder">
 				<source>Holder</source>

@@ -92,8 +92,8 @@
 			<trans-unit id="tx_schooldirectory_domain_model_school.twitter">
 				<source>Twitter</source>
 			</trans-unit>
-			<trans-unit id="tx_schooldirectory_domain_model_school.google">
-				<source>Google+</source>
+			<trans-unit id="tx_schooldirectory_domain_model_school.instagram">
+				<source>Instagram</source>
 			</trans-unit>
 			<trans-unit id="tx_schooldirectory_domain_model_school.holder">
 				<source>Holder</source>
