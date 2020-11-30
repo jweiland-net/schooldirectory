@@ -28,7 +28,7 @@ CREATE TABLE tx_schooldirectory_domain_model_school (
 	additional_informations text NOT NULL,
 	facebook varchar(255) DEFAULT '' NOT NULL,
 	twitter varchar(255) DEFAULT '' NOT NULL,
-	google varchar(255) DEFAULT '' NOT NULL,
+	instagram varchar(255) DEFAULT '' NOT NULL,
 	holder int(11) unsigned DEFAULT '0',
 	types int(11) unsigned DEFAULT '0' NOT NULL,
 	profile_contents int(11) unsigned DEFAULT '0' NOT NULL,

@@ -22,7 +22,7 @@ return [
         'iconfile' => 'EXT:schooldirectory/Resources/Public/Icons/tx_schooldirectory_domain_model_school.svg'
     ],
     'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, path_segment, leader, street, house_number, zip, city, district, telephone, telephone_alternative, fax, email, email_alternative, website, logo, images, amount_of_students, profile_title, school_way_plan, notes, additional_informations, holder, types, profile_contents, care_forms, school_district, facebook, twitter, google'
+        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, path_segment, leader, street, house_number, zip, city, district, telephone, telephone_alternative, fax, email, email_alternative, website, logo, images, amount_of_students, profile_title, school_way_plan, notes, additional_informations, holder, types, profile_contents, care_forms, school_district, facebook, twitter, instagram'
     ],
     'types' => [
         '1' => [
@@ -32,7 +32,7 @@ return [
             website, logo, images, amount_of_students, profile_title, school_way_plan, notes, additional_informations,
             --div--;LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:tabs.relations, holder, types,
             profile_contents, care_forms, school_district,
-            --div--;LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:tabs.social, facebook, twitter, google,
+            --div--;LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:tabs.social, facebook, twitter, instagram,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access, 
             --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access'
         ]
@@ -459,9 +459,9 @@ return [
                 'eval' => 'trim'
             ]
         ],
-        'google' => [
+        'instagram' => [
             'exclude' => true,
-            'label' => 'LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:tx_schooldirectory_domain_model_school.google',
+            'label' => 'LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:tx_schooldirectory_domain_model_school.instagram',
             'config' => [
                 'type' => 'input',
                 'size' => 30,
