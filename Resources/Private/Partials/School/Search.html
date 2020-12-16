@@ -1,27 +1,10 @@
-{namespace sd=JWeiland\Schooldirectory\ViewHelpers}
+<html lang="en"
+			xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+			xmlns:sd="http://typo3.org/ns/JWeiland/Schooldirectory/ViewHelpers"
+			data-namespace-typo3-fluid="true">
 
-<div class="search clearfix extsearch">
-	<div id="schooldirectory_data"
-			 data-type="{type}"
-			 data-careForm="{careForm}"
-			 data-profile="{profile}"
-	></div>
-
-	<form name="search" action="index.php?id={pidOfSearchPage}&no_cache=1&tx_schooldirectory_list[action]=search&tx_schooldirectory_list[controller]=School" method="post">
-		<dl id="schoolType">
-			<dt><f:translate key="tx_schooldirectory_domain_model_type"/></dt>
-			<dd><select name="tx_schooldirectory_list[type]"></select></dd>
-		</dl>
-		<dl id="schoolCareForm">
-			<dt><f:translate key="tx_schooldirectory_domain_model_school.care_forms"/></dt>
-			<dd><select name="tx_schooldirectory_list[careForm]"></select></dd>
-		</dl>
-		<dl id="schoolProfile">
-			<dt><f:translate key="tx_schooldirectory_domain_model_school.profile_title"/></dt>
-			<dd><select name="tx_schooldirectory_list[profile]"></select></dd>
-		</dl>
-		<div class="submitwrap">
-			<f:form.submit value="{f:translate(key: 'search')}"/>
-		</div>
-	</form>
-</div>
+<sd:widget.ajaxSelector type="{type}"
+												careForm="{careForm}"
+												profile="{profile}"
+												pidOfSearchPage="{settings.pidOfSearchPage}" />
+</html>
