@@ -16,8 +16,6 @@ plugin.tx_schooldirectory {
     pidOfMaps2Plugin =
     # cat=plugin.tx_schooldirectory//c; type=int+; label=PID of Detail page: Leave empty to show details on current page.
     pidOfDetailPage =
-    # cat=plugin.tx_schooldirectory//d; type=int+; label=PID of Search page.
-    pidOfSearchPage =
 
     pageBrowser {
       # cat=plugin.tx_schooldirectory/basic/dims; type=int+; label=Items per page: How many items should be displayed on one page
