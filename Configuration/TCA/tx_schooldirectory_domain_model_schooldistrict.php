@@ -19,7 +19,7 @@ return [
             'endtime' => 'endtime'
         ],
         'searchFields' => 'title',
-        'iconfile' => 'EXT:schooldirectory/Resources/Public/Icons/tx_schooldirectory_domain_model_schooldistrict.gif'
+        'iconfile' => 'EXT:schooldirectory/Resources/Public/Icons/tx_schooldirectory_domain_model_schooldistrict.svg'
     ],
     'interface' => [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title'

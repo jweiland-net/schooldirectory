@@ -19,7 +19,7 @@ return [
             'endtime' => 'endtime'
         ],
         'searchFields' => 'street',
-        'iconfile' => 'EXT:schooldirectory/Resources/Public/Icons/tx_schooldirectory_domain_model_street.gif'
+        'iconfile' => 'EXT:schooldirectory/Resources/Public/Icons/tx_schooldirectory_domain_model_street.svg'
     ],
     'interface' => [
         'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, street, number_from, letter_from, number_to, letter_to, district'
