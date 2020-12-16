@@ -43,6 +43,17 @@ If you want, you can change the links in project listing to link to another page
 By default the detail view uses current page.
 
 
+.. _pidOfSearchPage:
+
+pidOfSearchPage
+---------------
+
+Example: plugin.tx_schooldirectory.settings.pidOfSearchPage = 21
+
+If you're using the DropDowns to filter school records in frontend you can define another page
+shere to show the filtered school records. If empty we will show them on current page.
+
+
 .. _pidOfMaps2Plugin:
 
 pidOfMaps2Plugin
@@ -63,8 +74,19 @@ Default: 50c for width and height
 
 Example: plugin.tx_schooldirectory.settings.list.image.width = 150c
 
-Currently not implemented in Template, but if you want, you can use this
-setting to show one or more images with a defined width and height.
+Here you can configure width and height for images in list view.
+
+
+.. _show:
+
+show
+----
+
+Default: 240c for width and 180c for height
+
+Example: plugin.tx_schooldirectory.settings.show.image.width = 300c
+
+Here you can configure width and height for images in detail view.
 
 
 .. _pageBrowser:
