@@ -3,7 +3,6 @@
 	<file source-language="en" datatype="plaintext" original="messages" date="2013-04-13T09:09:13Z" product-name="schooldirectory">
 		<header/>
 		<body>
-
 			<trans-unit id="tx_schooldirectory_domain_model_school">
 				<source>School</source>
 			</trans-unit>
@@ -180,7 +179,6 @@
 			<trans-unit id="altTextMapImg">
 				<source>Map</source>
 			</trans-unit>
-
 		</body>
 	</file>
 </xliff>

@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <xliff version="1.0">
-	<file source-language="en" datatype="plaintext" original="messages" date="2013-04-13T09:09:13Z"
-			product-name="schooldirectory">
+	<file source-language="en" datatype="plaintext" original="messages" date="2013-04-13T09:09:13Z" product-name="schooldirectory">
 		<header/>
 		<body>
-
 			<trans-unit id="plugin.list.title">
 				<source>Schools: List</source>
 				<target>Schulen: Auflistung</target>
@@ -254,7 +252,6 @@
 				<source>Title</source>
 				<target>Bezeichnung</target>
 			</trans-unit>
-
 		</body>
 	</file>
 </xliff>
