@@ -57,10 +57,11 @@ class AjaxSelectorController extends AbstractWidgetController
      */
     public function indexAction(): void
     {
+        $pidOfSearchPage = $this->widgetConfiguration['pidOfSearchPage'] ?? $GLOBALS['TSFE']->id;
         $this->view->assign('types', $this->typeRepository->findAll());
         $this->view->assign('type', $this->widgetConfiguration['type']);
         $this->view->assign('careForm', $this->widgetConfiguration['careForm']);
         $this->view->assign('profile', $this->widgetConfiguration['profile']);
-        $this->view->assign('pidOfSearchPage', $this->widgetConfiguration['pidOfSearchPage']);
+        $this->view->assign('pidOfSearchPage', $pidOfSearchPage);
     }
 }
