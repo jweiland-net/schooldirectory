@@ -44,25 +44,28 @@ class AjaxSelectorViewHelper extends AbstractWidgetViewHelper
             'type',
             'int',
             'School type to select for',
-            true
+            false,
+            0
         );
         $this->registerArgument(
             'careForm',
             'int',
             'School careform to select for',
-            true
+            false,
+            0
         );
         $this->registerArgument(
             'profile',
             'int',
             'Profile content for School to select for',
-            true
+            false,
+            0
         );
         $this->registerArgument(
             'pidOfSearchPage',
             'int',
             'PID with configured schooldirectory search plugin',
-            true
+            false
         );
     }
 
