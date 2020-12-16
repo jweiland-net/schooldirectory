@@ -20,3 +20,7 @@ mod.wizards.newContentElement.wizardItems.plugins {
     }
   }
 }
+
+# Add CType Preview
+mod.web_layout.tt_content.preview.list.schooldirectory_list = EXT:schooldirectory/Resources/Private/Templates/PluginPreview/ListTableView.html
+mod.web_layout.tt_content.preview.list.schooldirectory_search = EXT:schooldirectory/Resources/Private/Templates/PluginPreview/SearchTableView.html
