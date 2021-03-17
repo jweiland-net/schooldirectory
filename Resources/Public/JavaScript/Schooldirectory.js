@@ -1,31 +1,42 @@
 jQuery(function () {
     let schoolData = $('#schooldirectory_data');
 
-    let schoolType = schoolData.data('type');
-    let schoolCareForm = schoolData.data('careform');
-    let schoolProfile = schoolData.data('profile');
+    if (hasSchooldirectoryData()) {
+        let schoolType = schoolData.data('type');
+        let schoolCareForm = schoolData.data('careform');
+        let schoolProfile = schoolData.data('profile');
 
-    // hide both selectboxes at loading
-    jQuery("#schoolType").hide();
-    jQuery("#schoolCareForm").hide();
-    jQuery("#schoolProfile").hide();
-
-    showType();
-    if (schoolCareForm) showCareForm(schoolType);
-    if (schoolProfile) showProfile(schoolType, schoolCareForm);
-
-    // show care form after selecting an type
-    jQuery("#schoolType select").on("change", function () {
+        // hide both selectboxes at loading
+        jQuery("#schoolType").hide();
         jQuery("#schoolCareForm").hide();
         jQuery("#schoolProfile").hide();
-        showCareForm(jQuery(this).val());
-    });
 
-    // show profile after selecting an care form
-    jQuery("#schoolCareForm select").on("change", function () {
-        jQuery("#schoolProfile").hide();
-        showProfile(jQuery("#schoolType select").val(), jQuery(this).val());
-    });
+        showType();
+        if (schoolCareForm) showCareForm(schoolType);
+        if (schoolProfile) showProfile(schoolType, schoolCareForm);
+
+        // show care form after selecting an type
+        jQuery("#schoolType select").on("change", function () {
+            jQuery("#schoolCareForm").hide();
+            jQuery("#schoolProfile").hide();
+            showCareForm(jQuery(this).val());
+        });
+
+        // show profile after selecting an care form
+        jQuery("#schoolCareForm select").on("change", function () {
+            jQuery("#schoolProfile").hide();
+            showProfile(jQuery("#schoolType select").val(), jQuery(this).val());
+        });
+    }
+
+    /**
+     * If true, we are on list view
+     *
+     * @returns {boolean}
+     */
+    function hasSchooldirectoryData() {
+        return !!schoolData.length;
+    }
 
     /**
      * show type
