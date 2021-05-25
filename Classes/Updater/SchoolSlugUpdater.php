@@ -46,19 +46,6 @@ class SchoolSlugUpdater implements UpgradeWizardInterface
      */
     protected $slugCache = [];
 
-    public function __construct(SlugHelper $slugHelper = null)
-    {
-        if ($slugHelper === null) {
-            $slugHelper = GeneralUtility::makeInstance(
-                SlugHelper::class,
-                $this->tableName,
-                $this->fieldName,
-                $GLOBALS['TCA'][$this->tableName]['columns']['path_segment']['config']
-            );
-        }
-        $this->slugHelper = $slugHelper;
-    }
-
     /**
      * Return the identifier for this wizard
      * This should be the same string as used in the ext_localconf class registration
@@ -132,7 +119,7 @@ class SchoolSlugUpdater implements UpgradeWizardInterface
         $connection = $this->getConnectionPool()->getConnectionForTable($this->tableName);
         while ($recordToUpdate = $statement->fetch()) {
             if ((string)$recordToUpdate['title'] !== '') {
-                $slug = $this->slugHelper->sanitize((string)$recordToUpdate['title']);
+                $slug = $this->getSlugHelper()->sanitize((string)$recordToUpdate['title']);
                 $connection->update(
                     $this->tableName,
                     [
@@ -190,6 +177,20 @@ class SchoolSlugUpdater implements UpgradeWizardInterface
                 )
             )
             ->execute();
+    }
+
+    protected function getSlugHelper(): SlugHelper
+    {
+        if ($this->slugHelper === null) {
+            $this->slugHelper = GeneralUtility::makeInstance(
+                SlugHelper::class,
+                $this->tableName,
+                $this->fieldName,
+                $GLOBALS['TCA'][$this->tableName]['columns']['path_segment']['config']
+            );
+        }
+
+        return $this->slugHelper;
     }
 
     /**
