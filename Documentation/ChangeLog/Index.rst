@@ -7,6 +7,10 @@
 ChangeLog
 =========
 
+**Version 4.0.3**
+
+- Move SlugHelper from constructor argument into getSlugHelper()
+
 **Version 4.0.1**
 
 - Add documentation
