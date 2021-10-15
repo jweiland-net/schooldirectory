@@ -353,9 +353,8 @@ return [
                 'type' => 'text',
                 'cols' => 40,
                 'rows' => 15,
-                'softref' => 'rtehtmlarea_images,typolink_tag,images,email[subst],url',
+                'softref' => 'typolink_tag,images,email[subst],url',
                 'enableRichtext' => true,
-                'richtextConfiguration' => 'default',
             ],
         ],
         'additional_informations' => [
@@ -365,9 +364,8 @@ return [
                 'type' => 'text',
                 'cols' => 40,
                 'rows' => 15,
-                'softref' => 'rtehtmlarea_images,typolink_tag,images,email[subst],url',
+                'softref' => 'typolink_tag,images,email[subst],url',
                 'enableRichtext' => true,
-                'richtextConfiguration' => 'default',
             ],
         ],
         'holder' => [
