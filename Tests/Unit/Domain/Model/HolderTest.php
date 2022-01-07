@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the package jweiland/schooldirectory.
  *
@@ -23,18 +25,12 @@ class HolderTest extends UnitTestCase
      */
     protected $subject;
 
-    /**
-     * set up class
-     */
-    public function setUp()
+    public function setUp(): void
     {
         $this->subject = new Holder();
     }
 
-    /**
-     * tear down class
-     */
-    public function tearDown()
+    public function tearDown(): void
     {
         unset($this->subject);
     }
@@ -42,7 +38,7 @@ class HolderTest extends UnitTestCase
     /**
      * @test
      */
-    public function getTitleInitiallyReturnsEmptyString()
+    public function getTitleInitiallyReturnsEmptyString(): void
     {
         self::assertSame(
             '',
@@ -53,7 +49,7 @@ class HolderTest extends UnitTestCase
     /**
      * @test
      */
-    public function setTitleSetsTitle()
+    public function setTitleSetsTitle(): void
     {
         $this->subject->setTitle('foo bar');
 
@@ -66,25 +62,7 @@ class HolderTest extends UnitTestCase
     /**
      * @test
      */
-    public function setTitleWithIntegerResultsInString()
-    {
-        $this->subject->setTitle(123);
-        self::assertSame('123', $this->subject->getTitle());
-    }
-
-    /**
-     * @test
-     */
-    public function setTitleWithBooleanResultsInString()
-    {
-        $this->subject->setTitle(true);
-        self::assertSame('1', $this->subject->getTitle());
-    }
-
-    /**
-     * @test
-     */
-    public function getLogoInitiallyReturnsNull()
+    public function getLogoInitiallyReturnsNull(): void
     {
         self::assertNull($this->subject->getLogo());
     }
@@ -92,7 +70,7 @@ class HolderTest extends UnitTestCase
     /**
      * @test
      */
-    public function setLogoSetsLogo()
+    public function setLogoSetsLogo(): void
     {
         $instance = new FileReference();
         $this->subject->setLogo($instance);
@@ -106,7 +84,7 @@ class HolderTest extends UnitTestCase
     /**
      * @test
      */
-    public function getWebsiteInitiallyReturnsEmptyString()
+    public function getWebsiteInitiallyReturnsEmptyString(): void
     {
         self::assertSame(
             '',
@@ -117,7 +95,7 @@ class HolderTest extends UnitTestCase
     /**
      * @test
      */
-    public function setWebsiteSetsWebsite()
+    public function setWebsiteSetsWebsite(): void
     {
         $this->subject->setWebsite('foo bar');
 
@@ -125,23 +103,5 @@ class HolderTest extends UnitTestCase
             'foo bar',
             $this->subject->getWebsite()
         );
-    }
-
-    /**
-     * @test
-     */
-    public function setWebsiteWithIntegerResultsInString()
-    {
-        $this->subject->setWebsite(123);
-        self::assertSame('123', $this->subject->getWebsite());
-    }
-
-    /**
-     * @test
-     */
-    public function setWebsiteWithBooleanResultsInString()
-    {
-        $this->subject->setWebsite(true);
-        self::assertSame('1', $this->subject->getWebsite());
     }
 }

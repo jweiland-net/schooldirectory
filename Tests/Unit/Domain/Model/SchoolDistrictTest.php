@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of the package jweiland/schooldirectory.
  *
@@ -24,18 +26,12 @@ class SchoolDistrictTest extends UnitTestCase
      */
     protected $subject;
 
-    /**
-     * set up class
-     */
-    public function setUp()
+    public function setUp(): void
     {
         $this->subject = new SchoolDistrict();
     }
 
-    /**
-     * tear down class
-     */
-    public function tearDown()
+    public function tearDown(): void
     {
         unset($this->subject);
     }
@@ -43,7 +39,7 @@ class SchoolDistrictTest extends UnitTestCase
     /**
      * @test
      */
-    public function getTitleInitiallyReturnsEmptyString()
+    public function getTitleInitiallyReturnsEmptyString(): void
     {
         self::assertSame(
             '',
@@ -54,7 +50,7 @@ class SchoolDistrictTest extends UnitTestCase
     /**
      * @test
      */
-    public function setTitleSetsTitle()
+    public function setTitleSetsTitle(): void
     {
         $this->subject->setTitle('foo bar');
 
@@ -67,25 +63,7 @@ class SchoolDistrictTest extends UnitTestCase
     /**
      * @test
      */
-    public function setTitleWithIntegerResultsInString()
-    {
-        $this->subject->setTitle(123);
-        self::assertSame('123', $this->subject->getTitle());
-    }
-
-    /**
-     * @test
-     */
-    public function setTitleWithBooleanResultsInString()
-    {
-        $this->subject->setTitle(true);
-        self::assertSame('1', $this->subject->getTitle());
-    }
-
-    /**
-     * @test
-     */
-    public function getStreetsInitiallyReturnsObjectStorage()
+    public function getStreetsInitiallyReturnsObjectStorage(): void
     {
         self::assertEquals(
             new ObjectStorage(),
@@ -96,7 +74,7 @@ class SchoolDistrictTest extends UnitTestCase
     /**
      * @test
      */
-    public function setStreetsSetsStreets()
+    public function setStreetsSetsStreets(): void
     {
         $object = new Street();
         $objectStorage = new ObjectStorage();
@@ -112,7 +90,7 @@ class SchoolDistrictTest extends UnitTestCase
     /**
      * @test
      */
-    public function addStreetAddsOneStreet()
+    public function addStreetAddsOneStreet(): void
     {
         $objectStorage = new ObjectStorage();
         $this->subject->setStreets($objectStorage);
@@ -131,7 +109,7 @@ class SchoolDistrictTest extends UnitTestCase
     /**
      * @test
      */
-    public function removeStreetRemovesOneStreet()
+    public function removeStreetRemovesOneStreet(): void
     {
         $object = new Street();
         $objectStorage = new ObjectStorage();
