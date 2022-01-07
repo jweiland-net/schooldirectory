@@ -11,9 +11,9 @@ declare(strict_types=1);
 
 namespace JWeiland\Schooldirectory\EventListener;
 
+use JWeiland\Glossary2\Service\GlossaryService;
 use JWeiland\Schooldirectory\Domain\Repository\SchoolRepository;
 use JWeiland\Schooldirectory\Event\PostProcessFluidVariablesEvent;
-use JWeiland\Glossary2\Service\GlossaryService;
 
 class AddGlossaryEventListener extends AbstractControllerEventListener
 {
