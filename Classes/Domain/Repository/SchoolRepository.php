@@ -33,6 +33,11 @@ class SchoolRepository extends Repository
         'title' => QueryInterface::ORDER_ASCENDING
     ];
 
+    public function getStoragePages(): array
+    {
+        return $this->createQuery()->getQuerySettings()->getStoragePageIds();
+    }
+
     /**
      * Find all records starting with given letter
      *
@@ -82,12 +87,14 @@ class SchoolRepository extends Repository
         if (!empty($profile)) {
             $constraint[] = $query->equals('profileContents.uid', $profile);
         }
+
         // there must be at least one constraint
         if (count($constraint)) {
             return $query->matching(
                 $query->logicalAnd($constraint)
             )->execute();
         }
+
         return $this->findAll();
     }
 
@@ -116,7 +123,7 @@ class SchoolRepository extends Repository
         }
 
         // add query for letter
-        if (!empty($letter)) {
+        if ($letter !== '') {
             $constraints[] = $query->lessThanOrEqual('schoolDistrict.streets.letterFrom', $letter);
 
             $orConstraint = [];
@@ -132,21 +139,16 @@ class SchoolRepository extends Repository
     /**
      * Sanitize street name
      * Converts f.e. "Strasse" to "Str."
-     *
-     * @param string $street
-     * @return string
      */
     protected function sanitizeStreetName(string $street): string
     {
-        $street = strtolower(trim($street));
-        $street = str_replace(['str.', 'strasse', 'straße'], 'str', $street);
-
-        return $street;
+        return str_replace(
+            ['str.', 'strasse', 'straße'],
+            'str',
+            strtolower(trim($street))
+        );
     }
 
-    /**
-     * @return QueryBuilder
-     */
     public function getQueryBuilderToFindAllEntries(): QueryBuilder
     {
         $table = 'tx_schooldirectory_domain_model_school';

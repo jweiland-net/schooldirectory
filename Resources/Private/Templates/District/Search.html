@@ -3,6 +3,10 @@
 			data-namespace-typo3-fluid="true">
 
 <div class="search clearfix">
+	<f:flashMessages />
+
+	<f:render partial="FormErrors"/>
+
 	<f:form action="list" name="search" class="extform">
 		<div class="extdiv">
 			<label><f:translate key="street" /></label>

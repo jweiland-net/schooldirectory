@@ -20,31 +20,18 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
 /**
  * Repository to find profile content by a given school type and careform
  */
-class ProfileContentRepository extends Repository
+class ProfileContentRepository extends AbstractRepository
 {
-    /**
-     * @var array
-     */
-    protected $defaultOrderings = [
-        'title' => QueryInterface::ORDER_ASCENDING
-    ];
-
-    /**
-     * find profile by given care form
-     *
-     * @param int $type
-     * @param int $careForm
-     * @return array
-     */
-    public function findByTypeAndCareForm(int $type, int $careForm): array
+    public function findByTypeAndCareForm(int $type, int $careForm, array $storagePages): array
     {
-        /** @var Query $query */
-        $query = $this->createQuery();
+        $queryBuilder = $this->getQueryBuilderForTable(
+            'tx_schooldirectory_domain_model_profilecontent',
+            'pc',
+            $storagePages
+        );
 
-        $queryBuilder = $this->getConnectionPool()->getQueryBuilderForTable('tx_schooldirectory_domain_model_profilecontent');
-        $queryBuilder
+        $statement = $queryBuilder
             ->selectLiteral('DISTINCT pc.uid, pc.title')
-            ->from('tx_schooldirectory_domain_model_profilecontent', 'pc')
             ->leftJoin(
                 'pc',
                 'tx_schooldirectory_school_profilecontent_mm',
@@ -96,11 +83,11 @@ class ProfileContentRepository extends Repository
             ->orderBy('pc.title', 'ASC')
             ->execute();
 
-        return $query->statement($queryBuilder)->execute(true);
-    }
+        $profileRecords = [];
+        while ($profileRecord = $statement->fetch()) {
+            $profileRecords[] = $profileRecord;
+        }
 
-    protected function getConnectionPool(): ConnectionPool
-    {
-        return GeneralUtility::makeInstance(ConnectionPool::class);
+        return $profileRecords;
     }
 }

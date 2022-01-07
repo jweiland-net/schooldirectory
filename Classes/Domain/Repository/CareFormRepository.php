@@ -11,39 +11,21 @@ declare(strict_types=1);
 
 namespace JWeiland\Schooldirectory\Domain\Repository;
 
-use TYPO3\CMS\Core\Database\ConnectionPool;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
-use TYPO3\CMS\Extbase\Persistence\Generic\Query;
-use TYPO3\CMS\Extbase\Persistence\QueryInterface;
-use TYPO3\CMS\Extbase\Persistence\Repository;
-
 /**
- * Repository to find careforms by a given school type
+ * Repository to find CareForm records by a given school type
  */
-class CareFormRepository extends Repository
+class CareFormRepository extends AbstractRepository
 {
-    /**
-     * @var array
-     */
-    protected $defaultOrderings = [
-        'title' => QueryInterface::ORDER_ASCENDING
-    ];
-
-    /**
-     * Find careforms by given school type
-     *
-     * @param int $type
-     * @return array
-     */
-    public function findByType(int $type): array
+    public function findByType(int $type, array $storagePages): array
     {
-        /** @var Query $query */
-        $query = $this->createQuery();
+        $queryBuilder = $this->getQueryBuilderForTable(
+            'tx_schooldirectory_domain_model_careform',
+            'c',
+            $storagePages
+        );
 
-        $queryBuilder = $this->getConnectionPool()->getQueryBuilderForTable('tx_schooldirectory_domain_model_careform');
-        $queryBuilder
+        $statement = $queryBuilder
             ->selectLiteral('DISTINCT c.uid, c.title')
-            ->from('tx_schooldirectory_domain_model_careform', 'c')
             ->leftJoin(
                 'c',
                 'tx_schooldirectory_school_careform_mm',
@@ -80,11 +62,11 @@ class CareFormRepository extends Repository
             ->orderBy('c.title', 'ASC')
             ->execute();
 
-        return $query->statement($queryBuilder)->execute(true);
-    }
+        $careFormRecords = [];
+        while ($careFormRecord = $statement->fetch()) {
+            $careFormRecords[] = $careFormRecord;
+        }
 
-    protected function getConnectionPool(): ConnectionPool
-    {
-        return GeneralUtility::makeInstance(ConnectionPool::class);
+        return $careFormRecords;
     }
 }

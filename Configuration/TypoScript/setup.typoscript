@@ -1,3 +1,7 @@
+page.includeJSFooter {
+  schooldirectory = EXT:schooldirectory/Resources/Public/JavaScript/Schooldirectory.js
+}
+
 plugin.tx_schooldirectory {
   view {
     templateRootPaths {
@@ -42,31 +46,8 @@ plugin.tx_schooldirectory {
 
     pageBrowser {
       itemsPerPage = {$plugin.tx_schooldirectory.settings.pageBrowser.itemsPerPage}
-      insertAbove = {$plugin.tx_schooldirectory.settings.pageBrowser.insertAbove}
-      insertBelow = {$plugin.tx_schooldirectory.settings.pageBrowser.insertBelow}
-      maximumNumberOfLinks = {$plugin.tx_schooldirectory.settings.pageBrowser.maximumNumberOfLinks}
     }
   }
-}
-
-schooldirectoryAjax = PAGE
-schooldirectoryAjax {
-  typeNum = 20180202
-
-  config {
-    disableAllHeaderCode = 1
-    additionalHeaders = Content-type: application/json, utf-8
-    xhtml_cleaning = 0
-    debug = 0
-    no_cache = 1
-    admPanel = 0
-  }
-
-  10 < tt_content.list.20.schooldirectory_list
-}
-
-page.includeJSFooter {
-  schooldirectory = EXT:schooldirectory/Resources/Public/JavaScript/Schooldirectory.js
 }
 
 plugin.tx_schooldirectory._CSS_DEFAULT_STYLE (

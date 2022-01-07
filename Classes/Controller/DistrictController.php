@@ -12,33 +12,23 @@ declare(strict_types=1);
 namespace JWeiland\Schooldirectory\Controller;
 
 use JWeiland\Schooldirectory\Domain\Repository\SchoolRepository;
-use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Core\EventDispatcher\EventDispatcher;
 
 /**
  * Controller to search and list districts
  */
-class DistrictController extends ActionController
+class DistrictController extends AbstractController
 {
     /**
      * @var SchoolRepository
      */
     protected $schoolRepository;
 
-    public function injectSchoolRepository(SchoolRepository $schoolRepository): void
+    public function __construct(SchoolRepository $schoolRepository, EventDispatcher $eventDispatcher)
     {
-        $this->schoolRepository = $schoolRepository;
-    }
+        parent::__construct($eventDispatcher);
 
-    /**
-     * Preprocessing of all actions
-     */
-    public function initializeAction(): void
-    {
-        // if this value was not set, then it will be filled with 0
-        // but that is not good, because UriBuilder accepts 0 as pid, so it's better to set it to NULL
-        if (empty($this->settings['pidOfDetailPage'])) {
-            $this->settings['pidOfDetailPage'] = null;
-        }
+        $this->schoolRepository = $schoolRepository;
     }
 
     /**
@@ -54,16 +44,23 @@ class DistrictController extends ActionController
      * @param string $street
      * @param int $number
      * @param string $letter
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty", param="street")
+     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty", param="number")
+     * @TYPO3\CMS\Extbase\Annotation\Validate("Integer", param="number")
      */
     public function listAction(string $street, int $number, string $letter = ''): void
     {
         $schools = $this->schoolRepository->searchSchoolsByStreet($street, $number, $letter);
+
         // I know, it's nasty, but as long as we have SQL Statements in Repository, we can't change that
         $amountOfSchools = 0;
         foreach ($schools as $school) {
             $amountOfSchools++;
         }
-        $this->view->assign('schools', $schools);
-        $this->view->assign('amountOfSchools', $amountOfSchools);
+
+        $this->postProcessAndAssignFluidVariables([
+            'schools' => $schools,
+            'amountOfSchools' => $amountOfSchools
+        ]);
     }
 }
