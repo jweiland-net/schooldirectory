@@ -11,29 +11,28 @@ declare(strict_types=1);
 
 namespace JWeiland\Schooldirectory\Domain\Repository;
 
-use TYPO3\CMS\Extbase\Persistence\QueryInterface;
-use TYPO3\CMS\Extbase\Persistence\Repository;
-
 /**
  * Repository to find all school types
  */
-class TypeRepository extends Repository
+class TypeRepository extends AbstractRepository
 {
-    /**
-     * @var array
-     */
-    protected $defaultOrderings = [
-        'title' => QueryInterface::ORDER_ASCENDING
-    ];
-
-    /**
-     * Get all school types as array
-     *
-     * @return array
-     */
-    public function findTypes(): array
+    public function findAll(array $storagePages): array
     {
-        $query = $this->createQuery();
-        return $query->execute(true);
+        $queryBuilder = $this->getQueryBuilderForTable(
+            'tx_schooldirectory_domain_model_type',
+            't',
+            $storagePages
+        );
+
+        $statement = $queryBuilder
+            ->select('*')
+            ->execute();
+
+        $typeRecords = [];
+        while ($typeRecord = $statement->fetch()) {
+            $typeRecords[] = $typeRecord;
+        }
+
+        return $typeRecords;
     }
 }

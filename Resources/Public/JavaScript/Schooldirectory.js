@@ -1,134 +1,141 @@
-jQuery(function () {
-    let schoolData = $('#schooldirectory_data');
+let SchoolDirectory = function (schoolDirectoryElement) {
+    let me = this;
+    let selectorSchoolDirectoryData = ".schoolDirectoryData";
+    let schoolDirectoryDataElement = null;
+    let schoolDirectoryType = 0;
+    let schoolDirectoryCareForm = 0;
+    let schoolDirectoryProfile = 0;
+    let schoolDirectoryStoragePages = '';
 
-    if (hasSchooldirectoryData()) {
-        let schoolType = schoolData.data('type');
-        let schoolCareForm = schoolData.data('careform');
-        let schoolProfile = schoolData.data('profile');
+    me.init = function () {
+        if (me.hasSchoolDirectoryData()) {
+            me.hideElements();
 
-        // hide both selectboxes at loading
-        jQuery("#schoolType").hide();
-        jQuery("#schoolCareForm").hide();
-        jQuery("#schoolProfile").hide();
+            schoolDirectoryDataElement = me.getSchoolDirectoryData();
+            schoolDirectoryType = parseInt(schoolDirectoryDataElement.dataset.type);
+            schoolDirectoryCareForm = parseInt(schoolDirectoryDataElement.dataset.careform);
+            schoolDirectoryProfile = parseInt(schoolDirectoryDataElement.dataset.profile);
+            schoolDirectoryStoragePages = schoolDirectoryDataElement.dataset.storagepages;
 
-        showType();
-        if (schoolCareForm) showCareForm(schoolType);
-        if (schoolProfile) showProfile(schoolType, schoolCareForm);
+            // Show care form after selecting a type
+            document.querySelector('.schoolDirectoryType select').addEventListener('change',function() {
+                me.hideElement(".schoolDirectoryCareForm");
+                me.hideElement(".schoolDirectoryProfile");
+                me.addCareFormOptions();
+            });
 
-        // show care form after selecting an type
-        jQuery("#schoolType select").on("change", function () {
-            jQuery("#schoolCareForm").hide();
-            jQuery("#schoolProfile").hide();
-            showCareForm(jQuery(this).val());
-        });
+            // Show profile after selecting an care form
+            document.querySelector('.schoolDirectoryCareForm select').addEventListener('change',function() {
+                me.hideElement(".schoolDirectoryProfile");
+                me.addProfileOptions();
+            });
 
-        // show profile after selecting an care form
-        jQuery("#schoolCareForm select").on("change", function () {
-            jQuery("#schoolProfile").hide();
-            showProfile(jQuery("#schoolType select").val(), jQuery(this).val());
-        });
+            me.addTypeOptions();
+        } else {
+            console.log('SchoolDirectory plugin is not up2date. Please copy over schooldirectory data section from original template into you own templates.')
+        }
     }
 
-    /**
-     * If true, we are on list view
-     *
-     * @returns {boolean}
-     */
-    function hasSchooldirectoryData() {
-        return !!schoolData.length;
+    me.hasSchoolDirectoryData = function() {
+        return me.getSchoolDirectoryData() !== null;
     }
 
-    /**
-     * show type
-     *
-     * @return void
-     */
-    function showType() {
-        let ajaxUri = TYPO3.settings.Schooldirectory.ajaxRenderTypeAction;
-        jQuery.ajax({
-            type: "POST",
-            url: ajaxUri,
-            cache: false,
-            dataType: "json",
-            success: function (data) {
-                if (!data.error) {
-                    // add empty option
-                    let option = jQuery("<option />").attr("value", "").html("");
-                    jQuery("#schoolType select").append(option);
+    me.getSchoolDirectoryData = function() {
+        return schoolDirectoryElement.querySelector(selectorSchoolDirectoryData);
+    }
 
-                    // add options from ajax request
-                    jQuery.each(data.types, function (index, value) {
-                        option = jQuery("<option />").attr("value", value.uid).html(value.title);
-                        if (schoolType == value.uid) {
-                            option.attr("selected", "selected");
-                        }
-                        jQuery("#schoolType select").append(option);
-                    });
-                    jQuery("#schoolType").show();
-                }
-            },
-            error: function (error) {
-                console.log(error);
+    me.hideElements = function() {
+        me.hideElement(".schoolDirectoryType");
+        me.hideElement(".schoolDirectoryCareForm");
+        me.hideElement(".schoolDirectoryProfile");
+    }
+
+    me.hideElement = function(elementClassName) {
+        let element = schoolDirectoryElement.querySelector(elementClassName)
+        if (element !== null) {
+            element.style.display = "none";
+        }
+    }
+
+    me.showElement = function(elementClassName) {
+        let element = schoolDirectoryElement.querySelector(elementClassName)
+        if (element !== null) {
+            element.style.display = "block";
+        }
+    }
+
+    me.addOptionsToSelectBox = function (selectBoxWrapperClassName, options, selectedValue, callback = null) {
+        let selectBoxElement = schoolDirectoryElement.querySelector(selectBoxWrapperClassName + " select");
+
+        if (selectBoxElement !== null) {
+            me.addOptionToSelectBox(selectBoxElement, "", "");
+            options.forEach(function (option) {
+                me.addOptionToSelectBox(selectBoxElement, option["title"], option["uid"]);
+            });
+
+            if (selectedValue) {
+                selectBoxElement.value = selectedValue;
+                callback();
             }
-        });
+
+            me.showElement(selectBoxWrapperClassName);
+        }
     }
 
-    /**
-     * show care form
-     *
-     * @param {int} schoolType
-     * @return void
-     */
-    function showCareForm(schoolType) {
-        let ajaxUri = TYPO3.settings.Schooldirectory.ajaxRenderCareFormAction;
-        jQuery.ajax({
-            type: "POST", url: ajaxUri, cache: false, dataType: "json", data: {
-                tx_schooldirectory_list: {schoolType: schoolType}
-            }, success: function (data) {
-                if (!data.error) {
-                    jQuery("#schoolCareForm select option").remove();
-                    jQuery("#schoolCareForm select").append(jQuery("<option />").attr("value", '0').html(''));
-                    jQuery.each(data.careForms, function (index, value) {
-                        let option = jQuery("<option />").attr("value", value.uid).html(value.title);
-                        if (schoolCareForm == value.uid) {
-                            option.attr("selected", "selected");
-                        }
-                        jQuery("#schoolCareForm select").append(option);
-                    });
-                    jQuery("#schoolCareForm").show();
-                }
-            }
-        })
+    me.addOptionToSelectBox = function(element, label, value) {
+        if (element !== null) {
+            element.add(new Option(label, value));
+        }
     }
 
-    /**
-     * show profile
-     *
-     * @param {int} schoolType
-     * @param {int} schoolCareForm
-     * @return void
-     */
-    function showProfile(schoolType, schoolCareForm) {
-        let ajaxUri = TYPO3.settings.Schooldirectory.ajaxRenderProfileAction;
-        jQuery.ajax({
-            type: "POST", url: ajaxUri, cache: false, dataType: "json", data: {
-                tx_schooldirectory_list: {
-                    schoolType: schoolType, careForm: schoolCareForm
-                }
-            }, success: function (data) {
-                if (!data.error) {
-                    jQuery("#schoolProfile select option").remove();
-                    jQuery("#schoolProfile select").append(jQuery("<option />").attr("value", '0').html(''));
-                    jQuery.each(data.profiles, function (index, value) {
-                        let option = jQuery("<option />").attr("value", value.uid).html(value.title);
-                        if (schoolProfile == value.uid) {
-                            option.attr("selected", "selected");
-                        }
-                        jQuery("#schoolProfile select").append(option);
-                    });
-                    jQuery("#schoolProfile").show();
-                }
+    me.addTypeOptions = function () {
+        me.fetchOptions(
+            "ext=schooldirectory&method=getTypes&storagePages=" + encodeURIComponent(schoolDirectoryStoragePages),
+            ".schoolDirectoryType",
+            schoolDirectoryType,
+            me.addCareFormOptions
+        );
+    }
+
+    me.addCareFormOptions = function () {
+        me.fetchOptions(
+            "ext=schooldirectory&method=getCareForms&storagePages=" + encodeURIComponent(schoolDirectoryStoragePages) + "&type=" + schoolDirectoryType,
+            ".schoolDirectoryCareForm",
+            schoolDirectoryCareForm,
+            me.addProfileOptions
+        );
+    }
+
+    me.addProfileOptions = function () {
+        me.fetchOptions(
+            "ext=schooldirectory&method=getCareForms&storagePages=" + encodeURIComponent(schoolDirectoryStoragePages) + "&type=" + schoolDirectoryType + "&careForm=" + schoolDirectoryCareForm,
+            ".schoolDirectoryProfile",
+            schoolDirectoryProfile
+        );
+    }
+
+    me.fetchOptions = function (postBody, selectBoxWrapperClass, selectedValue, callback) {
+        let host = window.location.protocol + "//" + window.location.host;
+        fetch(host, {
+            method: "POST",
+            body: postBody,
+            headers: {
+                "Content-type": "application/json"
             }
         })
+            .then(function(response) {
+                return response.json();
+            })
+            .then(function(response) {
+                if (response.success) {
+                    me.addOptionsToSelectBox(selectBoxWrapperClass, response.data, selectedValue, callback);
+                }
+            });
     }
+}
+
+let schoolDirectoryPlugins = document.querySelectorAll(".tx-schooldirectory");
+schoolDirectoryPlugins.forEach(function(schoolDirectoryPlugin) {
+    let schoolDirectory = new SchoolDirectory(schoolDirectoryPlugin);
+    schoolDirectory.init();
 });

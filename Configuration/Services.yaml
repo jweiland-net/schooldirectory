@@ -6,3 +6,19 @@ services:
 
   JWeiland\Schooldirectory\:
     resource: '../Classes/*'
+
+  JWeiland\Schooldirectory\EventListener\AddPaginatorEventListener:
+    tags:
+      - name: event.listener
+        event: JWeiland\Schooldirectory\Event\PostProcessFluidVariablesEvent
+
+  JWeiland\Schooldirectory\EventListener\AddGlossaryEventListener:
+    tags:
+      - name: event.listener
+        event: JWeiland\Schooldirectory\Event\PostProcessFluidVariablesEvent
+        after: JWeiland\Schooldirectory\EventListener\AddPaginatorEventListener
+
+  JWeiland\Schooldirectory\EventListener\AddStoragePagesEventListener:
+    tags:
+      - name: event.listener
+        event: JWeiland\Schooldirectory\Event\PostProcessFluidVariablesEvent
