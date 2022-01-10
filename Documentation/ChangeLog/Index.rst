@@ -7,6 +7,10 @@
 ChangeLog
 =========
 
+**Version 5.0.0**
+
+- Removed TYPO3 9 compatibility
+
 **Version 4.0.3**
 
 - Move SlugHelper from constructor argument into getSlugHelper()
