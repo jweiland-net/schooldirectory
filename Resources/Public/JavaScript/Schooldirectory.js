@@ -19,6 +19,9 @@ let SchoolDirectory = function (schoolDirectoryElement) {
 
             // Show care form after selecting a type
             document.querySelector('.schoolDirectoryType select').addEventListener('change',function() {
+                schoolDirectoryType = schoolDirectoryElement.querySelector(".schoolDirectoryType select").value;
+                schoolDirectoryCareForm = 0;
+                schoolDirectoryProfile = 0;
                 me.hideElement(".schoolDirectoryCareForm");
                 me.hideElement(".schoolDirectoryProfile");
                 me.addCareFormOptions();
@@ -26,6 +29,9 @@ let SchoolDirectory = function (schoolDirectoryElement) {
 
             // Show profile after selecting an care form
             document.querySelector('.schoolDirectoryCareForm select').addEventListener('change',function() {
+                schoolDirectoryType = schoolDirectoryElement.querySelector(".schoolDirectoryType select").value;
+                schoolDirectoryCareForm = schoolDirectoryElement.querySelector(".schoolDirectoryCareForm select").value;
+                schoolDirectoryProfile = 0;
                 me.hideElement(".schoolDirectoryProfile");
                 me.addProfileOptions();
             });
@@ -75,7 +81,9 @@ let SchoolDirectory = function (schoolDirectoryElement) {
 
             if (selectedValue) {
                 selectBoxElement.value = selectedValue;
-                callback();
+                if (typeof x === "function") {
+                    callback();
+                }
             }
 
             me.showElement(selectBoxWrapperClassName);
@@ -98,6 +106,9 @@ let SchoolDirectory = function (schoolDirectoryElement) {
     }
 
     me.addCareFormOptions = function () {
+        schoolDirectoryElement.querySelectorAll(".schoolDirectoryCareForm select option").forEach(function (option) {
+            option.parentNode.removeChild(option);
+        });
         me.fetchOptions(
             "ext=schooldirectory&method=getCareForms&storagePages=" + encodeURIComponent(schoolDirectoryStoragePages) + "&type=" + schoolDirectoryType,
             ".schoolDirectoryCareForm",
@@ -107,8 +118,11 @@ let SchoolDirectory = function (schoolDirectoryElement) {
     }
 
     me.addProfileOptions = function () {
+        schoolDirectoryElement.querySelectorAll(".schoolDirectoryProfile select option").forEach(function (option) {
+            option.parentNode.removeChild(option);
+        });
         me.fetchOptions(
-            "ext=schooldirectory&method=getCareForms&storagePages=" + encodeURIComponent(schoolDirectoryStoragePages) + "&type=" + schoolDirectoryType + "&careForm=" + schoolDirectoryCareForm,
+            "ext=schooldirectory&method=getProfiles&storagePages=" + encodeURIComponent(schoolDirectoryStoragePages) + "&type=" + schoolDirectoryType + "&careForm=" + schoolDirectoryCareForm,
             ".schoolDirectoryProfile",
             schoolDirectoryProfile
         );
