@@ -25,7 +25,7 @@ class CareFormRepository extends AbstractRepository
         );
 
         $statement = $queryBuilder
-            ->selectLiteral('DISTINCT c.uid, c.title')
+            ->selectLiteral('DISTINCT c.*')
             ->leftJoin(
                 'c',
                 'tx_schooldirectory_school_careform_mm',
