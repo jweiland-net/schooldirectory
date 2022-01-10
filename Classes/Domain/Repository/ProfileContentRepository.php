@@ -25,7 +25,7 @@ class ProfileContentRepository extends AbstractRepository
         );
 
         $statement = $queryBuilder
-            ->selectLiteral('DISTINCT pc.uid, pc.title')
+            ->selectLiteral('DISTINCT pc.*')
             ->leftJoin(
                 'pc',
                 'tx_schooldirectory_school_profilecontent_mm',
