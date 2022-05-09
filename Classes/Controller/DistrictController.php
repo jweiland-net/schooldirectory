@@ -12,7 +12,6 @@ declare(strict_types=1);
 namespace JWeiland\Schooldirectory\Controller;
 
 use JWeiland\Schooldirectory\Domain\Repository\SchoolRepository;
-use TYPO3\CMS\Core\EventDispatcher\EventDispatcher;
 
 /**
  * Controller to search and list districts
@@ -24,10 +23,8 @@ class DistrictController extends AbstractController
      */
     protected $schoolRepository;
 
-    public function __construct(SchoolRepository $schoolRepository, EventDispatcher $eventDispatcher)
+    public function injectSchoolRepository(SchoolRepository $schoolRepository): void
     {
-        parent::__construct($eventDispatcher);
-
         $this->schoolRepository = $schoolRepository;
     }
 
