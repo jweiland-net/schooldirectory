@@ -12,7 +12,6 @@ declare(strict_types=1);
 namespace JWeiland\Schooldirectory\Controller;
 
 use JWeiland\Schooldirectory\Event\PostProcessFluidVariablesEvent;
-use TYPO3\CMS\Core\EventDispatcher\EventDispatcher;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
