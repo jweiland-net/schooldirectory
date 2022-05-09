@@ -13,7 +13,6 @@ namespace JWeiland\Schooldirectory\Controller;
 
 use JWeiland\Schooldirectory\Domain\Model\School;
 use JWeiland\Schooldirectory\Domain\Repository\SchoolRepository;
-use TYPO3\CMS\Core\EventDispatcher\EventDispatcher;
 use TYPO3\CMS\Core\Page\PageRenderer;
 
 /**
@@ -31,16 +30,14 @@ class SchoolController extends AbstractController
      */
     protected $pageRenderer;
 
-    public function __construct(
-        SchoolRepository $schoolRepository,
-        PageRenderer $pageRenderer,
-        EventDispatcher $eventDispatcher
-    ) {
-        parent::__construct($eventDispatcher);
-
+    public function injectSchoolRepository(SchoolRepository $schoolRepository): void
+    {
         $this->schoolRepository = $schoolRepository;
+    }
+
+    public function injectPageRenderer(PageRenderer $pageRenderer): void
+    {
         $this->pageRenderer = $pageRenderer;
-        $this->eventDispatcher = $eventDispatcher;
     }
 
     /**
