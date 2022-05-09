@@ -18,28 +18,38 @@ use JWeiland\Schooldirectory\Domain\Model\ProfileContent;
 use JWeiland\Schooldirectory\Domain\Model\School;
 use JWeiland\Schooldirectory\Domain\Model\SchoolDistrict;
 use JWeiland\Schooldirectory\Domain\Model\Type;
-use Nimut\TestingFramework\TestCase\UnitTestCase;
+use Nimut\TestingFramework\TestCase\FunctionalTestCase;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
 /**
- * Test case for class \JWeiland\Schooldirectory\Domain\Model\School.
+ * Test case
  */
-class SchoolTest extends UnitTestCase
+class SchoolTest extends FunctionalTestCase
 {
     /**
      * @var School
      */
     protected $subject;
 
+    protected $testExtensionsToLoad = [
+        'typo3conf/ext/schooldirectory',
+        'typo3conf/ext/glossary2',
+        'typo3conf/ext/maps2'
+    ];
+
     public function setUp(): void
     {
+        parent::setUp();
+
         $this->subject = new School();
     }
 
     public function tearDown(): void
     {
-        unset($this->subject);
+        unset(
+            $this->subject
+        );
     }
 
     /**
