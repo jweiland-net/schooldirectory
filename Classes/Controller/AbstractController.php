@@ -20,16 +20,6 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
  */
 abstract class AbstractController extends ActionController
 {
-    /**
-     * @var EventDispatcher
-     */
-    protected $eventDispatcher;
-
-    public function __construct(EventDispatcher $eventDispatcher)
-    {
-        $this->eventDispatcher = $eventDispatcher;
-    }
-
     public function initializeAction(): void
     {
         // if this value was not set, then it will be filled with 0
