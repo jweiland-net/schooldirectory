@@ -7,6 +7,11 @@
 ChangeLog
 =========
 
+**Version 5.1.0**
+
+- Use inject methods in controller
+- Set glossary2 dependency to 5.0.0
+
 **Version 5.0.0**
 
 - Removed TYPO3 9 compatibility

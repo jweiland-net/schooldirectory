@@ -9,12 +9,12 @@ $EM_CONF[$_EXTKEY] = [
     'author_company' => 'jweiland.net',
     'state' => 'stable',
     'clearCacheOnLoad' => 0,
-    'version' => '5.0.0',
+    'version' => '5.1.0',
     'constraints' => [
         'depends' => [
             'typo3' => '10.4.19-10.4.99',
             'maps2' => '8.0.0-0.0.0',
-            'glossary2' => '4.0.0-4.99.99'
+            'glossary2' => '5.0.0-0.0.0'
         ],
         'conflicts' => [
         ],
