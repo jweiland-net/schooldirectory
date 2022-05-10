@@ -14,6 +14,7 @@ namespace JWeiland\Schooldirectory\EventListener;
 use JWeiland\Glossary2\Service\GlossaryService;
 use JWeiland\Schooldirectory\Domain\Repository\SchoolRepository;
 use JWeiland\Schooldirectory\Event\PostProcessFluidVariablesEvent;
+use TYPO3\CMS\Core\Utility\ArrayUtility;
 
 class AddGlossaryEventListener extends AbstractControllerEventListener
 {
@@ -46,14 +47,31 @@ class AddGlossaryEventListener extends AbstractControllerEventListener
                 'glossar',
                 $this->glossaryService->buildGlossary(
                     $this->schoolRepository->getQueryBuilderToFindAllEntries(),
-                    [
-                        'extensionName' => 'schooldirectory',
-                        'pluginName' => 'list',
-                        'controllerName' => 'School',
-                        'column' => 'title'
-                    ]
+                    $this->getOptions($event)
                 )
             );
         }
+    }
+
+    protected function getOptions(PostProcessFluidVariablesEvent $event): array
+    {
+        $options = [
+            'extensionName' => 'schooldirectory',
+            'pluginName' => 'list',
+            'controllerName' => 'School',
+            'column' => 'title',
+            'settings' => $event->getSettings()
+        ];
+
+        if (
+            isset($event->getSettings()['glossary'])
+            && is_array($event->getSettings()['glossary'])
+        ) {
+            ArrayUtility::mergeRecursiveWithOverrule($options, $event->getSettings()['glossary']);
+        }
+
+        \TYPO3\CMS\Core\Utility\DebugUtility::debug($options, 'Options');
+
+        return $options;
     }
 }

@@ -89,6 +89,24 @@ Example: plugin.tx_schooldirectory.settings.show.image.width = 300c
 Here you can configure width and height for images in detail view.
 
 
+.. _glossar:
+
+glossary
+--------
+
+**mergeNumbers**
+
+Example: plugin.tx_schooldirectory.settings.glossary.mergeNumbers = 1
+
+Merge school titles starting with numbers to `0-9` in glossary.
+
+**showAllLink**
+
+Example: plugin.tx_schooldirectory.settings.glossary.showAllLink = 1
+
+Prepend an additional button in front of the glossary to show all school records again.
+
+
 .. _pageBrowser:
 
 pageBrowser
@@ -97,24 +115,8 @@ pageBrowser
 You can fine tuning the page browser
 
 Example: plugin.tx_schooldirectory.settings.pageBrowser.itemsPerPage = 15
-Example: plugin.tx_schooldirectory.settings.pageBrowser.insertAbove = 1
-Example: plugin.tx_schooldirectory.settings.pageBrowser.insertBelow = 0
-Example: plugin.tx_schooldirectory.settings.pageBrowser.maximumNumberOfLinks = 5
 
 **itemsPerPage**
 
 Reduce result of school records to this value for a page
 
-**insertAbove**
-
-Insert page browser above list of school records
-
-**insertBelow**
-
-Insert page browser below list of school records. I remember a bug in TYPO3 CMS. So I can not guarantee
-that this option will work.
-
-**maximumNumberOfLinks**
-
-If you have many school records it makes sense to reduce the amount of pages in page browser to a fixed maximum
-value. Instead of 1, 2, 3, 4, 5, 6, 7, 8 you will get 1, 2, 3...8, 9 if you have configured this option to 5.
