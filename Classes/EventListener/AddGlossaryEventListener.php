@@ -70,8 +70,6 @@ class AddGlossaryEventListener extends AbstractControllerEventListener
             ArrayUtility::mergeRecursiveWithOverrule($options, $event->getSettings()['glossary']);
         }
 
-        \TYPO3\CMS\Core\Utility\DebugUtility::debug($options, 'Options');
-
         return $options;
     }
 }
