@@ -7,6 +7,10 @@
 ChangeLog
 =========
 
+**Version 5.1.1**
+
+- Add settings for glossary
+
 **Version 5.1.0**
 
 - Use inject methods in controller

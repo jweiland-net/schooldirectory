@@ -44,6 +44,11 @@ plugin.tx_schooldirectory {
       }
     }
 
+    glossary {
+      mergeNumbers = 0
+      showAllLink = 1
+    }
+
     pageBrowser {
       itemsPerPage = {$plugin.tx_schooldirectory.settings.pageBrowser.itemsPerPage}
     }
