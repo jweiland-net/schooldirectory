@@ -45,7 +45,7 @@ plugin.tx_schooldirectory {
     }
 
     glossary {
-      mergeNumbers = 0
+      mergeNumbers = 1
       showAllLink = 1
     }
 
