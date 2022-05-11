@@ -7,6 +7,10 @@
 ChangeLog
 =========
 
+**Version 5.1.2**
+
+- Repair autofill of select fields after starting a search request
+
 **Version 5.1.1**
 
 - Add settings for glossary
