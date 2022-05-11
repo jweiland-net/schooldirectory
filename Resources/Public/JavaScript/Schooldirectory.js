@@ -81,7 +81,7 @@ let SchoolDirectory = function (schoolDirectoryElement) {
 
             if (selectedValue) {
                 selectBoxElement.value = selectedValue;
-                if (typeof x === "function") {
+                if (typeof callback === "function") {
                     callback();
                 }
             }
