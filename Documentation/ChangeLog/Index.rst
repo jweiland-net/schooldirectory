@@ -7,6 +7,10 @@
 ChangeLog
 =========
 
+**Version 5.1.3**
+
+- Don't show selectbox if there are no options
+
 **Version 5.1.2**
 
 - Repair autofill of select fields after starting a search request
