@@ -7,6 +7,12 @@
 ChangeLog
 =========
 
+**Version 5.1.4**
+
+- Remove vendor name from plugin definition
+- Remove definition for AjaxController
+- Use FQCN for controller definition
+
 **Version 5.1.3**
 
 - Don't show selectbox if there are no options
