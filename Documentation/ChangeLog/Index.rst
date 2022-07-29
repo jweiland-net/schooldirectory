@@ -7,6 +7,10 @@
 ChangeLog
 =========
 
+**Version 5.1.5**
+
+- Remove vendor name from district plugin
+
 **Version 5.1.4**
 
 - Remove vendor name from plugin definition
