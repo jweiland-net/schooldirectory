@@ -20,11 +20,11 @@ call_user_func(static function () {
         'Schooldirectory',
         'Search',
         [
-            \JWeiland\Schooldirectory\Domain\Model\District::class => 'search, list'
+            \JWeiland\Schooldirectory\Controller\DistrictController::class => 'search, list'
         ],
         // non-cacheable actions
         [
-            \JWeiland\Schooldirectory\Domain\Model\District::class => 'list'
+            \JWeiland\Schooldirectory\Controller\DistrictController::class => 'list'
         ]
     );
 
