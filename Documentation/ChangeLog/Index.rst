@@ -7,6 +7,10 @@
 ChangeLog
 =========
 
+**Version 5.1.6**
+
+- Use correct controller for district
+
 **Version 5.1.5**
 
 - Remove vendor name from district plugin
