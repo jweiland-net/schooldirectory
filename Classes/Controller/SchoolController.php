@@ -13,12 +13,14 @@ namespace JWeiland\Schooldirectory\Controller;
 
 use JWeiland\Schooldirectory\Domain\Model\School;
 use JWeiland\Schooldirectory\Domain\Repository\SchoolRepository;
+use JWeiland\Schooldirectory\Event\PostProcessFluidVariablesEvent;
 use TYPO3\CMS\Core\Page\PageRenderer;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
  * Main controller to list and show school records.
  */
-class SchoolController extends AbstractController
+class SchoolController extends ActionController
 {
     /**
      * @var SchoolRepository
@@ -41,8 +43,6 @@ class SchoolController extends AbstractController
     }
 
     /**
-     * Action list
-     *
      * @param string $letter Show only records starting with this letter
      * @TYPO3\CMS\Extbase\Annotation\Validate("StringLength", param="letter", options={"minimum": 0, "maximum": 3})
      */
@@ -56,31 +56,18 @@ class SchoolController extends AbstractController
 
         $this->postProcessAndAssignFluidVariables([
             'schools' => $schools,
-            'letter' => $letter
+            'letter' => $letter,
         ]);
     }
 
-    /**
-     * Action show
-     *
-     * @param School $school
-     * @param string $letter
-     */
     public function showAction(School $school, string $letter = ''): void
     {
         $this->postProcessAndAssignFluidVariables([
             'school' => $school,
-            'letter' => $letter
+            'letter' => $letter,
         ]);
     }
 
-    /**
-     * Action search
-     *
-     * @param int $type
-     * @param int $careForm
-     * @param int $profile
-     */
     public function searchAction(int $type = 0, int $careForm = 0, int $profile = 0): void
     {
         $schools = $this->schoolRepository->searchSchools($type, $careForm, $profile);
@@ -90,5 +77,19 @@ class SchoolController extends AbstractController
             'careForm' => $careForm,
             'profile' => $profile,
         ]);
+    }
+
+    protected function postProcessAndAssignFluidVariables(array $variables = []): void
+    {
+        /** @var PostProcessFluidVariablesEvent $event */
+        $event = $this->eventDispatcher->dispatch(
+            new PostProcessFluidVariablesEvent(
+                $this->request,
+                $this->settings,
+                $variables
+            )
+        );
+
+        $this->view->assignMultiple($event->getFluidVariables());
     }
 }

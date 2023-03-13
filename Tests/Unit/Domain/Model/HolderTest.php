@@ -25,12 +25,12 @@ class HolderTest extends UnitTestCase
      */
     protected $subject;
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         $this->subject = new Holder();
     }
 
-    public function tearDown(): void
+    protected function tearDown(): void
     {
         unset($this->subject);
     }

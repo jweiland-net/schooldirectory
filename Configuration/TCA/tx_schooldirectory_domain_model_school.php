@@ -16,13 +16,10 @@ return [
         'enablecolumns' => [
             'disabled' => 'hidden',
             'starttime' => 'starttime',
-            'endtime' => 'endtime'
+            'endtime' => 'endtime',
         ],
         'searchFields' => 'title,leader,street,zip,city,telephone,telephone_alternative,email,email_alternative,website,profile_title,notes,additional_informations',
-        'iconfile' => 'EXT:schooldirectory/Resources/Public/Icons/tx_schooldirectory_domain_model_school.svg'
-    ],
-    'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, title, path_segment, leader, street, house_number, zip, city, district, telephone, telephone_alternative, fax, email, email_alternative, website, logo, images, amount_of_students, profile_title, school_way_plan, notes, additional_informations, holder, types, profile_contents, care_forms, school_district, facebook, twitter, instagram'
+        'iconfile' => 'EXT:schooldirectory/Resources/Public/Icons/tx_schooldirectory_domain_model_school.svg',
     ],
     'types' => [
         '1' => [
@@ -34,8 +31,8 @@ return [
             profile_contents, care_forms, school_district,
             --div--;LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:tabs.social, facebook, twitter, instagram,
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access, 
-            --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access'
-        ]
+            --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access',
+        ],
     ],
     'palettes' => [
         'languageHidden' => ['showitem' => 'sys_language_uid, l10n_parent, hidden'],
@@ -45,7 +42,7 @@ return [
         'email' => ['showitem' => 'email, email_alternative'],
         'access' => [
             'showitem' => 'starttime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel,endtime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel',
-        ]
+        ],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -59,11 +56,11 @@ return [
                     [
                         'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
                         -1,
-                        'flags-multiple'
+                        'flags-multiple',
                     ],
                 ],
                 'default' => 0,
-            ]
+            ],
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
@@ -82,45 +79,45 @@ return [
                     ],
                 ],
                 'default' => 0,
-            ]
+            ],
         ],
         'l10n_diffsource' => [
             'config' => [
                 'type' => 'passthrough',
-                'default' => ''
-            ]
+                'default' => '',
+            ],
         ],
         'hidden' => [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
             'config' => [
                 'type' => 'check',
-                'default' => 0
-            ]
+                'default' => 0,
+            ],
         ],
         'cruser_id' => [
             'label' => 'cruser_id',
             'config' => [
-                'type' => 'passthrough'
-            ]
+                'type' => 'passthrough',
+            ],
         ],
         'pid' => [
             'label' => 'pid',
             'config' => [
-                'type' => 'passthrough'
-            ]
+                'type' => 'passthrough',
+            ],
         ],
         'crdate' => [
             'label' => 'crdate',
             'config' => [
                 'type' => 'passthrough',
-            ]
+            ],
         ],
         'tstamp' => [
             'label' => 'tstamp',
             'config' => [
                 'type' => 'passthrough',
-            ]
+            ],
         ],
         'starttime' => [
             'exclude' => true,
@@ -134,7 +131,7 @@ return [
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
                 ],
-            ]
+            ],
         ],
         'endtime' => [
             'exclude' => true,
@@ -148,7 +145,7 @@ return [
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
                 ],
-            ]
+            ],
         ],
         'title' => [
             'exclude' => true,
@@ -156,8 +153,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'path_segment' => [
             'exclude' => true,
@@ -171,13 +168,13 @@ return [
                     // As pageSlug may contain slashes, we have to remove page slug
                     'prefixParentPageSlug' => false,
                     'replacements' => [
-                        '/' => '-'
+                        '/' => '-',
                     ],
                 ],
                 'fallbackCharacter' => '-',
                 'eval' => 'unique',
-                'default' => ''
-            ]
+                'default' => '',
+            ],
         ],
         'leader' => [
             'exclude' => true,
@@ -185,8 +182,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'street' => [
             'exclude' => true,
@@ -194,8 +191,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'house_number' => [
             'exclude' => true,
@@ -203,8 +200,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'zip' => [
             'exclude' => true,
@@ -212,8 +209,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'city' => [
             'exclude' => true,
@@ -221,8 +218,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'district' => [
             'exclude' => true,
@@ -233,11 +230,11 @@ return [
                 'foreign_table' => 'tx_schooldirectory_domain_model_district',
                 'foreign_table_where' => 'ORDER BY tx_schooldirectory_domain_model_district.district',
                 'items' => [
-                    ['', '']
+                    ['', ''],
                 ],
                 'minitems' => 0,
-                'maxitems' => 1
-            ]
+                'maxitems' => 1,
+            ],
         ],
         'telephone' => [
             'exclude' => true,
@@ -245,8 +242,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'telephone_alternative' => [
             'exclude' => true,
@@ -254,8 +251,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'fax' => [
             'exclude' => true,
@@ -263,8 +260,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'email' => [
             'exclude' => true,
@@ -272,8 +269,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'email_alternative' => [
             'exclude' => true,
@@ -281,8 +278,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'website' => [
             'exclude' => true,
@@ -293,7 +290,7 @@ return [
                 'size' => 50,
                 'max' => 1024,
                 'eval' => 'trim',
-            ]
+            ],
         ],
         'logo' => [
             'exclude' => true,
@@ -302,9 +299,9 @@ return [
                 'logo',
                 [
                     'minitems' => 0,
-                    'maxitems' => 1
+                    'maxitems' => 1,
                 ]
-            )
+            ),
         ],
         'images' => [
             'exclude' => true,
@@ -313,9 +310,9 @@ return [
                 'images',
                 [
                     'minitems' => 0,
-                    'maxitems' => 5
+                    'maxitems' => 5,
                 ]
-            )
+            ),
         ],
         'amount_of_students' => [
             'exclude' => true,
@@ -323,8 +320,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'profile_title' => [
             'exclude' => true,
@@ -332,8 +329,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'school_way_plan' => [
             'exclude' => true,
@@ -344,7 +341,7 @@ return [
                 'size' => 50,
                 'max' => 1024,
                 'eval' => 'trim',
-            ]
+            ],
         ],
         'notes' => [
             'exclude' => true,
@@ -376,8 +373,8 @@ return [
                 'renderType' => 'selectSingle',
                 'foreign_table' => 'tx_schooldirectory_domain_model_holder',
                 'minitems' => 0,
-                'maxitems' => 1
-            ]
+                'maxitems' => 1,
+            ],
         ],
         'types' => [
             'exclude' => true,
@@ -391,7 +388,7 @@ return [
                 'autoSizeMax' => 30,
                 'maxitems' => 9999,
                 'multiple' => 0,
-            ]
+            ],
         ],
         'profile_contents' => [
             'exclude' => true,
@@ -405,7 +402,7 @@ return [
                 'autoSizeMax' => 30,
                 'maxitems' => 9999,
                 'multiple' => 0,
-            ]
+            ],
         ],
         'care_forms' => [
             'exclude' => true,
@@ -419,7 +416,7 @@ return [
                 'autoSizeMax' => 30,
                 'maxitems' => 9999,
                 'multiple' => 0,
-            ]
+            ],
         ],
         'school_district' => [
             'exclude' => true,
@@ -434,9 +431,9 @@ return [
                     'levelLinksPosition' => 'top',
                     'showSynchronizationLink' => 1,
                     'showPossibleLocalizationRecords' => 1,
-                    'showAllLocalizationLink' => 1
-                ]
-            ]
+                    'showAllLocalizationLink' => 1,
+                ],
+            ],
         ],
         'facebook' => [
             'exclude' => true,
@@ -444,8 +441,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'twitter' => [
             'exclude' => true,
@@ -453,8 +450,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'instagram' => [
             'exclude' => true,
@@ -462,8 +459,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
-            ]
-        ]
-    ]
+                'eval' => 'trim',
+            ],
+        ],
+    ],
 ];

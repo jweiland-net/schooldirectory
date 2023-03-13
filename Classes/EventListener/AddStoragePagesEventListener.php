@@ -24,8 +24,8 @@ class AddStoragePagesEventListener extends AbstractControllerEventListener
     protected $allowedControllerActions = [
         'School' => [
             'list',
-            'search'
-        ]
+            'search',
+        ],
     ];
 
     public function __construct(SchoolRepository $schoolRepository)

@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace JWeiland\Schooldirectory\Domain\Repository;
 
+use JWeiland\Schooldirectory\Domain\Repository\Traits\QueryBuilderTrait;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
@@ -26,11 +27,13 @@ use TYPO3\CMS\Extbase\Persistence\Repository;
  */
 class SchoolRepository extends Repository
 {
+    use QueryBuilderTrait;
+
     /**
      * @var array
      */
     protected $defaultOrderings = [
-        'title' => QueryInterface::ORDER_ASCENDING
+        'title' => QueryInterface::ORDER_ASCENDING,
     ];
 
     public function getStoragePages(): array
@@ -40,15 +43,12 @@ class SchoolRepository extends Repository
 
     /**
      * Find all records starting with given letter
-     *
-     * @param string $letter
-     * @return QueryResultInterface
      */
     public function findByStartingLetter(string $letter): QueryResultInterface
     {
         $query = $this->createQuery();
         $constraint = [];
-        if ($letter == '0-9') {
+        if ($letter === '0-9') {
             $constraint[] = $query->like('title', '0%');
             $constraint[] = $query->like('title', '1%');
             $constraint[] = $query->like('title', '2%');
@@ -68,11 +68,6 @@ class SchoolRepository extends Repository
 
     /**
      * Search for school records
-     *
-     * @param int $type
-     * @param int $careForm
-     * @param int $profile
-     * @return QueryResultInterface
      */
     public function searchSchools(int $type = 0, int $careForm = 0, int $profile = 0): QueryResultInterface
     {
@@ -99,12 +94,7 @@ class SchoolRepository extends Repository
     }
 
     /**
-     * search for school records by school type
-     *
-     * @param string $street
-     * @param int $number
-     * @param string $letter
-     * @return QueryResultInterface
+     * Search for school records by school type
      */
     public function searchSchoolsByStreet(string $street, int $number, string $letter): QueryResultInterface
     {
@@ -170,10 +160,5 @@ class SchoolRepository extends Repository
             );
 
         return $queryBuilder;
-    }
-
-    protected function getConnectionPool(): ConnectionPool
-    {
-        return GeneralUtility::makeInstance(ConnectionPool::class);
     }
 }

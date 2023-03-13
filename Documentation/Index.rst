@@ -1,63 +1,58 @@
-.. include:: Includes.txt
+..  include:: /Includes.rst.txt
 
 
-.. Every manual should have a start label for cross-referencing to
-.. start page. Do not remove this!
+===============
+Schooldirectory
+===============
 
-.. _start:
+:Extension key:
+    schooldirectory
 
-=============================================================
-schooldirectory
-=============================================================
+:Package name:
+    jweiland/schooldirectory
 
-.. only:: html
+:Version:
+    |release|
 
-   :Classification:
-      schooldirectory
+:Language:
+    en
 
-   :Version:
-      |release|
+:Author:
+    Stefan Froemken
 
-   :Language:
-      en
+:License:
+    This document is published under the
+    `Creative Commons BY 4.0 <https://creativecommons.org/licenses/by/4.0/>`__
+    license.
 
-   :Description:
-      Manual covering TYPO3 extension schooldirectory
+:Rendered:
+    |today|
 
-   :Keywords:
-      school, schooldirectory
+----
 
-   :Copyright:
-      2013-2020
+Manual covering TYPO3 extension schooldirectory
 
-   :Author:
-      Stefan Froemken
+----
 
-   :Email:
-      projects@jweiland.net
+**Table of Contents**
 
-   :License:
-      This document is published under the Open Publication License
-      available from http://www.opencontent.org/openpub/
+..  toctree::
+    :maxdepth: 2
+    :titlesonly:
 
-   :Rendered:
-      |today|
+    Introduction/Index
+    User/Index
+    Installation/Index
+    Configuration/Index
+    Administrator/Index
+    KnownProblems/Index
+    ChangeLog/Index
+    Links
 
-   The content of this document is related to TYPO3,
-   a GNU/GPL CMS/Framework available from `www.typo3.org <https://typo3.org/>`__.
+..  Meta Menu
 
+..  toctree::
+    :hidden:
 
-   **Table of Contents**
-
-.. toctree::
-   :maxdepth: 3
-
-
-   Introduction/Index
-   User/Index
-   Installation/Index
-   Configuration/Index
-   AdministratorManual/Index
-   KnownProblems/Index
-   ChangeLog/Index
-   Links
+    Sitemap
+    genindex

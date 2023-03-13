@@ -34,7 +34,7 @@ class Street extends AbstractEntity
     protected $numberTo = '';
 
     /**
-     * @var \JWeiland\Schooldirectory\Domain\Model\District
+     * @var District
      */
     protected $district;
 

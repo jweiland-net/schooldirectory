@@ -1,14 +1,13 @@
-.. include:: ../Includes.txt
+..  include:: /Includes.rst.txt
 
 
-.. _introduction:
+..  _introduction:
 
 ============
 Introduction
 ============
 
-
-.. _what-it-does:
+..  _what-it-does:
 
 What does it do?
 ================
@@ -19,6 +18,6 @@ schools for a city.
 Features
 --------
 
-* Create school records
-* Assign schools to addresses. Which school is responsible for which address?
-* Differ school records by their type
+*   Create school records
+*   Assign schools to addresses. Which school is responsible for which address?
+*   Differ school records by their type

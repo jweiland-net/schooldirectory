@@ -35,17 +35,17 @@ class SchoolTest extends FunctionalTestCase
     protected $testExtensionsToLoad = [
         'typo3conf/ext/schooldirectory',
         'typo3conf/ext/glossary2',
-        'typo3conf/ext/maps2'
+        'typo3conf/ext/maps2',
     ];
 
-    public function setUp(): void
+    protected function setUp(): void
     {
         parent::setUp();
 
         $this->subject = new School();
     }
 
-    public function tearDown(): void
+    protected function tearDown(): void
     {
         unset(
             $this->subject
