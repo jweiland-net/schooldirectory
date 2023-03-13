@@ -9,6 +9,14 @@ Upgrade
 
 If you update EXT:schooldirectory to a newer version, please read this section carefully!
 
+Update to Version 6.0.0
+=======================
+
+We have added TYPO3 11 compatibility.
+
+We have moved Schooldirectory.js from TypoScript to f:asset VH.
+Please update your own partials to load that file with f:asset.
+
 Update to Version 5.0.0
 =======================
 
