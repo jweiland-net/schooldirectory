@@ -13,6 +13,7 @@ namespace JWeiland\Schooldirectory\Controller;
 
 use JWeiland\Schooldirectory\Domain\Repository\SchoolRepository;
 use JWeiland\Schooldirectory\Event\PostProcessFluidVariablesEvent;
+use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
@@ -40,9 +41,9 @@ class DistrictController extends ActionController
     /**
      * This action shows the search results in list form
      *
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty", param="street")
-     * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty", param="number")
-     * @TYPO3\CMS\Extbase\Annotation\Validate("Integer", param="number")
+     * @Extbase\Validate("NotEmpty", param="street")
+     * @Extbase\Validate("NotEmpty", param="number")
+     * @Extbase\Validate("Integer", param="number")
      */
     public function listAction(string $street, int $number, string $letter = ''): void
     {
