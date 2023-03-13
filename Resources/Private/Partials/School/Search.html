@@ -2,6 +2,8 @@
       xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
       data-namespace-typo3-fluid="true">
 
+<f:asset.script identifier="schoolDirectory" src="EXT:schooldirectory/Resources/Public/JavaScript/Schooldirectory.js"/>
+
 <div class="schoolDirectoryData"
      data-type="{type}"
      data-careForm="{careForm}"
@@ -9,8 +11,9 @@
      data-storagePages="{storagePages}"></div>
 
 <form name="search"
-      action="/index.php?id={pidOfSearchPage}&no_cache=1&tx_schooldirectory_list[action]=search&tx_schooldirectory_list[controller]=School"
+      action="/index.php?id={settings.pidOfSearchPage}&no_cache=1&tx_schooldirectory_list[action]=search&tx_schooldirectory_list[controller]=School"
       method="post">
+
     <dl class="schoolDirectoryType">
         <dt>
             <f:translate key="tx_schooldirectory_domain_model_type"/>
