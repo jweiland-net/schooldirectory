@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace JWeiland\Schooldirectory\Domain\Model;
 
+use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
@@ -25,14 +26,22 @@ class SchoolDistrict extends AbstractEntity
     protected $title = '';
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Schooldirectory\Domain\Model\Street>
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @var ObjectStorage<Street>
+     * @Extbase\ORM\Lazy
      */
     protected $streets;
 
     public function __construct()
     {
         $this->streets = new ObjectStorage();
+    }
+
+    /**
+     * Called again with initialize object, as fetching an entity from the DB does not use the constructor
+     */
+    public function initializeObject(): void
+    {
+        $this->streets = $this->streets ?? new ObjectStorage();
     }
 
     public function getTitle(): string

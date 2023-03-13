@@ -96,7 +96,7 @@ class AjaxRequestMiddleware implements MiddlewareInterface
 
             return new JsonResponse([
                 'success' => true,
-                'data' => $data
+                'data' => $data,
             ]);
         }
 
@@ -122,7 +122,7 @@ class AjaxRequestMiddleware implements MiddlewareInterface
     protected function getTypeRecords(array $storagePages): array
     {
         return $this->overlayRecords(
-            $this->typeRepository->findAll($storagePages),
+            $this->typeRepository->findAllByStoragePages($storagePages),
             'tx_schooldirectory_domain_model_type'
         );
     }

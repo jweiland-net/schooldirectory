@@ -5,7 +5,7 @@
 <f:layout name="Default" />
 
 <f:section name="main">
-	<f:if condition="{amountOfSchools}">
+	<f:if condition="{schools}">
 		<f:then>
 			<f:render partial="School/List" arguments="{schools: schools, letter: letter}" />
 		</f:then>

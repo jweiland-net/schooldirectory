@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace JWeiland\Schooldirectory\Domain\Model;
 
 use JWeiland\Maps2\Domain\Model\PoiCollection;
+use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
@@ -82,12 +83,14 @@ class School extends AbstractEntity
     protected $website = '';
 
     /**
-     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     * @var FileReference
      */
     protected $logo;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\TYPO3\CMS\Extbase\Domain\Model\FileReference>
+     * @var ObjectStorage<FileReference>
+     *
+     * @Extbase\ORM\Lazy
      */
     protected $images;
 
@@ -132,40 +135,43 @@ class School extends AbstractEntity
     protected $instagram = '';
 
     /**
-     * @var \JWeiland\Maps2\Domain\Model\PoiCollection
+     * @var PoiCollection
      */
     protected $txMaps2Uid;
 
     /**
-     * @var \JWeiland\Schooldirectory\Domain\Model\Holder
+     * @var Holder
      */
     protected $holder;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Schooldirectory\Domain\Model\Type>
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @var ObjectStorage<Type>
+     *
+     * @Extbase\ORM\Lazy
      */
     protected $types;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Schooldirectory\Domain\Model\ProfileContent>
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @var ObjectStorage<ProfileContent>
+     *
+     * @Extbase\ORM\Lazy
      */
     protected $profileContents;
 
     /**
-     * @var \TYPO3\CMS\Extbase\Persistence\ObjectStorage<\JWeiland\Schooldirectory\Domain\Model\CareForm>
-     * @TYPO3\CMS\Extbase\Annotation\ORM\Lazy
+     * @var ObjectStorage<CareForm>
+     *
+     * @Extbase\ORM\Lazy
      */
     protected $careForms;
 
     /**
-     * @var \JWeiland\Schooldirectory\Domain\Model\SchoolDistrict
+     * @var SchoolDistrict
      */
     protected $schoolDistrict;
 
     /**
-     * @var \JWeiland\Schooldirectory\Domain\Model\District
+     * @var District
      */
     protected $district;
 
@@ -175,6 +181,17 @@ class School extends AbstractEntity
         $this->types = new ObjectStorage();
         $this->profileContents = new ObjectStorage();
         $this->careForms = new ObjectStorage();
+    }
+
+    /**
+     * Called again with initialize object, as fetching an entity from the DB does not use the constructor
+     */
+    public function initializeObject(): void
+    {
+        $this->images = $this->images ?? new ObjectStorage();
+        $this->types = $this->types ?? new ObjectStorage();
+        $this->profileContents = $this->profileContents ?? new ObjectStorage();
+        $this->careForms = $this->careForms ?? new ObjectStorage();
     }
 
     public function getTitle(): string

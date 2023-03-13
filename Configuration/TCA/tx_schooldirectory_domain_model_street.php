@@ -16,21 +16,18 @@ return [
         'enablecolumns' => [
             'disabled' => 'hidden',
             'starttime' => 'starttime',
-            'endtime' => 'endtime'
+            'endtime' => 'endtime',
         ],
         'searchFields' => 'street',
-        'iconfile' => 'EXT:schooldirectory/Resources/Public/Icons/tx_schooldirectory_domain_model_street.svg'
-    ],
-    'interface' => [
-        'showRecordFieldList' => 'sys_language_uid, l10n_parent, l10n_diffsource, hidden, street, number_from, letter_from, number_to, letter_to, district'
+        'iconfile' => 'EXT:schooldirectory/Resources/Public/Icons/tx_schooldirectory_domain_model_street.svg',
     ],
     'types' => [
         '1' => [
             'showitem' => '--palette--;;languageHidden, --palette--;;streetDistrict,
             --palette--;;numberFromTo, --palette--;;letterFromTo, 
             --div--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.tabs.access, 
-            --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access'
-        ]
+            --palette--;LLL:EXT:frontend/Resources/Private/Language/locallang_tca.xlf:pages.palettes.access;access',
+        ],
     ],
     'palettes' => [
         'languageHidden' => ['showitem' => 'sys_language_uid, l10n_parent, hidden'],
@@ -39,7 +36,7 @@ return [
         'letterFromTo' => ['showitem' => 'letter_from, letter_to'],
         'access' => [
             'showitem' => 'starttime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:starttime_formlabel,endtime;LLL:EXT:frontend/Resources/Private/Language/locallang_ttc.xlf:endtime_formlabel',
-        ]
+        ],
     ],
     'columns' => [
         'sys_language_uid' => [
@@ -53,11 +50,11 @@ return [
                     [
                         'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.allLanguages',
                         -1,
-                        'flags-multiple'
+                        'flags-multiple',
                     ],
                 ],
                 'default' => 0,
-            ]
+            ],
         ],
         'l10n_parent' => [
             'displayCond' => 'FIELD:sys_language_uid:>:0',
@@ -76,45 +73,45 @@ return [
                     ],
                 ],
                 'default' => 0,
-            ]
+            ],
         ],
         'l10n_diffsource' => [
             'config' => [
                 'type' => 'passthrough',
-                'default' => ''
-            ]
+                'default' => '',
+            ],
         ],
         'hidden' => [
             'exclude' => true,
             'label' => 'LLL:EXT:core/Resources/Private/Language/locallang_general.xlf:LGL.hidden',
             'config' => [
                 'type' => 'check',
-                'default' => 0
-            ]
+                'default' => 0,
+            ],
         ],
         'cruser_id' => [
             'label' => 'cruser_id',
             'config' => [
-                'type' => 'passthrough'
-            ]
+                'type' => 'passthrough',
+            ],
         ],
         'pid' => [
             'label' => 'pid',
             'config' => [
-                'type' => 'passthrough'
-            ]
+                'type' => 'passthrough',
+            ],
         ],
         'crdate' => [
             'label' => 'crdate',
             'config' => [
                 'type' => 'passthrough',
-            ]
+            ],
         ],
         'tstamp' => [
             'label' => 'tstamp',
             'config' => [
                 'type' => 'passthrough',
-            ]
+            ],
         ],
         'starttime' => [
             'exclude' => true,
@@ -128,7 +125,7 @@ return [
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
                 ],
-            ]
+            ],
         ],
         'endtime' => [
             'exclude' => true,
@@ -142,7 +139,7 @@ return [
                 'behaviour' => [
                     'allowLanguageSynchronization' => true,
                 ],
-            ]
+            ],
         ],
         'street' => [
             'exclude' => true,
@@ -150,8 +147,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 30,
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'number_from' => [
             'exclude' => true,
@@ -159,8 +156,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 7,
-                'eval' => 'int'
-            ]
+                'eval' => 'int',
+            ],
         ],
         'letter_from' => [
             'exclude' => true,
@@ -168,8 +165,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 7,
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'number_to' => [
             'exclude' => true,
@@ -177,8 +174,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 7,
-                'eval' => 'int'
-            ]
+                'eval' => 'int',
+            ],
         ],
         'letter_to' => [
             'exclude' => true,
@@ -186,8 +183,8 @@ return [
             'config' => [
                 'type' => 'input',
                 'size' => 7,
-                'eval' => 'trim'
-            ]
+                'eval' => 'trim',
+            ],
         ],
         'district' => [
             'exclude' => true,
@@ -197,8 +194,8 @@ return [
                 'renderType' => 'selectSingle',
                 'foreign_table' => 'tx_schooldirectory_domain_model_schooldistrict',
                 'minitems' => 0,
-                'maxitems' => 1
-            ]
-        ]
-    ]
+                'maxitems' => 1,
+            ],
+        ],
+    ],
 ];

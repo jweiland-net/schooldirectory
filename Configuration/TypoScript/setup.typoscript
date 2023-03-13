@@ -37,7 +37,7 @@ plugin.tx_schooldirectory {
       }
     }
 
-    list {
+    show {
       image {
         width = 240c
         height = 180c

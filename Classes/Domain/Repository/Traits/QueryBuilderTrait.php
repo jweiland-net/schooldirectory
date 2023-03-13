@@ -9,7 +9,7 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace JWeiland\Schooldirectory\Domain\Repository;
+namespace JWeiland\Schooldirectory\Domain\Repository\Traits;
 
 use JWeiland\Schooldirectory\Helper\OverlayHelper;
 use TYPO3\CMS\Core\Database\Connection;
@@ -19,16 +19,16 @@ use TYPO3\CMS\Core\Database\Query\Restriction\FrontendRestrictionContainer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
 
 /**
- * Abstract Repository which contains useful methods for all Repositories
+ * Trait to create QueryBuilder object which is pre-configured for overlay
  */
-abstract class AbstractRepository
+trait QueryBuilderTrait
 {
     /**
      * @var OverlayHelper
      */
     protected $overlayHelper;
 
-    public function __construct(OverlayHelper $overlayHelper)
+    public function injectOverlayHelper(OverlayHelper $overlayHelper): void
     {
         $this->overlayHelper = $overlayHelper;
     }

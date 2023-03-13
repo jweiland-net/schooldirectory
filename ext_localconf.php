@@ -20,11 +20,11 @@ call_user_func(static function () {
         'Schooldirectory',
         'Search',
         [
-            \JWeiland\Schooldirectory\Controller\DistrictController::class => 'search, list'
+            \JWeiland\Schooldirectory\Controller\DistrictController::class => 'search, list',
         ],
         // non-cacheable actions
         [
-            \JWeiland\Schooldirectory\Controller\DistrictController::class => 'list'
+            \JWeiland\Schooldirectory\Controller\DistrictController::class => 'list',
         ]
     );
 
@@ -37,7 +37,7 @@ call_user_func(static function () {
 
     // Add schooldirectory plugin to new element wizard
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
-        '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:schooldirectory/Configuration/TSconfig/ContentElementWizard.txt">'
+        '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:schooldirectory/Configuration/TSconfig/ContentElementWizard.tsconfig">'
     );
 
     $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['schoolUpdateSlug']

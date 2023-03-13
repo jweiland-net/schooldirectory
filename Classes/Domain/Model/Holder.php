@@ -25,7 +25,7 @@ class Holder extends AbstractEntity
     protected $title = '';
 
     /**
-     * @var \TYPO3\CMS\Extbase\Domain\Model\FileReference
+     * @var FileReference
      */
     protected $logo;
 

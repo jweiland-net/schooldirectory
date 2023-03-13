@@ -30,8 +30,8 @@ class AddGlossaryEventListener extends AbstractControllerEventListener
 
     protected $allowedControllerActions = [
         'School' => [
-            'list'
-        ]
+            'list',
+        ],
     ];
 
     public function __construct(GlossaryService $glossaryService, SchoolRepository $schoolRepository)
@@ -60,7 +60,7 @@ class AddGlossaryEventListener extends AbstractControllerEventListener
             'pluginName' => 'list',
             'controllerName' => 'School',
             'column' => 'title',
-            'settings' => $event->getSettings()
+            'settings' => $event->getSettings(),
         ];
 
         if (

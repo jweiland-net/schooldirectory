@@ -19,14 +19,14 @@ if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('maps2')) {
             'defaultCountry' => 'Deutschland',
             'defaultStoragePid' => [
                 'extKey' => 'schooldirectory',
-                'property' => 'poiCollectionPid'
+                'property' => 'poiCollectionPid',
             ],
             'synchronizeColumns' => [
                 [
                     'foreignColumnName' => 'title',
-                    'poiCollectionColumnName' => 'title'
-                ]
-            ]
-        ]
+                    'poiCollectionColumnName' => 'title',
+                ],
+            ],
+        ],
     );
 }

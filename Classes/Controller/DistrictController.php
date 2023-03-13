@@ -12,11 +12,13 @@ declare(strict_types=1);
 namespace JWeiland\Schooldirectory\Controller;
 
 use JWeiland\Schooldirectory\Domain\Repository\SchoolRepository;
+use JWeiland\Schooldirectory\Event\PostProcessFluidVariablesEvent;
+use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
  * Controller to search and list districts
  */
-class DistrictController extends AbstractController
+class DistrictController extends ActionController
 {
     /**
      * @var SchoolRepository
@@ -38,9 +40,6 @@ class DistrictController extends AbstractController
     /**
      * This action shows the search results in list form
      *
-     * @param string $street
-     * @param int $number
-     * @param string $letter
      * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty", param="street")
      * @TYPO3\CMS\Extbase\Annotation\Validate("NotEmpty", param="number")
      * @TYPO3\CMS\Extbase\Annotation\Validate("Integer", param="number")
@@ -49,15 +48,22 @@ class DistrictController extends AbstractController
     {
         $schools = $this->schoolRepository->searchSchoolsByStreet($street, $number, $letter);
 
-        // I know, it's nasty, but as long as we have SQL Statements in Repository, we can't change that
-        $amountOfSchools = 0;
-        foreach ($schools as $school) {
-            $amountOfSchools++;
-        }
-
         $this->postProcessAndAssignFluidVariables([
             'schools' => $schools,
-            'amountOfSchools' => $amountOfSchools
         ]);
+    }
+
+    protected function postProcessAndAssignFluidVariables(array $variables = []): void
+    {
+        /** @var PostProcessFluidVariablesEvent $event */
+        $event = $this->eventDispatcher->dispatch(
+            new PostProcessFluidVariablesEvent(
+                $this->request,
+                $this->settings,
+                $variables
+            )
+        );
+
+        $this->view->assignMultiple($event->getFluidVariables());
     }
 }
