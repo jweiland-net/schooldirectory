@@ -1,7 +1,3 @@
-page.includeJSFooter {
-  schooldirectory = EXT:schooldirectory/Resources/Public/JavaScript/Schooldirectory.js
-}
-
 plugin.tx_schooldirectory {
   view {
     templateRootPaths {

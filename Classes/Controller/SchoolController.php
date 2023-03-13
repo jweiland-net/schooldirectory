@@ -15,6 +15,7 @@ use JWeiland\Schooldirectory\Domain\Model\School;
 use JWeiland\Schooldirectory\Domain\Repository\SchoolRepository;
 use JWeiland\Schooldirectory\Event\PostProcessFluidVariablesEvent;
 use TYPO3\CMS\Core\Page\PageRenderer;
+use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
@@ -44,7 +45,7 @@ class SchoolController extends ActionController
 
     /**
      * @param string $letter Show only records starting with this letter
-     * @TYPO3\CMS\Extbase\Annotation\Validate("StringLength", param="letter", options={"minimum": 0, "maximum": 3})
+     * @Extbase\Validate("StringLength", param="letter", options={"minimum": 0, "maximum": 3})
      */
     public function listAction(string $letter = ''): void
     {
