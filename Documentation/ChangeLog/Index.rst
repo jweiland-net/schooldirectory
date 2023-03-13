@@ -7,6 +7,11 @@
 ChangeLog
 =========
 
+Version 6.0.0
+=============
+
+*   Add TYPO3 11 compatibility
+
 Version 5.1.6
 =============
 
