@@ -14,8 +14,8 @@ namespace JWeiland\Schooldirectory\Controller;
 use JWeiland\Schooldirectory\Domain\Model\School;
 use JWeiland\Schooldirectory\Domain\Repository\SchoolRepository;
 use JWeiland\Schooldirectory\Event\PostProcessFluidVariablesEvent;
-use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Core\Page\PageRenderer;
+use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
 /**
