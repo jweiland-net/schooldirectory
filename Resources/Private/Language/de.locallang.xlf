@@ -3,245 +3,245 @@
   <file source-language="en" datatype="plaintext" original="messages" date="2013-04-13T09:09:13Z" product-name="schooldirectory" target-language="de">
     <header/>
     <body>
-      <trans-unit id="tx_schooldirectory_domain_model_school">
+      <trans-unit id="tx_schooldirectory_domain_model_school" approved="yes">
         <source>School</source>
-        <target state="needs-translation">School</target>
+        <target state="final">Schulen</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.title">
+      <trans-unit id="tx_schooldirectory_domain_model_school.title" approved="yes">
         <source>Title</source>
-        <target state="needs-translation">Title</target>
+        <target state="final">Titel</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.leader">
+      <trans-unit id="tx_schooldirectory_domain_model_school.leader" approved="yes">
         <source>Leader</source>
-        <target state="needs-translation">Leader</target>
+        <target state="final">Leitung</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.street">
+      <trans-unit id="tx_schooldirectory_domain_model_school.street" approved="yes">
         <source>Street</source>
-        <target state="needs-translation">Street</target>
+        <target state="final">Straße</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.house_number">
+      <trans-unit id="tx_schooldirectory_domain_model_school.house_number" approved="yes">
         <source>House number</source>
-        <target state="needs-translation">House number</target>
+        <target state="final">Hausnummer</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.zip">
+      <trans-unit id="tx_schooldirectory_domain_model_school.zip" approved="yes">
         <source>Zip</source>
-        <target state="needs-translation">Zip</target>
+        <target state="final">PLZ</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.city">
+      <trans-unit id="tx_schooldirectory_domain_model_school.city" approved="yes">
         <source>City</source>
-        <target state="needs-translation">City</target>
+        <target state="final">Ort</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.telephone">
+      <trans-unit id="tx_schooldirectory_domain_model_school.telephone" approved="yes">
         <source>Telephone</source>
-        <target state="needs-translation">Telephone</target>
+        <target state="final">Telefon 1</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.telephone_alternative">
+      <trans-unit id="tx_schooldirectory_domain_model_school.telephone_alternative" approved="yes">
         <source>Telephone alternative</source>
-        <target state="needs-translation">Telephone alternative</target>
+        <target state="final">Telefon 2</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.fax">
+      <trans-unit id="tx_schooldirectory_domain_model_school.fax" approved="yes">
         <source>Fax</source>
-        <target state="needs-translation">Fax</target>
+        <target state="final">Fax</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.email">
+      <trans-unit id="tx_schooldirectory_domain_model_school.email" approved="yes">
         <source>Email</source>
-        <target state="needs-translation">Email</target>
+        <target state="final">E-Mail Verwaltung</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.email_alternative">
+      <trans-unit id="tx_schooldirectory_domain_model_school.email_alternative" approved="yes">
         <source>Email alternative</source>
-        <target state="needs-translation">Email alternative</target>
+        <target state="final">E-Mail Schule</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.website">
+      <trans-unit id="tx_schooldirectory_domain_model_school.website" approved="yes">
         <source>Website</source>
-        <target state="needs-translation">Website</target>
+        <target state="final">Webseite</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.logo">
+      <trans-unit id="tx_schooldirectory_domain_model_school.logo" approved="yes">
         <source>Logo</source>
-        <target state="needs-translation">Logo</target>
+        <target state="final">Logo</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.images">
+      <trans-unit id="tx_schooldirectory_domain_model_school.images" approved="yes">
         <source>Images</source>
-        <target state="needs-translation">Images</target>
+        <target state="final">Bilder</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.amount_of_students">
+      <trans-unit id="tx_schooldirectory_domain_model_school.amount_of_students" approved="yes">
         <source>Amount of students</source>
-        <target state="needs-translation">Amount of students</target>
+        <target state="final">Schülerzahl</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.profile_title">
+      <trans-unit id="tx_schooldirectory_domain_model_school.profile_title" approved="yes">
         <source>Profile title</source>
-        <target state="needs-translation">Profile title</target>
+        <target state="final">Profil</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.school_way_plan">
+      <trans-unit id="tx_schooldirectory_domain_model_school.school_way_plan" approved="yes">
         <source>School way plan</source>
-        <target state="needs-translation">School way plan</target>
+        <target state="final">Schulwegeplan (PDF)</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.notes">
+      <trans-unit id="tx_schooldirectory_domain_model_school.notes" approved="yes">
         <source>Notes</source>
-        <target state="needs-translation">Notes</target>
+        <target state="final">Bemerkungen</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.additional_informations">
+      <trans-unit id="tx_schooldirectory_domain_model_school.additional_informations" approved="yes">
         <source>Additional Informations</source>
-        <target state="needs-translation">Additional Informations</target>
+        <target state="final">Zusätzliche Informationen</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.holder">
+      <trans-unit id="tx_schooldirectory_domain_model_school.holder" approved="yes">
         <source>Holder</source>
-        <target state="needs-translation">Holder</target>
+        <target state="final">Schulträger</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.types">
+      <trans-unit id="tx_schooldirectory_domain_model_school.types" approved="yes">
         <source>Types</source>
-        <target state="needs-translation">Types</target>
+        <target state="final">Schultyp</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.profile_contents">
+      <trans-unit id="tx_schooldirectory_domain_model_school.profile_contents" approved="yes">
         <source>Profile contents</source>
-        <target state="needs-translation">Profile contents</target>
+        <target state="final">Schulprofil Inhalt</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.care_forms">
+      <trans-unit id="tx_schooldirectory_domain_model_school.care_forms" approved="yes">
         <source>Care forms</source>
-        <target state="needs-translation">Care forms</target>
+        <target state="final">Betreuungsformen</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.school_district">
+      <trans-unit id="tx_schooldirectory_domain_model_school.school_district" approved="yes">
         <source>School District</source>
-        <target state="needs-translation">School District</target>
+        <target state="final">Schulbezirk</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_school.district">
+      <trans-unit id="tx_schooldirectory_domain_model_school.district" approved="yes">
         <source>District</source>
-        <target state="needs-translation">District</target>
+        <target state="final">Stadtteil</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_holder">
+      <trans-unit id="tx_schooldirectory_domain_model_holder" approved="yes">
         <source>School holder</source>
-        <target state="needs-translation">School holder</target>
+        <target state="final">Schulträger</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_holder.title">
+      <trans-unit id="tx_schooldirectory_domain_model_holder.title" approved="yes">
         <source>Title</source>
-        <target state="needs-translation">Title</target>
+        <target state="final">Name des Trägers</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_holder.logo">
+      <trans-unit id="tx_schooldirectory_domain_model_holder.logo" approved="yes">
         <source>Logo</source>
-        <target state="needs-translation">Logo</target>
+        <target state="final">Logo</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_holder.website">
+      <trans-unit id="tx_schooldirectory_domain_model_holder.website" approved="yes">
         <source>Website</source>
-        <target state="needs-translation">Website</target>
+        <target state="final">Webseite</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_type">
+      <trans-unit id="tx_schooldirectory_domain_model_type" approved="yes">
         <source>Type</source>
-        <target state="needs-translation">Type</target>
+        <target state="final">Schultyp</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_type.title">
+      <trans-unit id="tx_schooldirectory_domain_model_type.title" approved="yes">
         <source>Title</source>
-        <target state="needs-translation">Title</target>
+        <target state="final">Bezeichnung</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_type.description">
+      <trans-unit id="tx_schooldirectory_domain_model_type.description" approved="yes">
         <source>Description</source>
-        <target state="needs-translation">Description</target>
+        <target state="final">Beschreibung</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_profilecontent">
+      <trans-unit id="tx_schooldirectory_domain_model_profilecontent" approved="yes">
         <source>School profile content</source>
-        <target state="needs-translation">School profile content</target>
+        <target state="final">Schulprofil Inhalt</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_profilecontent.title">
+      <trans-unit id="tx_schooldirectory_domain_model_profilecontent.title" approved="yes">
         <source>Title</source>
-        <target state="needs-translation">Title</target>
+        <target state="final">Bezeichnung</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_profilecontent.description">
+      <trans-unit id="tx_schooldirectory_domain_model_profilecontent.description" approved="yes">
         <source>Description</source>
-        <target state="needs-translation">Description</target>
+        <target state="final">Beschreibung</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_careform">
+      <trans-unit id="tx_schooldirectory_domain_model_careform" approved="yes">
         <source>CareForm</source>
-        <target state="needs-translation">CareForm</target>
+        <target state="final">Betreuungsform</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_careform.title">
+      <trans-unit id="tx_schooldirectory_domain_model_careform.title" approved="yes">
         <source>Title</source>
-        <target state="needs-translation">Title</target>
+        <target state="final">Bezeichnung</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_careform.description">
+      <trans-unit id="tx_schooldirectory_domain_model_careform.description" approved="yes">
         <source>Description</source>
-        <target state="needs-translation">Description</target>
+        <target state="final">Beschreibung</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_schooldistrict">
+      <trans-unit id="tx_schooldirectory_domain_model_schooldistrict" approved="yes">
         <source>District</source>
-        <target state="needs-translation">District</target>
+        <target state="final">Schulbezirk (Schule)</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_schooldistrict.title">
+      <trans-unit id="tx_schooldirectory_domain_model_schooldistrict.title" approved="yes">
         <source>Title</source>
-        <target state="needs-translation">Title</target>
+        <target state="final">Bezeichnung</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_street">
+      <trans-unit id="tx_schooldirectory_domain_model_street" approved="yes">
         <source>Street</source>
-        <target state="needs-translation">Street</target>
+        <target state="final">Straßen</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_street.street">
+      <trans-unit id="tx_schooldirectory_domain_model_street.street" approved="yes">
         <source>Street</source>
-        <target state="needs-translation">Street</target>
+        <target state="final">Straße</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_street.number_from">
+      <trans-unit id="tx_schooldirectory_domain_model_street.number_from" approved="yes">
         <source>Number From</source>
-        <target state="needs-translation">Number From</target>
+        <target state="final">Hausnummer von</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_street.letter_from">
+      <trans-unit id="tx_schooldirectory_domain_model_street.letter_from" approved="yes">
         <source>Letter From</source>
-        <target state="needs-translation">Letter From</target>
+        <target state="final">Buchstabe von</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_street.number_to">
+      <trans-unit id="tx_schooldirectory_domain_model_street.number_to" approved="yes">
         <source>Number To</source>
-        <target state="needs-translation">Number To</target>
+        <target state="final">Hausnummer bis</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_street.letter_to">
+      <trans-unit id="tx_schooldirectory_domain_model_street.letter_to" approved="yes">
         <source>Letter To</source>
-        <target state="needs-translation">Letter To</target>
+        <target state="final">Buchstabe bis</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_street.district">
+      <trans-unit id="tx_schooldirectory_domain_model_street.district" approved="yes">
         <source>District</source>
-        <target state="needs-translation">District</target>
+        <target state="final">Schulbezirk</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_district">
+      <trans-unit id="tx_schooldirectory_domain_model_district" approved="yes">
         <source>District</source>
-        <target state="needs-translation">District</target>
+        <target state="final">Schulbezirk</target>
       </trans-unit>
-      <trans-unit id="tx_schooldirectory_domain_model_district.district">
+      <trans-unit id="tx_schooldirectory_domain_model_district.district" approved="yes">
         <source>Title</source>
-        <target state="needs-translation">Title</target>
+        <target state="final">Bezeichnung</target>
       </trans-unit>
-      <trans-unit id="search">
+      <trans-unit id="search" approved="yes">
         <source>Search</source>
-        <target state="needs-translation">Search</target>
+        <target state="final">Suche</target>
       </trans-unit>
-      <trans-unit id="noResults">
+      <trans-unit id="noResults" approved="yes">
         <source>No results found</source>
-        <target state="needs-translation">No results found</target>
+        <target state="final">Keine Ergebnisse gefunden</target>
       </trans-unit>
-      <trans-unit id="street">
+      <trans-unit id="street" approved="yes">
         <source>Street</source>
-        <target state="needs-translation">Street</target>
+        <target state="final">Straße</target>
       </trans-unit>
-      <trans-unit id="number">
+      <trans-unit id="number" approved="yes">
         <source>Number</source>
-        <target state="needs-translation">Number</target>
+        <target state="final">Hausnummer (ohne Zusatzbuchstabe)</target>
       </trans-unit>
-      <trans-unit id="letter">
+      <trans-unit id="letter" approved="yes">
         <source>Letter</source>
-        <target state="needs-translation">Letter</target>
+        <target state="final">ggf. Buchstabenzusatz zur Hausnummer</target>
       </trans-unit>
-      <trans-unit id="altTextMapImg">
+      <trans-unit id="altTextMapImg" approved="yes">
         <source>Map</source>
-        <target state="needs-translation">Map</target>
+        <target state="final">Karte</target>
       </trans-unit>
-      <trans-unit id="pageBrowser.first">
+      <trans-unit id="pageBrowser.first" approved="yes">
         <source>First</source>
-        <target state="needs-translation">First</target>
+        <target state="final">Erste</target>
       </trans-unit>
-      <trans-unit id="pageBrowser.previous">
+      <trans-unit id="pageBrowser.previous" approved="yes">
         <source>Previous</source>
-        <target state="needs-translation">Previous</target>
+        <target state="final">Vorherige</target>
       </trans-unit>
-      <trans-unit id="pageBrowser.next">
+      <trans-unit id="pageBrowser.next" approved="yes">
         <source>Next</source>
-        <target state="needs-translation">Next</target>
+        <target state="final">Nächste</target>
       </trans-unit>
-      <trans-unit id="pageBrowser.last">
+      <trans-unit id="pageBrowser.last" approved="yes">
         <source>Last</source>
-        <target state="needs-translation">Last</target>
+        <target state="final">Letzte</target>
       </trans-unit>
     </body>
   </file>
