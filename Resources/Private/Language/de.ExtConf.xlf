@@ -3,9 +3,9 @@
   <file source-language="en" datatype="plaintext" original="messages" date="2013-03-28T08:36:00Z" product-name="schooldirectory" target-language="de">
     <header/>
     <body>
-      <trans-unit id="poiCollectionPid" xml:space="preserve">
+      <trans-unit id="poiCollectionPid" xml:space="preserve" approved="yes">
 				<source>PID for POI collections: While creating school records we will try to generate a Point of Interest. Please define a page UID where these records should be created.</source>
-			<target state="needs-translation">PID for POI collections: While creating school records we will try to generate a Point of Interest. Please define a page UID where these records should be created.</target></trans-unit>
+			<target state="final">PID für POI-Sammlungen: Bei der Erstellung von Schul-Datensätzen versuchen wir einen Point of Interest zu generieren. Bitte definieren Sie eine Seiten-UID, auf der diese Datensätze erstellt werden sollen.</target></trans-unit>
     </body>
   </file>
 </xliff>
