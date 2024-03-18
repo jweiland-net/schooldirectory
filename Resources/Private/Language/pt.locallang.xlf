@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2013-04-13T09:09:13Z" product-name="schooldirectory" target-language="pt-PT">
+    <header/>
+    <body>
+      <trans-unit id="tx_schooldirectory_domain_model_school">
+        <source>School</source>
+        <target state="needs-translation">School</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.title">
+        <source>Title</source>
+        <target state="needs-translation">Title</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.leader">
+        <source>Leader</source>
+        <target state="needs-translation">Leader</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.street">
+        <source>Street</source>
+        <target state="needs-translation">Street</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.house_number">
+        <source>House number</source>
+        <target state="needs-translation">House number</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.zip">
+        <source>Zip</source>
+        <target state="needs-translation">Zip</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.city">
+        <source>City</source>
+        <target state="needs-translation">City</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.telephone">
+        <source>Telephone</source>
+        <target state="needs-translation">Telephone</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.telephone_alternative">
+        <source>Telephone alternative</source>
+        <target state="needs-translation">Telephone alternative</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.fax">
+        <source>Fax</source>
+        <target state="needs-translation">Fax</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.email">
+        <source>Email</source>
+        <target state="needs-translation">Email</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.email_alternative">
+        <source>Email alternative</source>
+        <target state="needs-translation">Email alternative</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.website">
+        <source>Website</source>
+        <target state="needs-translation">Website</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.logo">
+        <source>Logo</source>
+        <target state="needs-translation">Logo</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.images">
+        <source>Images</source>
+        <target state="needs-translation">Images</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.amount_of_students">
+        <source>Amount of students</source>
+        <target state="needs-translation">Amount of students</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.profile_title">
+        <source>Profile title</source>
+        <target state="needs-translation">Profile title</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.school_way_plan">
+        <source>School way plan</source>
+        <target state="needs-translation">School way plan</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.notes">
+        <source>Notes</source>
+        <target state="needs-translation">Notes</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.additional_informations">
+        <source>Additional Informations</source>
+        <target state="needs-translation">Additional Informations</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.holder">
+        <source>Holder</source>
+        <target state="needs-translation">Holder</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.types">
+        <source>Types</source>
+        <target state="needs-translation">Types</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.profile_contents">
+        <source>Profile contents</source>
+        <target state="needs-translation">Profile contents</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.care_forms">
+        <source>Care forms</source>
+        <target state="needs-translation">Care forms</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.school_district">
+        <source>School District</source>
+        <target state="needs-translation">School District</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.district">
+        <source>District</source>
+        <target state="needs-translation">District</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_holder">
+        <source>School holder</source>
+        <target state="needs-translation">School holder</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_holder.title">
+        <source>Title</source>
+        <target state="needs-translation">Title</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_holder.logo">
+        <source>Logo</source>
+        <target state="needs-translation">Logo</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_holder.website">
+        <source>Website</source>
+        <target state="needs-translation">Website</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_type">
+        <source>Type</source>
+        <target state="needs-translation">Type</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_type.title">
+        <source>Title</source>
+        <target state="needs-translation">Title</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_type.description">
+        <source>Description</source>
+        <target state="needs-translation">Description</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_profilecontent">
+        <source>School profile content</source>
+        <target state="needs-translation">School profile content</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_profilecontent.title">
+        <source>Title</source>
+        <target state="needs-translation">Title</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_profilecontent.description">
+        <source>Description</source>
+        <target state="needs-translation">Description</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_careform">
+        <source>CareForm</source>
+        <target state="needs-translation">CareForm</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_careform.title">
+        <source>Title</source>
+        <target state="needs-translation">Title</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_careform.description">
+        <source>Description</source>
+        <target state="needs-translation">Description</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_schooldistrict">
+        <source>District</source>
+        <target state="needs-translation">District</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_schooldistrict.title">
+        <source>Title</source>
+        <target state="needs-translation">Title</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_street">
+        <source>Street</source>
+        <target state="needs-translation">Street</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_street.street">
+        <source>Street</source>
+        <target state="needs-translation">Street</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_street.number_from">
+        <source>Number From</source>
+        <target state="needs-translation">Number From</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_street.letter_from">
+        <source>Letter From</source>
+        <target state="needs-translation">Letter From</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_street.number_to">
+        <source>Number To</source>
+        <target state="needs-translation">Number To</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_street.letter_to">
+        <source>Letter To</source>
+        <target state="needs-translation">Letter To</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_street.district">
+        <source>District</source>
+        <target state="needs-translation">District</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_district">
+        <source>District</source>
+        <target state="needs-translation">District</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_district.district">
+        <source>Title</source>
+        <target state="needs-translation">Title</target>
+      </trans-unit>
+      <trans-unit id="search">
+        <source>Search</source>
+        <target state="needs-translation">Search</target>
+      </trans-unit>
+      <trans-unit id="noResults">
+        <source>No results found</source>
+        <target state="needs-translation">No results found</target>
+      </trans-unit>
+      <trans-unit id="street">
+        <source>Street</source>
+        <target state="needs-translation">Street</target>
+      </trans-unit>
+      <trans-unit id="number">
+        <source>Number</source>
+        <target state="needs-translation">Number</target>
+      </trans-unit>
+      <trans-unit id="letter">
+        <source>Letter</source>
+        <target state="needs-translation">Letter</target>
+      </trans-unit>
+      <trans-unit id="altTextMapImg">
+        <source>Map</source>
+        <target state="needs-translation">Map</target>
+      </trans-unit>
+      <trans-unit id="pageBrowser.first">
+        <source>First</source>
+        <target state="needs-translation">First</target>
+      </trans-unit>
+      <trans-unit id="pageBrowser.previous">
+        <source>Previous</source>
+        <target state="needs-translation">Previous</target>
+      </trans-unit>
+      <trans-unit id="pageBrowser.next">
+        <source>Next</source>
+        <target state="needs-translation">Next</target>
+      </trans-unit>
+      <trans-unit id="pageBrowser.last">
+        <source>Last</source>
+        <target state="needs-translation">Last</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
