@@ -3,11 +3,13 @@ if (!defined('TYPO3')) {
     die('Access denied.');
 }
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::makeCategorizable(
-    'schooldirectory',
-    'tx_schooldirectory_domain_model_school',
-    'category'
-);
+$GLOBALS['TCA']['tx_schooldirectory_domain_model_school']['columns']['schooldirectory'] = [
+    'config' => [
+        'type' => 'category'
+    ]
+];
+
+\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_schooldirectory_domain_model_school', 'schooldirectory');
 
 // Add tx_maps2_uid column to school table
 if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('maps2')) {
