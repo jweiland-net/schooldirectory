@@ -34,9 +34,7 @@ class DistrictController extends ActionController
     /**
      * This action shows the search form
      */
-    public function searchAction(): void
-    {
-    }
+    public function searchAction(): void {}
 
     /**
      * This action shows the search results in list form

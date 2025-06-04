@@ -22,7 +22,7 @@ class TypeTest extends UnitTestCase
     /**
      * @var Type
      */
-    protected $subject;
+    protected Type $subject;
 
     protected function setUp(): void
     {

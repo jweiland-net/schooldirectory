@@ -60,6 +60,8 @@
 			"typo3/class-alias-loader": true,
 			"typo3/cms-composer-installers": true
 		},
+		"bin-dir": ".Build/bin",
+		"sort-packages": true,
 		"vendor-dir": ".Build/vendor"
 	},
 	"extra": {
