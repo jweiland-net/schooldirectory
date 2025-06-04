@@ -77,7 +77,7 @@ class SchoolSlugUpdate implements UpgradeWizardInterface
             ->count('*')
             ->from($this->tableName)
             ->where(
-                $queryBuilder->expr()->orX(
+                $queryBuilder->expr()->or(
                     $queryBuilder->expr()->eq(
                         $this->fieldName,
                         $queryBuilder->createNamedParameter('', Connection::PARAM_STR)
@@ -106,7 +106,7 @@ class SchoolSlugUpdate implements UpgradeWizardInterface
             ->select('uid', 'title', 'path_segment')
             ->from($this->tableName)
             ->where(
-                $queryBuilder->expr()->orX(
+                $queryBuilder->expr()->or(
                     $queryBuilder->expr()->eq(
                         $this->fieldName,
                         $queryBuilder->createNamedParameter('', Connection::PARAM_STR)

@@ -18,9 +18,9 @@ use JWeiland\Schooldirectory\Domain\Model\ProfileContent;
 use JWeiland\Schooldirectory\Domain\Model\School;
 use JWeiland\Schooldirectory\Domain\Model\SchoolDistrict;
 use JWeiland\Schooldirectory\Domain\Model\Type;
-use Nimut\TestingFramework\TestCase\FunctionalTestCase;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use TYPO3\TestingFramework\Core\Functional\FunctionalTestCase;
 
 /**
  * Test case
