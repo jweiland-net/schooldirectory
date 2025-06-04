@@ -39,7 +39,4 @@ call_user_func(static function () {
     \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
         '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:schooldirectory/Configuration/TSconfig/ContentElementWizard.tsconfig">'
     );
-
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['schoolUpdateSlug']
-        = \JWeiland\Schooldirectory\Updater\SchoolSlugUpdater::class;
 });

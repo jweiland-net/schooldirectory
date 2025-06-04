@@ -9,7 +9,7 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace JWeiland\Schooldirectory\Updater;
+namespace JWeiland\Schooldirectory\Updates;
 
 use Doctrine\DBAL\Driver\Statement;
 use TYPO3\CMS\Core\Database\Connection;
@@ -18,13 +18,15 @@ use TYPO3\CMS\Core\Database\Query\Restriction\DeletedRestriction;
 use TYPO3\CMS\Core\Database\Query\Restriction\HiddenRestriction;
 use TYPO3\CMS\Core\DataHandling\SlugHelper;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Install\Attribute\UpgradeWizard;
 use TYPO3\CMS\Install\Updates\DatabaseUpdatedPrerequisite;
 use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 
 /*
  * Updater to fill empty slug columns of school records
  */
-class SchoolSlugUpdater implements UpgradeWizardInterface
+#[UpgradeWizard('schoolUpdateSlug')]
+class SchoolSlugUpdate implements UpgradeWizardInterface
 {
     /**
      * @var string
