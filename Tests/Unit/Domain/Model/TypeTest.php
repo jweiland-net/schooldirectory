@@ -19,9 +19,6 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
  */
 class TypeTest extends UnitTestCase
 {
-    /**
-     * @var Type
-     */
     protected Type $subject;
 
     protected function setUp(): void

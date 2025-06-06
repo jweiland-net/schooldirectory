@@ -30,9 +30,9 @@ class SchoolTest extends FunctionalTestCase
     /**
      * @var School
      */
-    protected $subject;
+    protected School $subject;
 
-    protected $testExtensionsToLoad = [
+    protected array $testExtensionsToLoad = [
         'typo3conf/ext/schooldirectory',
         'typo3conf/ext/glossary2',
         'typo3conf/ext/maps2',

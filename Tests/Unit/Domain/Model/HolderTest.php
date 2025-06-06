@@ -20,10 +20,7 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
  */
 class HolderTest extends UnitTestCase
 {
-    /**
-     * @var Holder
-     */
-    protected $subject;
+    protected Holder $subject;
 
     protected function setUp(): void
     {

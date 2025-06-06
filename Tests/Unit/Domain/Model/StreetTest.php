@@ -20,10 +20,7 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
  */
 class StreetTest extends UnitTestCase
 {
-    /**
-     * @var Street
-     */
-    protected $subject;
+    protected Street $subject;
 
     protected function setUp(): void
     {

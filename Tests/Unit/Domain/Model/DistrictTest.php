@@ -19,10 +19,7 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
  */
 class DistrictTest extends UnitTestCase
 {
-    /**
-     * @var District
-     */
-    protected $subject;
+    protected District $subject;
 
     protected function setUp(): void
     {

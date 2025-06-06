@@ -19,10 +19,7 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
  */
 class CareFormTest extends UnitTestCase
 {
-    /**
-     * @var CareForm
-     */
-    protected $subject;
+    protected CareForm $subject;
 
     protected function setUp(): void
     {

@@ -19,10 +19,7 @@ use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
  */
 class ProfileContentTest extends UnitTestCase
 {
-    /**
-     * @var ProfileContent
-     */
-    protected $subject;
+    protected ProfileContent $subject;
 
     protected function setUp(): void
     {
