@@ -85,7 +85,7 @@ class School extends AbstractEntity
     /**
      * @var FileReference
      */
-    protected FileReference $logo;
+    protected ?FileReference $logo = null;
 
     /**
      * @var ObjectStorage<FileReference>
@@ -142,7 +142,7 @@ class School extends AbstractEntity
     /**
      * @var Holder
      */
-    protected Holder $holder;
+    protected ?Holder $holder = null;
 
     /**
      * @var ObjectStorage<Type>
@@ -165,7 +165,7 @@ class School extends AbstractEntity
      */
     protected ObjectStorage $careForms;
 
-    protected SchoolDistrict $schoolDistrict;
+    protected ?SchoolDistrict $schoolDistrict = null;
 
     protected District $district;
 
