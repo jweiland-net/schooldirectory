@@ -11,29 +11,36 @@ declare(strict_types=1);
 
 namespace JWeiland\Schooldirectory\Domain\Repository;
 
+use JWeiland\Schooldirectory\Domain\Model\School;
 use JWeiland\Schooldirectory\Domain\Repository\Traits\QueryBuilderTrait;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Database\Query\Restriction\FrontendRestrictionContainer;
 use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 use TYPO3\CMS\Extbase\Persistence\QueryInterface;
 use TYPO3\CMS\Extbase\Persistence\QueryResultInterface;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
  * Main Repository to find various types of schools
+ *
+ * @extends Repository<School>
  */
 class SchoolRepository extends Repository
 {
     use QueryBuilderTrait;
 
     /**
-     * @var array
+     * @var array<non-empty-string, 'ASC'|'DESC'>
      */
     protected $defaultOrderings = [
         'title' => QueryInterface::ORDER_ASCENDING,
     ];
 
+    /**
+     * @return array<int, int>
+     */
     public function getStoragePages(): array
     {
         return $this->createQuery()->getQuerySettings()->getStoragePageIds();
@@ -41,6 +48,9 @@ class SchoolRepository extends Repository
 
     /**
      * Find all records starting with given letter
+     *
+     * @return QueryResultInterface<int, School>
+     * @throws InvalidQueryException
      */
     public function findByStartingLetter(string $letter): QueryResultInterface
     {
@@ -61,11 +71,13 @@ class SchoolRepository extends Repository
             $constraint[] = $query->like('title', $letter . '%');
         }
 
-        return $query->matching($query->logicalOr($constraint))->execute();
+        return $query->matching($query->logicalOr(...$constraint))->execute();
     }
 
     /**
      * Search for school records
+     *
+     * @return QueryResultInterface<int, School>
      */
     public function searchSchools(int $type = 0, int $careForm = 0, int $profile = 0): QueryResultInterface
     {
@@ -84,7 +96,7 @@ class SchoolRepository extends Repository
         // there must be at least one constraint
         if (count($constraint)) {
             return $query->matching(
-                $query->logicalAnd($constraint)
+                $query->logicalAnd(...$constraint)
             )->execute();
         }
 
@@ -93,6 +105,9 @@ class SchoolRepository extends Repository
 
     /**
      * Search for school records by school type
+     *
+     * @return QueryResultInterface<int, School>
+     * @throws InvalidQueryException
      */
     public function searchSchoolsByStreet(string $street, int $number, string $letter): QueryResultInterface
     {
@@ -118,10 +133,10 @@ class SchoolRepository extends Repository
             $orConstraint[] = $query->greaterThanOrEqual('schoolDistrict.streets.letterTo', $letter);
             $orConstraint[] = $query->equals('schoolDistrict.streets.letterTo', '');
 
-            $constraints[] = $query->logicalOr($orConstraint);
+            $constraints[] = $query->logicalOr(...$orConstraint);
         }
 
-        return $query->matching($query->logicalAnd($constraints))->execute();
+        return $query->matching($query->logicalAnd(...$constraints))->execute();
     }
 
     /**

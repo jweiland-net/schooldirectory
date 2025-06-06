@@ -27,25 +27,13 @@ use TYPO3\CMS\Core\Utility\GeneralUtility;
  */
 class AjaxRequestMiddleware implements MiddlewareInterface
 {
-    /**
-     * @var CareFormRepository
-     */
-    protected $careFormRepository;
+    protected CareFormRepository $careFormRepository;
 
-    /**
-     * @var ProfileContentRepository
-     */
-    protected $profileContentRepository;
+    protected ProfileContentRepository $profileContentRepository;
 
-    /**
-     * @var TypeRepository
-     */
-    protected $typeRepository;
+    protected TypeRepository $typeRepository;
 
-    /**
-     * @var PageRepository
-     */
-    protected $pageRepository;
+    protected PageRepository $pageRepository;
 
     public function __construct(
         CareFormRepository $careFormRepository,
@@ -61,7 +49,7 @@ class AjaxRequestMiddleware implements MiddlewareInterface
 
     public function process(ServerRequestInterface $request, RequestHandlerInterface $handler): ResponseInterface
     {
-        parse_str(file_get_contents('php://input') ?? '', $postParameters);
+        parse_str(file_get_contents('php://input') ?: '', $postParameters);
 
         if (
             array_key_exists('ext', $postParameters)
@@ -103,6 +91,10 @@ class AjaxRequestMiddleware implements MiddlewareInterface
         return $handler->handle($request);
     }
 
+    /**
+     * @param array<int, int> $storagePages
+     * @return array<int, array{uid: int, title: string}>
+     */
     protected function getCareFormRecords(int $type, array $storagePages): array
     {
         return $this->overlayRecords(
@@ -111,6 +103,10 @@ class AjaxRequestMiddleware implements MiddlewareInterface
         );
     }
 
+    /**
+     * @param array<int, int> $storagePages
+     * @return array<int, array{uid: int, title: string}>
+     */
     protected function getProfileRecords(int $type, int $careForm, array $storagePages): array
     {
         return $this->overlayRecords(
@@ -119,6 +115,10 @@ class AjaxRequestMiddleware implements MiddlewareInterface
         );
     }
 
+    /**
+     * @param array<int, int> $storagePages
+     * @return array<int, array{uid: int, title: string}>
+     */
     protected function getTypeRecords(array $storagePages): array
     {
         return $this->overlayRecords(
@@ -127,6 +127,10 @@ class AjaxRequestMiddleware implements MiddlewareInterface
         );
     }
 
+    /**
+     * @param array<int, array<string, mixed>> $recordsToBeTranslated
+     * @return array<int, array{uid: int, title: string}>
+     */
     protected function overlayRecords(array $recordsToBeTranslated, string $table): array
     {
         $translatedRecords = [];

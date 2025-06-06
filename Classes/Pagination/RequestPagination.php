@@ -17,7 +17,7 @@ use TYPO3\CMS\Core\Pagination\PaginatorInterface;
 use TYPO3\CMS\Core\Utility\ArrayUtility;
 
 /**
- * This is a simple paginator which also respects GEt and POST arguments from Request
+ * This is a simple paginator which also respects GET and POST arguments from Request
  */
 class RequestPagination implements PaginationInterface
 {
@@ -25,6 +25,9 @@ class RequestPagination implements PaginationInterface
 
     protected PaginatorInterface $paginator;
 
+    /**
+     * @var array<string, mixed>
+     */
     protected array $arguments = [];
 
     public function __construct(PaginatorInterface $paginator)
@@ -33,13 +36,13 @@ class RequestPagination implements PaginationInterface
         $pluginArguments = $this->getPluginArguments($this->pluginNamespace);
 
         foreach ($pluginArguments as $argumentName => $argument) {
-            if ($argumentName[0] === '_' && $argumentName[1] === '_') {
+            if (is_string($argumentName) && strlen($argumentName) >= 2 && $argumentName[0] === '_' && $argumentName[1] === '_') {
                 continue;
             }
-            if (in_array($argumentName, ['@extension', '@subpackage', '@controller', '@action', '@format'], true)) {
+            if (is_string($argumentName) && in_array($argumentName, ['@extension', '@subpackage', '@controller', '@action', '@format'], true)) {
                 continue;
             }
-            if (in_array($argumentName, ['extension', 'plugin', 'controller', 'action'], true)) {
+            if (is_string($argumentName) && in_array($argumentName, ['extension', 'plugin', 'controller', 'action'], true)) {
                 continue;
             }
 
@@ -47,6 +50,9 @@ class RequestPagination implements PaginationInterface
         }
     }
 
+    /**
+     * Returns the number of the previous page or null if there is no previous page
+     */
     public function getPreviousPageNumber(): ?int
     {
         $previousPage = $this->paginator->getCurrentPageNumber() - 1;
@@ -58,14 +64,27 @@ class RequestPagination implements PaginationInterface
         return $previousPage >= $this->getFirstPageNumber() ? $previousPage : null;
     }
 
+    /**
+     * Returns the arguments for the previous page or null if there is no previous page
+     *
+     * @return array<string, mixed>|null The arguments for the previous page or null if there is no previous page
+     */
     public function getPreviousPageArguments(): ?array
     {
+        $previousPageNumber = $this->getPreviousPageNumber();
+        if ($previousPageNumber === null) {
+            return null;
+        }
+
         $arguments = $this->arguments;
-        $arguments['currentPage'] = $this->getPreviousPageNumber();
+        $arguments['currentPage'] = $previousPageNumber;
 
         return $arguments;
     }
 
+    /**
+     * Returns the number of the next page or null if there is no next page
+     */
     public function getNextPageNumber(): ?int
     {
         $nextPage = $this->paginator->getCurrentPageNumber() + 1;
@@ -73,20 +92,38 @@ class RequestPagination implements PaginationInterface
         return $nextPage <= $this->paginator->getNumberOfPages() ? $nextPage : null;
     }
 
+    /**
+     * Returns the arguments for the next page or null if there is no next page
+     *
+     * @return array<string, mixed>|null The arguments for the next page or null if there is no next page
+     */
     public function getNextPageArguments(): ?array
     {
+        $nextPageNumber = $this->getNextPageNumber();
+        if ($nextPageNumber === null) {
+            return null;
+        }
+
         $arguments = $this->arguments;
-        $arguments['currentPage'] = $this->getNextPageNumber();
+        $arguments['currentPage'] = $nextPageNumber;
 
         return $arguments;
     }
 
+    /**
+     * Returns the number of the first page
+     */
     public function getFirstPageNumber(): int
     {
         return 1;
     }
 
-    public function getFirstPageArguments(): ?array
+    /**
+     * Returns the arguments for the first page
+     *
+     * @return array<string, mixed> The arguments for the first page
+     */
+    public function getFirstPageArguments(): array
     {
         $arguments = $this->arguments;
         $arguments['currentPage'] = $this->getFirstPageNumber();
@@ -94,12 +131,20 @@ class RequestPagination implements PaginationInterface
         return $arguments;
     }
 
+    /**
+     * Returns the number of the last page
+     */
     public function getLastPageNumber(): int
     {
         return $this->paginator->getNumberOfPages();
     }
 
-    public function getLastPageArguments(): ?array
+    /**
+     * Returns the arguments for the last page
+     *
+     * @return array<string, mixed> The arguments for the last page
+     */
+    public function getLastPageArguments(): array
     {
         $arguments = $this->arguments;
         $arguments['currentPage'] = $this->getLastPageNumber();
@@ -107,6 +152,9 @@ class RequestPagination implements PaginationInterface
         return $arguments;
     }
 
+    /**
+     * Returns the number of the first record on the current page
+     */
     public function getStartRecordNumber(): int
     {
         if ($this->paginator->getCurrentPageNumber() > $this->paginator->getNumberOfPages()) {
@@ -116,6 +164,9 @@ class RequestPagination implements PaginationInterface
         return $this->paginator->getKeyOfFirstPaginatedItem() + 1;
     }
 
+    /**
+     * Returns the number of the last record on the current page
+     */
     public function getEndRecordNumber(): int
     {
         if ($this->paginator->getCurrentPageNumber() > $this->paginator->getNumberOfPages()) {
@@ -125,7 +176,12 @@ class RequestPagination implements PaginationInterface
         return $this->paginator->getKeyOfLastPaginatedItem() + 1;
     }
 
-    public function getPluginArguments($pluginNamespace): array
+    /**
+     * Returns the plugin arguments from the request
+     *
+     * @return array<string, mixed> The plugin arguments
+     */
+    public function getPluginArguments(string $pluginNamespace): array
     {
         $request = $this->getRequestFromGlobalScope();
         $getMergedWithPost = $request->getQueryParams()[$pluginNamespace] ?? [];
@@ -135,6 +191,9 @@ class RequestPagination implements PaginationInterface
         return $getMergedWithPost;
     }
 
+    /**
+     * Returns the current request from the global scope
+     */
     public function getRequestFromGlobalScope(): ServerRequestInterface
     {
         return $GLOBALS['TYPO3_REQUEST'];

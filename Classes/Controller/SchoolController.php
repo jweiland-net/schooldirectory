@@ -14,6 +14,7 @@ namespace JWeiland\Schooldirectory\Controller;
 use JWeiland\Schooldirectory\Domain\Model\School;
 use JWeiland\Schooldirectory\Domain\Repository\SchoolRepository;
 use JWeiland\Schooldirectory\Event\PostProcessFluidVariablesEvent;
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
@@ -47,7 +48,7 @@ class SchoolController extends ActionController
      * @param string $letter Show only records starting with this letter
      * @Extbase\Validate("StringLength", param="letter", options={"minimum": 0, "maximum": 3})
      */
-    public function listAction(string $letter = ''): void
+    public function listAction(string $letter = ''): ResponseInterface
     {
         if ($letter === '') {
             $schools = $this->schoolRepository->findAll();
@@ -59,17 +60,21 @@ class SchoolController extends ActionController
             'schools' => $schools,
             'letter' => $letter,
         ]);
+
+        return $this->htmlResponse();
     }
 
-    public function showAction(School $school, string $letter = ''): void
+    public function showAction(School $school, string $letter = ''): ResponseInterface
     {
         $this->postProcessAndAssignFluidVariables([
             'school' => $school,
             'letter' => $letter,
         ]);
+
+        return $this->htmlResponse();
     }
 
-    public function searchAction(int $type = 0, int $careForm = 0, int $profile = 0): void
+    public function searchAction(int $type = 0, int $careForm = 0, int $profile = 0): ResponseInterface
     {
         $schools = $this->schoolRepository->searchSchools($type, $careForm, $profile);
         $this->postProcessAndAssignFluidVariables([
@@ -78,8 +83,13 @@ class SchoolController extends ActionController
             'careForm' => $careForm,
             'profile' => $profile,
         ]);
+
+        return $this->htmlResponse();
     }
 
+    /**
+     * @param array<string, mixed> $variables
+     */
     protected function postProcessAndAssignFluidVariables(array $variables = []): void
     {
         /** @var PostProcessFluidVariablesEvent $event */

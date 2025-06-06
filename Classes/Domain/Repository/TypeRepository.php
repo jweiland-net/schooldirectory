@@ -11,16 +11,23 @@ declare(strict_types=1);
 
 namespace JWeiland\Schooldirectory\Domain\Repository;
 
+use JWeiland\Schooldirectory\Domain\Model\Type;
 use JWeiland\Schooldirectory\Domain\Repository\Traits\QueryBuilderTrait;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
  * Repository to find all school types
+ *
+ * @extends Repository<Type>
  */
 class TypeRepository extends Repository
 {
     use QueryBuilderTrait;
 
+    /**
+     * @param array<int, int> $storagePages
+     * @return array<int, mixed>
+     */
     public function findAllByStoragePages(array $storagePages): array
     {
         $queryBuilder = $this->getQueryBuilderForTable(

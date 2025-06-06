@@ -11,7 +11,7 @@ declare(strict_types=1);
 
 namespace JWeiland\Schooldirectory\Updates;
 
-use Doctrine\DBAL\Driver\Statement;
+use Doctrine\DBAL\Result;
 use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\Restriction\DeletedRestriction;
@@ -28,25 +28,16 @@ use TYPO3\CMS\Install\Updates\UpgradeWizardInterface;
 #[UpgradeWizard('schoolUpdateSlug')]
 class SchoolSlugUpdate implements UpgradeWizardInterface
 {
-    /**
-     * @var string
-     */
-    protected $tableName = 'tx_schooldirectory_domain_model_school';
+    protected string $tableName = 'tx_schooldirectory_domain_model_school';
+
+    protected string $fieldName = 'path_segment';
+
+    protected SlugHelper $slugHelper;
 
     /**
-     * @var string
+     * @var array<string, mixed>
      */
-    protected $fieldName = 'path_segment';
-
-    /**
-     * @var SlugHelper
-     */
-    protected $slugHelper;
-
-    /**
-     * @var array
-     */
-    protected $slugCache = [];
+    protected array $slugCache = [];
 
     /**
      * Return the identifier for this wizard
@@ -87,8 +78,8 @@ class SchoolSlugUpdate implements UpgradeWizardInterface
                     )
                 )
             )
-            ->execute()
-            ->fetchColumn();
+            ->executeQuery()
+            ->fetchOne();
 
         return (bool)$amountOfRecordsWithEmptySlug;
     }
@@ -116,10 +107,10 @@ class SchoolSlugUpdate implements UpgradeWizardInterface
                     )
                 )
             )
-            ->execute();
+            ->executeQuery();
 
         $connection = $this->getConnectionPool()->getConnectionForTable($this->tableName);
-        while ($recordToUpdate = $statement->fetch()) {
+        while ($recordToUpdate = $statement->fetchAssociative()) {
             if ((string)$recordToUpdate['title'] !== '') {
                 $slug = $this->getSlugHelper()->sanitize((string)$recordToUpdate['title']);
                 $connection->update(
@@ -142,12 +133,12 @@ class SchoolSlugUpdate implements UpgradeWizardInterface
 
     protected function getUniqueValue(int $uid, string $slug): string
     {
-        $statement = $this->getUniqueSlugStatement($uid, $slug);
+        $result = $this->getUniqueSlugStatement($uid, $slug);
         $counter = $this->slugCache[$slug] ?? 1;
-        while ($statement->fetch()) {
+        while ($result->fetchAssociative()) {
             $newSlug = $slug . '-' . $counter;
-            $statement->bindValue(1, $newSlug);
-            $statement->execute();
+            // Get a new result with the updated slug
+            $result = $this->getUniqueSlugStatement($uid, $newSlug);
 
             // Do not cache every slug, because of memory consumption. I think 5 is a good value to start caching.
             if ($counter > 5) {
@@ -159,7 +150,7 @@ class SchoolSlugUpdate implements UpgradeWizardInterface
         return $newSlug ?? $slug;
     }
 
-    protected function getUniqueSlugStatement(int $uid, string $slug): Statement
+    protected function getUniqueSlugStatement(int $uid, string $slug): Result
     {
         $queryBuilder = $this->getConnectionPool()->getQueryBuilderForTable($this->tableName);
         $queryBuilder->getRestrictions()->removeAll();
@@ -178,20 +169,11 @@ class SchoolSlugUpdate implements UpgradeWizardInterface
                     $queryBuilder->createPositionalParameter($uid, Connection::PARAM_INT)
                 )
             )
-            ->execute();
+            ->executeQuery();
     }
 
     protected function getSlugHelper(): SlugHelper
     {
-        if ($this->slugHelper === null) {
-            $this->slugHelper = GeneralUtility::makeInstance(
-                SlugHelper::class,
-                $this->tableName,
-                $this->fieldName,
-                $GLOBALS['TCA'][$this->tableName]['columns']['path_segment']['config']
-            );
-        }
-
         return $this->slugHelper;
     }
 

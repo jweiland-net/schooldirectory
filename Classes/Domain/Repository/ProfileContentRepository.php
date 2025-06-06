@@ -11,16 +11,24 @@ declare(strict_types=1);
 
 namespace JWeiland\Schooldirectory\Domain\Repository;
 
+use JWeiland\Schooldirectory\Domain\Model\ProfileContent;
 use JWeiland\Schooldirectory\Domain\Repository\Traits\QueryBuilderTrait;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
  * Repository to find profile content by a given school type and careform
+ *
+ * @extends Repository<ProfileContent>
  */
 class ProfileContentRepository extends Repository
 {
     use QueryBuilderTrait;
 
+    /**
+     * @param int[] $storagePages List of storage page UIDs
+     *
+     * @return array<int, array<string, mixed>> Array of profile content DB rows
+     */
     public function findByTypeAndCareForm(int $type, int $careForm, array $storagePages): array
     {
         $queryBuilder = $this->getQueryBuilderForTable(

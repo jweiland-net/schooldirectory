@@ -11,8 +11,8 @@ declare(strict_types=1);
 
 namespace JWeiland\Schooldirectory\Domain\Repository\Traits;
 
+use Doctrine\DBAL\ArrayParameterType;
 use JWeiland\Schooldirectory\Helper\OverlayHelper;
-use TYPO3\CMS\Core\Database\Connection;
 use TYPO3\CMS\Core\Database\ConnectionPool;
 use TYPO3\CMS\Core\Database\Query\QueryBuilder;
 use TYPO3\CMS\Core\Database\Query\Restriction\FrontendRestrictionContainer;
@@ -33,6 +33,9 @@ trait QueryBuilderTrait
         $this->overlayHelper = $overlayHelper;
     }
 
+    /**
+     * @param array<int, int> $storagePages
+     */
     protected function getQueryBuilderForTable(
         string $table,
         string $alias,
@@ -46,7 +49,7 @@ trait QueryBuilderTrait
             ->andWhere(
                 $queryBuilder->expr()->in(
                     'pid',
-                    $queryBuilder->createNamedParameter($storagePages, Connection::PARAM_INT_ARRAY)
+                    $queryBuilder->createNamedParameter($storagePages, ArrayParameterType::INTEGER)
                 )
             );
 

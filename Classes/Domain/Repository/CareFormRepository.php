@@ -11,16 +11,23 @@ declare(strict_types=1);
 
 namespace JWeiland\Schooldirectory\Domain\Repository;
 
+use JWeiland\Schooldirectory\Domain\Model\CareForm;
 use JWeiland\Schooldirectory\Domain\Repository\Traits\QueryBuilderTrait;
 use TYPO3\CMS\Extbase\Persistence\Repository;
 
 /**
  * Repository to find CareForm records by a given school type
+ *
+ * @extends Repository<CareForm>
  */
 class CareFormRepository extends Repository
 {
     use QueryBuilderTrait;
 
+    /**
+     * @param int[] $storagePages
+     * @return array<int, array<string, mixed>>
+     */
     public function findByType(int $type, array $storagePages): array
     {
         $queryBuilder = $this->getQueryBuilderForTable(
