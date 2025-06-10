@@ -13,18 +13,15 @@ namespace JWeiland\Schooldirectory\Tests\Unit\Domain\Model;
 
 use JWeiland\Schooldirectory\Domain\Model\SchoolDistrict;
 use JWeiland\Schooldirectory\Domain\Model\Street;
-use Nimut\TestingFramework\TestCase\UnitTestCase;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 /**
  * Test case for class \JWeiland\Schooldirectory\Domain\Model\SchoolDistrict.
  */
 class SchoolDistrictTest extends UnitTestCase
 {
-    /**
-     * @var SchoolDistrict
-     */
-    protected $subject;
+    protected SchoolDistrict $subject;
 
     protected function setUp(): void
     {

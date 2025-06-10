@@ -29,7 +29,7 @@ class SchoolDistrict extends AbstractEntity
      * @var ObjectStorage<Street>
      * @Extbase\ORM\Lazy
      */
-    protected $streets;
+    protected ObjectStorage $streets;
 
     public function __construct()
     {
@@ -54,11 +54,17 @@ class SchoolDistrict extends AbstractEntity
         $this->title = $title;
     }
 
+    /**
+     * @return ObjectStorage<Street>
+     */
     public function getStreets(): ObjectStorage
     {
         return $this->streets;
     }
 
+    /**
+     * @param ObjectStorage<Street> $streets
+     */
     public function setStreets(ObjectStorage $streets): void
     {
         $this->streets = $streets;

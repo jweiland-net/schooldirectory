@@ -1,45 +1,57 @@
 <?php
-if (!defined('TYPO3_MODE')) {
+
+/*
+ * This file is part of the package jweiland/schooldirectory.
+ *
+ * For the full copyright and license information, please read the
+ * LICENSE file that was distributed with this source code.
+ */
+
+use JWeiland\Schooldirectory\Controller\DistrictController;
+use JWeiland\Schooldirectory\Controller\SchoolController;
+use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use TYPO3\CMS\Core\Utility\GeneralUtility;
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+
+if (!defined('TYPO3')) {
     die('Access denied.');
 }
 
 call_user_func(static function () {
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    ExtensionUtility::configurePlugin(
         'Schooldirectory',
         'List',
         [
-            \JWeiland\Schooldirectory\Controller\SchoolController::class => 'list, show, search',
+            SchoolController::class => 'list, show, search',
         ],
         // non-cacheable actions
         [
-            \JWeiland\Schooldirectory\Controller\SchoolController::class => 'list, search',
-        ]
+            SchoolController::class => 'list, search',
+        ],
     );
 
-    \TYPO3\CMS\Extbase\Utility\ExtensionUtility::configurePlugin(
+    ExtensionUtility::configurePlugin(
         'Schooldirectory',
         'Search',
         [
-            \JWeiland\Schooldirectory\Controller\DistrictController::class => 'search, list',
+            DistrictController::class => 'search, list',
         ],
         // non-cacheable actions
         [
-            \JWeiland\Schooldirectory\Controller\DistrictController::class => 'list',
-        ]
+            DistrictController::class => 'list',
+        ],
     );
 
-    $iconRegistry = \TYPO3\CMS\Core\Utility\GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
+    $iconRegistry = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
     $iconRegistry->registerIcon(
         'extensions-schooldirectory-plugin-list',
-        \TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider::class,
+        SvgIconProvider::class,
         ['source' => 'EXT:schooldirectory/Resources/Public/Icons/tx_schooldirectory_domain_model_school.svg']
     );
 
     // Add schooldirectory plugin to new element wizard
-    \TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addPageTSConfig(
+    ExtensionManagementUtility::addPageTSConfig(
         '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:schooldirectory/Configuration/TSconfig/ContentElementWizard.tsconfig">'
     );
-
-    $GLOBALS['TYPO3_CONF_VARS']['SC_OPTIONS']['ext/install']['update']['schoolUpdateSlug']
-        = \JWeiland\Schooldirectory\Updater\SchoolSlugUpdater::class;
 });

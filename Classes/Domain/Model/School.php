@@ -25,114 +25,114 @@ class School extends AbstractEntity
     /**
      * @var string
      */
-    protected $title = '';
+    protected string $title = '';
 
     /**
      * @var string
      */
-    protected $leader = '';
+    protected string $leader = '';
 
     /**
      * @var string
      */
-    protected $street = '';
+    protected string $street = '';
 
     /**
      * @var string
      */
-    protected $houseNumber = '';
+    protected string $houseNumber = '';
 
     /**
      * @var string
      */
-    protected $zip = '';
+    protected string $zip = '';
 
     /**
      * @var string
      */
-    protected $city = '';
+    protected string $city = '';
 
     /**
      * @var string
      */
-    protected $telephone = '';
+    protected string $telephone = '';
 
     /**
      * @var string
      */
-    protected $telephoneAlternative = '';
+    protected string $telephoneAlternative = '';
 
     /**
      * @var string
      */
-    protected $fax = '';
+    protected string $fax = '';
 
     /**
      * @var string
      */
-    protected $email = '';
+    protected string $email = '';
 
     /**
      * @var string
      */
-    protected $emailAlternative = '';
+    protected string $emailAlternative = '';
 
     /**
      * @var string
      */
-    protected $website = '';
+    protected string $website = '';
 
     /**
      * @var FileReference
      */
-    protected $logo;
+    protected ?FileReference $logo = null;
 
     /**
      * @var ObjectStorage<FileReference>
      *
      * @Extbase\ORM\Lazy
      */
-    protected $images;
+    protected ObjectStorage $images;
 
     /**
      * @var string
      */
-    protected $amountOfStudents = '';
+    protected string $amountOfStudents = '';
 
     /**
      * @var string
      */
-    protected $profileTitle = '';
+    protected string $profileTitle = '';
 
     /**
      * @var string
      */
-    protected $schoolWayPlan = '';
+    protected string $schoolWayPlan = '';
 
     /**
      * @var string
      */
-    protected $notes = '';
+    protected string $notes = '';
 
     /**
      * @var string
      */
-    protected $additionalInformations = '';
+    protected string $additionalInformations = '';
 
     /**
      * @var string
      */
-    protected $facebook = '';
+    protected string $facebook = '';
 
     /**
      * @var string
      */
-    protected $twitter = '';
+    protected string $twitter = '';
 
     /**
      * @var string
      */
-    protected $instagram = '';
+    protected string $instagram = '';
 
     /**
      * @var PoiCollection
@@ -142,38 +142,32 @@ class School extends AbstractEntity
     /**
      * @var Holder
      */
-    protected $holder;
+    protected ?Holder $holder = null;
 
     /**
      * @var ObjectStorage<Type>
      *
      * @Extbase\ORM\Lazy
      */
-    protected $types;
+    protected ObjectStorage $types;
 
     /**
      * @var ObjectStorage<ProfileContent>
      *
      * @Extbase\ORM\Lazy
      */
-    protected $profileContents;
+    protected ObjectStorage $profileContents;
 
     /**
      * @var ObjectStorage<CareForm>
      *
      * @Extbase\ORM\Lazy
      */
-    protected $careForms;
+    protected ObjectStorage $careForms;
 
-    /**
-     * @var SchoolDistrict
-     */
-    protected $schoolDistrict;
+    protected ?SchoolDistrict $schoolDistrict = null;
 
-    /**
-     * @var District
-     */
-    protected $district;
+    protected District $district;
 
     public function __construct()
     {
@@ -314,11 +308,17 @@ class School extends AbstractEntity
         $this->logo = $logo;
     }
 
+    /**
+     * @return ObjectStorage<FileReference>
+     */
     public function getImages(): ObjectStorage
     {
         return $this->images;
     }
 
+    /**
+     * @param ObjectStorage<FileReference> $images
+     */
     public function setImages(ObjectStorage $images): void
     {
         $this->images = $images;
@@ -434,11 +434,17 @@ class School extends AbstractEntity
         $this->holder = $holder;
     }
 
+    /**
+     * @return ObjectStorage<Type>
+     */
     public function getTypes(): ObjectStorage
     {
         return $this->types;
     }
 
+    /**
+     * @param ObjectStorage<Type> $types
+     */
     public function setTypes(ObjectStorage $types): void
     {
         $this->types = $types;
@@ -454,11 +460,17 @@ class School extends AbstractEntity
         $this->types->detach($type);
     }
 
+    /**
+     * @return ObjectStorage<ProfileContent>
+     */
     public function getProfileContents(): ObjectStorage
     {
         return $this->profileContents;
     }
 
+    /**
+     * @param ObjectStorage<ProfileContent> $profileContents
+     */
     public function setProfileContents(ObjectStorage $profileContents): void
     {
         $this->profileContents = $profileContents;
@@ -474,11 +486,17 @@ class School extends AbstractEntity
         $this->profileContents->detach($profileContent);
     }
 
+    /**
+     * @return ObjectStorage<CareForm>
+     */
     public function getCareForms(): ObjectStorage
     {
         return $this->careForms;
     }
 
+    /**
+     * @param ObjectStorage<CareForm> $careForms
+     */
     public function setCareForms(ObjectStorage $careForms): void
     {
         $this->careForms = $careForms;

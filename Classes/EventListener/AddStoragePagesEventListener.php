@@ -16,11 +16,11 @@ use JWeiland\Schooldirectory\Event\PostProcessFluidVariablesEvent;
 
 class AddStoragePagesEventListener extends AbstractControllerEventListener
 {
-    /**
-     * @var SchoolRepository
-     */
-    protected $schoolRepository;
+    protected SchoolRepository $schoolRepository;
 
+    /**
+     * @var array<string, string[]>
+     */
     protected $allowedControllerActions = [
         'School' => [
             'list',

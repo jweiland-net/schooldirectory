@@ -13,6 +13,7 @@ namespace JWeiland\Schooldirectory\Controller;
 
 use JWeiland\Schooldirectory\Domain\Repository\SchoolRepository;
 use JWeiland\Schooldirectory\Event\PostProcessFluidVariablesEvent;
+use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
 
@@ -21,10 +22,7 @@ use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
  */
 class DistrictController extends ActionController
 {
-    /**
-     * @var SchoolRepository
-     */
-    protected $schoolRepository;
+    protected SchoolRepository $schoolRepository;
 
     public function injectSchoolRepository(SchoolRepository $schoolRepository): void
     {
@@ -34,8 +32,9 @@ class DistrictController extends ActionController
     /**
      * This action shows the search form
      */
-    public function searchAction(): void
+    public function searchAction(): ResponseInterface
     {
+        return $this->htmlResponse();
     }
 
     /**
@@ -45,15 +44,20 @@ class DistrictController extends ActionController
      * @Extbase\Validate("NotEmpty", param="number")
      * @Extbase\Validate("Integer", param="number")
      */
-    public function listAction(string $street, int $number, string $letter = ''): void
+    public function listAction(string $street, int $number, string $letter = ''): ResponseInterface
     {
         $schools = $this->schoolRepository->searchSchoolsByStreet($street, $number, $letter);
 
         $this->postProcessAndAssignFluidVariables([
             'schools' => $schools,
         ]);
+
+        return $this->htmlResponse();
     }
 
+    /**
+     * @param array<string, mixed> $variables
+     */
     protected function postProcessAndAssignFluidVariables(array $variables = []): void
     {
         /** @var PostProcessFluidVariablesEvent $event */

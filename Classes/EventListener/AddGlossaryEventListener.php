@@ -18,16 +18,13 @@ use TYPO3\CMS\Core\Utility\ArrayUtility;
 
 class AddGlossaryEventListener extends AbstractControllerEventListener
 {
-    /**
-     * @var GlossaryService
-     */
-    protected $glossaryService;
+    protected GlossaryService $glossaryService;
+
+    protected SchoolRepository $schoolRepository;
 
     /**
-     * @var SchoolRepository
+     * @var array<string, string[]>
      */
-    protected $schoolRepository;
-
     protected $allowedControllerActions = [
         'School' => [
             'list',
@@ -53,6 +50,9 @@ class AddGlossaryEventListener extends AbstractControllerEventListener
         }
     }
 
+    /**
+     * @return array<string, string[]>
+     */
     protected function getOptions(PostProcessFluidVariablesEvent $event): array
     {
         $options = [

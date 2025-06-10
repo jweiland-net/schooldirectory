@@ -12,17 +12,14 @@ declare(strict_types=1);
 namespace JWeiland\Schooldirectory\Tests\Unit\Domain\Model;
 
 use JWeiland\Schooldirectory\Domain\Model\District;
-use Nimut\TestingFramework\TestCase\UnitTestCase;
+use TYPO3\TestingFramework\Core\Unit\UnitTestCase;
 
 /**
  * Test case for class \JWeiland\Schooldirectory\Domain\Model\District.
  */
 class DistrictTest extends UnitTestCase
 {
-    /**
-     * @var District
-     */
-    protected $subject;
+    protected District $subject;
 
     protected function setUp(): void
     {
