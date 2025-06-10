@@ -18,21 +18,16 @@ use Psr\Http\Message\ResponseInterface;
 use TYPO3\CMS\Core\Page\PageRenderer;
 use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\Mvc\Controller\ActionController;
+use TYPO3\CMS\Extbase\Persistence\Exception\InvalidQueryException;
 
 /**
  * Main controller to list and show school records.
  */
 class SchoolController extends ActionController
 {
-    /**
-     * @var SchoolRepository
-     */
-    protected $schoolRepository;
+    protected SchoolRepository $schoolRepository;
 
-    /**
-     * @var PageRenderer
-     */
-    protected $pageRenderer;
+    protected PageRenderer $pageRenderer;
 
     public function injectSchoolRepository(SchoolRepository $schoolRepository): void
     {
@@ -47,6 +42,7 @@ class SchoolController extends ActionController
     /**
      * @param string $letter Show only records starting with this letter
      * @Extbase\Validate("StringLength", param="letter", options={"minimum": 0, "maximum": 3})
+     * @throws InvalidQueryException
      */
     public function listAction(string $letter = ''): ResponseInterface
     {

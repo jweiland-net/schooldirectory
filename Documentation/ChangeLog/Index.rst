@@ -7,6 +7,12 @@
 ChangeLog
 =========
 
+Version 7.0.0
+=============
+
+*   Add TYPO3 12 compatibility
+*   Removed older version compatibility
+
 Version 6.0.0
 =============
 

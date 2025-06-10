@@ -19,20 +19,17 @@ use TYPO3\CMS\Extbase\Mvc\RequestInterface;
  */
 class PostProcessFluidVariablesEvent implements ControllerActionEventInterface
 {
-    /**
-     * @var RequestInterface
-     */
-    protected $request;
+    protected RequestInterface $request;
 
     /**
      * @var array<string, mixed>
      */
-    protected $settings = [];
+    protected array $settings = [];
 
     /**
      * @var array<string, mixed>
      */
-    protected $fluidVariables = [];
+    protected array $fluidVariables = [];
 
     /**
      * @param array<string, mixed> $settings
