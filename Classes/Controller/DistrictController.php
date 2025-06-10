@@ -46,8 +46,6 @@ class DistrictController extends ActionController
      */
     public function listAction(string $street, int $number, string $letter = ''): ResponseInterface
     {
-        debug('here');
-        die;
         $schools = $this->schoolRepository->searchSchoolsByStreet($street, $number, $letter);
 
         $this->postProcessAndAssignFluidVariables([
