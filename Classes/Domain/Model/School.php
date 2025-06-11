@@ -12,7 +12,6 @@ declare(strict_types=1);
 namespace JWeiland\Schooldirectory\Domain\Model;
 
 use JWeiland\Maps2\Domain\Model\PoiCollection;
-use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
@@ -22,69 +21,30 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
  */
 class School extends AbstractEntity
 {
-    /**
-     * @var string
-     */
     protected string $title = '';
 
-    /**
-     * @var string
-     */
     protected string $leader = '';
 
-    /**
-     * @var string
-     */
     protected string $street = '';
 
-    /**
-     * @var string
-     */
     protected string $houseNumber = '';
 
-    /**
-     * @var string
-     */
     protected string $zip = '';
 
-    /**
-     * @var string
-     */
     protected string $city = '';
 
-    /**
-     * @var string
-     */
     protected string $telephone = '';
 
-    /**
-     * @var string
-     */
     protected string $telephoneAlternative = '';
 
-    /**
-     * @var string
-     */
     protected string $fax = '';
 
-    /**
-     * @var string
-     */
     protected string $email = '';
 
-    /**
-     * @var string
-     */
     protected string $emailAlternative = '';
 
-    /**
-     * @var string
-     */
     protected string $website = '';
 
-    /**
-     * @var FileReference
-     */
     protected ?FileReference $logo = null;
 
     /**
@@ -94,44 +54,20 @@ class School extends AbstractEntity
      */
     protected ObjectStorage $images;
 
-    /**
-     * @var string
-     */
     protected string $amountOfStudents = '';
 
-    /**
-     * @var string
-     */
     protected string $profileTitle = '';
 
-    /**
-     * @var string
-     */
     protected string $schoolWayPlan = '';
 
-    /**
-     * @var string
-     */
     protected string $notes = '';
 
-    /**
-     * @var string
-     */
     protected string $additionalInformations = '';
 
-    /**
-     * @var string
-     */
     protected string $facebook = '';
 
-    /**
-     * @var string
-     */
     protected string $twitter = '';
 
-    /**
-     * @var string
-     */
     protected string $instagram = '';
 
     /**
@@ -139,9 +75,6 @@ class School extends AbstractEntity
      */
     protected $txMaps2Uid;
 
-    /**
-     * @var Holder
-     */
     protected ?Holder $holder = null;
 
     /**
@@ -182,10 +115,10 @@ class School extends AbstractEntity
      */
     public function initializeObject(): void
     {
-        $this->images = $this->images ?? new ObjectStorage();
-        $this->types = $this->types ?? new ObjectStorage();
-        $this->profileContents = $this->profileContents ?? new ObjectStorage();
-        $this->careForms = $this->careForms ?? new ObjectStorage();
+        $this->images ??= new ObjectStorage();
+        $this->types ??= new ObjectStorage();
+        $this->profileContents ??= new ObjectStorage();
+        $this->careForms ??= new ObjectStorage();
     }
 
     public function getTitle(): string

@@ -18,25 +18,13 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
  */
 class Street extends AbstractEntity
 {
-    /**
-     * @var string
-     */
-    protected $street = '';
+    protected string $street = '';
 
-    /**
-     * @var string
-     */
-    protected $numberFrom = '';
+    protected string $numberFrom = '';
 
-    /**
-     * @var string
-     */
-    protected $numberTo = '';
+    protected string $numberTo = '';
 
-    /**
-     * @var District
-     */
-    protected $district;
+    protected ?District $district = null;
 
     public function getStreet(): string
     {
