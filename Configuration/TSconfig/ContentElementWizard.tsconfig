@@ -1,26 +1,3 @@
-mod.wizards.newContentElement.wizardItems.plugins {
-  elements {
-    schooldirectoryList {
-      iconIdentifier = extensions-schooldirectory-plugin-list
-      title = LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:plugin.list.title
-      description = LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:plugin.list.description
-      tt_content_defValues {
-        CType = list
-        list_type = schooldirectory_list
-      }
-    }
-    schooldirectorySearch {
-      iconIdentifier = extensions-schooldirectory-plugin-list
-      title = LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:plugin.search.title
-      description = LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:plugin.search.description
-      tt_content_defValues {
-        CType = list
-        list_type = schooldirectory_search
-      }
-    }
-  }
-}
-
 # Add CType Preview
-mod.web_layout.tt_content.preview.list.schooldirectory_list = EXT:schooldirectory/Resources/Private/Templates/PluginPreview/ListTableView.html
-mod.web_layout.tt_content.preview.list.schooldirectory_search = EXT:schooldirectory/Resources/Private/Templates/PluginPreview/SearchTableView.html
+mod.web_layout.tt_content.preview.schooldirectory_list = EXT:schooldirectory/Resources/Private/Templates/PluginPreview/ListTableView.html
+mod.web_layout.tt_content.preview.schooldirectory_search = EXT:schooldirectory/Resources/Private/Templates/PluginPreview/SearchTableView.html
