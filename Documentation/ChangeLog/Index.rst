@@ -7,6 +7,13 @@
 ChangeLog
 =========
 
+Version 8.0.0
+=============
+
+*   Add TYPO3 13 compatibility
+*   Replaced all older API with new.
+*   Removed older version compatibility
+
 Version 7.0.0
 =============
 
