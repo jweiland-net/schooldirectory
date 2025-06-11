@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace JWeiland\Schooldirectory\Domain\Model;
 
 use JWeiland\Maps2\Domain\Model\PoiCollection;
+use TYPO3\CMS\Extbase\Annotation\ORM\Lazy;
 use TYPO3\CMS\Extbase\Domain\Model\FileReference;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
@@ -50,7 +51,7 @@ class School extends AbstractEntity
     /**
      * @var ObjectStorage<FileReference>
      *
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected ObjectStorage $images;
 
@@ -80,21 +81,21 @@ class School extends AbstractEntity
     /**
      * @var ObjectStorage<Type>
      *
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected ObjectStorage $types;
 
     /**
      * @var ObjectStorage<ProfileContent>
      *
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected ObjectStorage $profileContents;
 
     /**
      * @var ObjectStorage<CareForm>
      *
-     * @Extbase\ORM\Lazy
+     * @Lazy
      */
     protected ObjectStorage $careForms;
 

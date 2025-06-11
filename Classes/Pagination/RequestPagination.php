@@ -200,4 +200,16 @@ class RequestPagination implements PaginationInterface
     {
         return $GLOBALS['TYPO3_REQUEST'];
     }
+
+    public function getAllPageNumbers(): array
+    {
+        $firstPage = $this->getFirstPageNumber();
+        $lastPage = $this->getLastPageNumber();
+
+        if ($lastPage < $firstPage) {
+            return [];
+        }
+
+        return range($firstPage, $lastPage);
+    }
 }
