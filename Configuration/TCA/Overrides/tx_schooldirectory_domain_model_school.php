@@ -1,5 +1,8 @@
 <?php
 
+use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
+use JWeiland\Maps2\Tca\Maps2Registry;
+
 /*
  * This file is part of the package jweiland/schooldirectory.
  *
@@ -17,11 +20,11 @@ $GLOBALS['TCA']['tx_schooldirectory_domain_model_school']['columns']['schooldire
     ]
 ];
 
-\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::addToAllTCAtypes('tx_schooldirectory_domain_model_school', 'schooldirectory');
+ExtensionManagementUtility::addToAllTCAtypes('tx_schooldirectory_domain_model_school', 'schooldirectory');
 
 // Add tx_maps2_uid column to school table
-if (\TYPO3\CMS\Core\Utility\ExtensionManagementUtility::isLoaded('maps2')) {
-    \JWeiland\Maps2\Tca\Maps2Registry::getInstance()->add(
+if (ExtensionManagementUtility::isLoaded('maps2')) {
+    Maps2Registry::getInstance()->add(
         'schooldirectory',
         'tx_schooldirectory_domain_model_school',
         [

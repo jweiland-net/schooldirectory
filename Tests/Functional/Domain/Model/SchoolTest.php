@@ -381,6 +381,7 @@ class SchoolTest extends FunctionalTestCase
         $object = new FileReference();
         $objectStorage = new ObjectStorage();
         $objectStorage->attach($object);
+
         $this->subject->setImages($objectStorage);
 
         self::assertSame(
@@ -416,9 +417,11 @@ class SchoolTest extends FunctionalTestCase
         $object = new FileReference();
         $objectStorage = new ObjectStorage();
         $objectStorage->attach($object);
+
         $this->subject->setImages($objectStorage);
 
         $this->subject->removeImage($object);
+
         $objectStorage->detach($object);
 
         self::assertSame(
@@ -682,6 +685,7 @@ class SchoolTest extends FunctionalTestCase
         $object = new Type();
         $objectStorage = new ObjectStorage();
         $objectStorage->attach($object);
+
         $this->subject->setTypes($objectStorage);
 
         self::assertSame(
@@ -717,9 +721,11 @@ class SchoolTest extends FunctionalTestCase
         $object = new Type();
         $objectStorage = new ObjectStorage();
         $objectStorage->attach($object);
+
         $this->subject->setTypes($objectStorage);
 
         $this->subject->removeType($object);
+
         $objectStorage->detach($object);
 
         self::assertSame(
@@ -747,6 +753,7 @@ class SchoolTest extends FunctionalTestCase
         $object = new ProfileContent();
         $objectStorage = new ObjectStorage();
         $objectStorage->attach($object);
+
         $this->subject->setProfileContents($objectStorage);
 
         self::assertSame(
@@ -782,9 +789,11 @@ class SchoolTest extends FunctionalTestCase
         $object = new ProfileContent();
         $objectStorage = new ObjectStorage();
         $objectStorage->attach($object);
+
         $this->subject->setProfileContents($objectStorage);
 
         $this->subject->removeProfileContent($object);
+
         $objectStorage->detach($object);
 
         self::assertSame(
@@ -812,6 +821,7 @@ class SchoolTest extends FunctionalTestCase
         $object = new CareForm();
         $objectStorage = new ObjectStorage();
         $objectStorage->attach($object);
+
         $this->subject->setCareForms($objectStorage);
 
         self::assertSame(
@@ -847,9 +857,11 @@ class SchoolTest extends FunctionalTestCase
         $object = new CareForm();
         $objectStorage = new ObjectStorage();
         $objectStorage->attach($object);
+
         $this->subject->setCareForms($objectStorage);
 
         $this->subject->removeCareForm($object);
+
         $objectStorage->detach($object);
 
         self::assertSame(
