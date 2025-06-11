@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace JWeiland\Schooldirectory\Domain\Repository;
 
+use Doctrine\DBAL\ParameterType;
 use JWeiland\Schooldirectory\Domain\Model\ProfileContent;
 use JWeiland\Schooldirectory\Domain\Repository\Traits\QueryBuilderTrait;
 use TYPO3\CMS\Extbase\Persistence\Repository;
@@ -78,20 +79,20 @@ class ProfileContentRepository extends Repository
             ->where(
                 $queryBuilder->expr()->eq(
                     'st_mm.uid_foreign',
-                    $queryBuilder->createNamedParameter($type, \PDO::PARAM_INT)
+                    $queryBuilder->createNamedParameter($type, ParameterType::INTEGER)
                 )
             )
             ->andWhere(
                 $queryBuilder->expr()->eq(
                     'sc_mm.uid_foreign',
-                    $queryBuilder->createNamedParameter($careForm, \PDO::PARAM_INT)
+                    $queryBuilder->createNamedParameter($careForm, ParameterType::INTEGER)
                 )
             )
             ->orderBy('pc.title', 'ASC')
-            ->execute();
+            ->executeQuery();
 
         $profileRecords = [];
-        while ($profileRecord = $statement->fetch()) {
+        while ($profileRecord = $statement->fetchAssociative()) {
             $profileRecords[] = $profileRecord;
         }
 
