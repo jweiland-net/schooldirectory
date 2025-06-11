@@ -9,9 +9,6 @@
 
 use JWeiland\Schooldirectory\Controller\DistrictController;
 use JWeiland\Schooldirectory\Controller\SchoolController;
-use TYPO3\CMS\Core\Imaging\IconProvider\SvgIconProvider;
-use TYPO3\CMS\Core\Utility\ExtensionManagementUtility;
-use TYPO3\CMS\Core\Utility\GeneralUtility;
 use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
 
 if (!defined('TYPO3')) {
@@ -29,6 +26,7 @@ call_user_func(static function () {
         [
             SchoolController::class => 'list, search',
         ],
+        ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
     );
 
     ExtensionUtility::configurePlugin(
@@ -41,17 +39,6 @@ call_user_func(static function () {
         [
             DistrictController::class => 'list',
         ],
-    );
-
-    $iconRegistry = GeneralUtility::makeInstance(\TYPO3\CMS\Core\Imaging\IconRegistry::class);
-    $iconRegistry->registerIcon(
-        'extensions-schooldirectory-plugin-list',
-        SvgIconProvider::class,
-        ['source' => 'EXT:schooldirectory/Resources/Public/Icons/tx_schooldirectory_domain_model_school.svg']
-    );
-
-    // Add schooldirectory plugin to new element wizard
-    ExtensionManagementUtility::addPageTSConfig(
-        '<INCLUDE_TYPOSCRIPT: source="FILE:EXT:schooldirectory/Configuration/TSconfig/ContentElementWizard.tsconfig">'
+        ExtensionUtility::PLUGIN_TYPE_CONTENT_ELEMENT,
     );
 });
