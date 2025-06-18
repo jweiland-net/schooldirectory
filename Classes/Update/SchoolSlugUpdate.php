@@ -9,7 +9,7 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace JWeiland\Schooldirectory\Updates;
+namespace JWeiland\Schooldirectory\Update;
 
 use Doctrine\DBAL\Result;
 use TYPO3\CMS\Core\Database\Connection;
