@@ -13,6 +13,13 @@ Version 8.0.0
 *   Add TYPO3 13 compatibility
 *   Replaced all older API with new.
 *   Removed older version compatibility
+*   Added Version 13 Compatibility
+*   Site configuration (site sets) integration for cleaner setup
+*   Removed deprecated functions
+*   Removed obsolete functions
+*   Cleaned up TCA and backend form setups
+*   Code formatting and PSR-12 cleanup
+*   Custom CType plugins replacing deprecated list_type
 
 Version 7.0.0
 =============
