@@ -76,6 +76,7 @@ class SchoolDistrictTest extends UnitTestCase
         $object = new Street();
         $objectStorage = new ObjectStorage();
         $objectStorage->attach($object);
+
         $this->subject->setStreets($objectStorage);
 
         self::assertSame(
@@ -111,9 +112,11 @@ class SchoolDistrictTest extends UnitTestCase
         $object = new Street();
         $objectStorage = new ObjectStorage();
         $objectStorage->attach($object);
+
         $this->subject->setStreets($objectStorage);
 
         $this->subject->removeStreet($object);
+
         $objectStorage->detach($object);
 
         self::assertSame(

@@ -7,10 +7,12 @@
  * LICENSE file that was distributed with this source code.
  */
 
+use JWeiland\Schooldirectory\Middleware\AjaxRequestMiddleware;
+
 return [
     'frontend' => [
         'middleware-identifier' => [
-            'target' => \JWeiland\Schooldirectory\Middleware\AjaxRequestMiddleware::class,
+            'target' => AjaxRequestMiddleware::class,
             'after' => [
                 'typo3/cms-frontend/site',
             ],

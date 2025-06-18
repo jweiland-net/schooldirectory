@@ -38,10 +38,10 @@ class TypeRepository extends Repository
 
         $statement = $queryBuilder
             ->select('*')
-            ->execute();
+            ->executeQuery();
 
         $typeRecords = [];
-        while ($typeRecord = $statement->fetch()) {
+        while ($typeRecord = $statement->fetchAssociative()) {
             $typeRecords[] = $typeRecord;
         }
 

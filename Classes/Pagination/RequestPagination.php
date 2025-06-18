@@ -39,10 +39,12 @@ class RequestPagination implements PaginationInterface
             if (is_string($argumentName) && strlen($argumentName) >= 2 && $argumentName[0] === '_' && $argumentName[1] === '_') {
                 continue;
             }
+
             if (is_string($argumentName) && in_array($argumentName, ['@extension', '@subpackage', '@controller', '@action', '@format'], true)) {
                 continue;
             }
-            if (is_string($argumentName) && in_array($argumentName, ['extension', 'plugin', 'controller', 'action'], true)) {
+
+            if (in_array($argumentName, ['extension', 'plugin', 'controller', 'action'], true)) {
                 continue;
             }
 
@@ -197,5 +199,17 @@ class RequestPagination implements PaginationInterface
     public function getRequestFromGlobalScope(): ServerRequestInterface
     {
         return $GLOBALS['TYPO3_REQUEST'];
+    }
+
+    public function getAllPageNumbers(): array
+    {
+        $firstPage = $this->getFirstPageNumber();
+        $lastPage = $this->getLastPageNumber();
+
+        if ($lastPage < $firstPage) {
+            return [];
+        }
+
+        return range($firstPage, $lastPage);
     }
 }

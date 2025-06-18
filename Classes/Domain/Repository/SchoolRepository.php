@@ -83,18 +83,20 @@ class SchoolRepository extends Repository
     {
         $query = $this->createQuery();
         $constraint = [];
-        if (!empty($type)) {
+        if ($type !== 0) {
             $constraint[] = $query->equals('types.uid', $type);
         }
-        if (!empty($careForm)) {
+
+        if ($careForm !== 0) {
             $constraint[] = $query->equals('careForms.uid', $careForm);
         }
-        if (!empty($profile)) {
+
+        if ($profile !== 0) {
             $constraint[] = $query->equals('profileContents.uid', $profile);
         }
 
         // there must be at least one constraint
-        if (count($constraint)) {
+        if ($constraint !== []) {
             return $query->matching(
                 $query->logicalAnd(...$constraint)
             )->execute();
@@ -120,7 +122,7 @@ class SchoolRepository extends Repository
         $constraints[] = $query->like('schoolDistrict.streets.street', $this->sanitizeStreetName($street) . '%');
 
         // add query for number
-        if (!empty($number)) {
+        if ($number !== 0) {
             $constraints[] = $query->lessThanOrEqual('schoolDistrict.streets.numberFrom', $number);
             $constraints[] = $query->greaterThanOrEqual('schoolDistrict.streets.numberTo', $number);
         }

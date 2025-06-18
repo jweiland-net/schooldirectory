@@ -1,0 +1,59 @@
+categories:
+  schooldirectory:
+    label: 'schooldirectory'
+  schooldirectory.templates:
+    label: 'Templates'
+    parent: schooldirectory
+  schooldirectory.pages:
+    label: 'Pages'
+    parent: schooldirectory
+
+settings:
+  schooldirectory.templateRootPath:
+    label: 'Templates'
+    category: schooldirectory.templates
+    description: 'Path to template root'
+    type: string
+    default: 'EXT:schooldirectory/Resources/Private/Templates/'
+  schooldirectory.partialRootPath:
+    label: 'Partials'
+    category: schooldirectory.templates
+    description: 'Path to partial root'
+    type: string
+    default: 'EXT:schooldirectory/Resources/Private/Partials/'
+  schooldirectory.layoutRootPath:
+    label: 'Layouts'
+    category: schooldirectory.templates
+    description: 'Path to layout root'
+    type: string
+    default: 'EXT:schooldirectory/Resources/Private/Layouts/'
+  schooldirectory.storagePid:
+    label: 'Default storage PID'
+    category: schooldirectory.pages
+    description: 'Folder that stores all POIs'
+    type: int
+    default: 0
+  schooldirectory.pidOfDetailPage:
+    label: 'Pid of Detail Page'
+    category: schooldirectory.pages
+    description: 'Page with detail page plugin'
+    type: int
+    default: 0
+  schooldirectory.pidOfMaps2Plugin:
+    label: 'Pid of Maps Plugin Page'
+    category: schooldirectory.pages
+    description: 'Page with Maps Storage'
+    type: int
+    default: 0
+  schooldirectory.pidOfSearchPage:
+    label: 'Pid of Maps Search Storage Page'
+    category: schooldirectory.pages
+    description: 'Pid of storage page'
+    type: int
+    default: 0
+  schooldirectory.pageBrowser.itemsPerPage:
+    label: 'Items per page for pagination'
+    category: schooldirectory.pages
+    description: 'Number of results that needs to be shown on listing page'
+    type: int
+    default: 10

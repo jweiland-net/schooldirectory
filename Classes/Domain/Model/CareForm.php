@@ -18,15 +18,9 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
  */
 class CareForm extends AbstractEntity
 {
-    /**
-     * @var string
-     */
-    protected $title = '';
+    protected string $title = '';
 
-    /**
-     * @var string
-     */
-    protected $description = '';
+    protected string $description = '';
 
     public function getTitle(): string
     {

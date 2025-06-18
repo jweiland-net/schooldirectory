@@ -19,20 +19,11 @@ use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
  */
 class Holder extends AbstractEntity
 {
-    /**
-     * @var string
-     */
-    protected $title = '';
+    protected string $title = '';
 
-    /**
-     * @var FileReference
-     */
-    protected $logo;
+    protected ?FileReference $logo = null;
 
-    /**
-     * @var string
-     */
-    protected $website = '';
+    protected string $website = '';
 
     public function getTitle(): string
     {

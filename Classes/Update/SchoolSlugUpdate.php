@@ -9,7 +9,7 @@ declare(strict_types=1);
  * LICENSE file that was distributed with this source code.
  */
 
-namespace JWeiland\Schooldirectory\Updates;
+namespace JWeiland\Schooldirectory\Update;
 
 use Doctrine\DBAL\Result;
 use TYPO3\CMS\Core\Database\Connection;
@@ -42,8 +42,6 @@ class SchoolSlugUpdate implements UpgradeWizardInterface
     /**
      * Return the identifier for this wizard
      * This should be the same string as used in the ext_localconf class registration
-     *
-     * @return string
      */
     public function getIdentifier(): string
     {
@@ -144,6 +142,7 @@ class SchoolSlugUpdate implements UpgradeWizardInterface
             if ($counter > 5) {
                 $this->slugCache[$slug] = $counter;
             }
+
             $counter++;
         }
 

@@ -11,7 +11,6 @@ declare(strict_types=1);
 
 namespace JWeiland\Schooldirectory\Domain\Model;
 
-use TYPO3\CMS\Extbase\Annotation as Extbase;
 use TYPO3\CMS\Extbase\DomainObject\AbstractEntity;
 use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
 
@@ -20,10 +19,7 @@ use TYPO3\CMS\Extbase\Persistence\ObjectStorage;
  */
 class SchoolDistrict extends AbstractEntity
 {
-    /**
-     * @var string
-     */
-    protected $title = '';
+    protected string $title = '';
 
     /**
      * @var ObjectStorage<Street>
@@ -41,7 +37,7 @@ class SchoolDistrict extends AbstractEntity
      */
     public function initializeObject(): void
     {
-        $this->streets = $this->streets ?? new ObjectStorage();
+        $this->streets ??= new ObjectStorage();
     }
 
     public function getTitle(): string

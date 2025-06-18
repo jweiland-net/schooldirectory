@@ -52,7 +52,6 @@ class OverlayHelper
     /**
      * Add WHERE clause to get records in requested language.
      *
-     * @param QueryBuilder $queryBuilder
      * @param string $tableName tablename to read the localization columns from TCA ctrl
      * @param string $tableAlias the table alias as configured in $queryBuilder->from(table, tableAlias)
      * @param bool $useLangStrict in case of a search like "letter=b" it does not make sense to search for "b" (bicycle) in default language, do an overlay and show "Fahrrad" in frontend. Activate for search queries. Else false.

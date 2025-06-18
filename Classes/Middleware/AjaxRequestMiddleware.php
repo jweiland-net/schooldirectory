@@ -58,12 +58,13 @@ class AjaxRequestMiddleware implements MiddlewareInterface
             && $postParameters['ext'] === 'schooldirectory'
         ) {
             $data = [];
-            $storagePages = GeneralUtility::intExplode(',', $postParameters['storagePages'], true);
+            $storagePages = GeneralUtility::intExplode(',', $postParameters['storagePages']);
             switch ($postParameters['method']) {
                 case 'getCareForms':
                     if (array_key_exists('type', $postParameters)) {
                         $data = $this->getCareFormRecords((int)$postParameters['type'], $storagePages);
                     }
+
                     break;
                 case 'getProfiles':
                     if (
@@ -76,6 +77,7 @@ class AjaxRequestMiddleware implements MiddlewareInterface
                             $storagePages
                         );
                     }
+
                     break;
                 case 'getTypes':
                 default:

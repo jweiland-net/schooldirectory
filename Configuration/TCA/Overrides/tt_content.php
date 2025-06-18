@@ -7,18 +7,26 @@
  * LICENSE file that was distributed with this source code.
  */
 
+use TYPO3\CMS\Extbase\Utility\ExtensionUtility;
+
 if (!defined('TYPO3')) {
     die('Access denied.');
 }
 
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+ExtensionUtility::registerPlugin(
     'Schooldirectory',
     'List',
-    'LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:plugin.list.title'
+    'LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:plugin.list.title',
+    'extensions-schooldirectory-plugin-list',
+    'plugins',
+    'LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:plugin.list.description',
 );
 
-\TYPO3\CMS\Extbase\Utility\ExtensionUtility::registerPlugin(
+ExtensionUtility::registerPlugin(
     'Schooldirectory',
     'Search',
-    'LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:plugin.search.title'
+    'LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:plugin.search.title',
+    'extensions-schooldirectory-plugin-list',
+    'plugins',
+    'LLL:EXT:schooldirectory/Resources/Private/Language/locallang_db.xlf:plugin.search.description',
 );

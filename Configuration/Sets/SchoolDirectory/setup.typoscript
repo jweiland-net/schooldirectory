@@ -15,13 +15,13 @@ plugin.tx_schooldirectory {
   }
 
   persistence {
-    storagePid = {$plugin.tx_schooldirectory.persistence.storagePid}
+    storagePid = {$schooldirectory.storagePid}
   }
 
   settings {
-    pidOfMaps2Plugin = {$plugin.tx_schooldirectory.settings.pidOfMaps2Plugin}
-    pidOfDetailPage = {$plugin.tx_schooldirectory.settings.pidOfDetailPage}
-    pidOfSearchPage = {$plugin.tx_schooldirectory.settings.pidOfSearchPage}
+    pidOfMaps2Plugin = {$schooldirectory.pidOfMaps2Plugin}
+    pidOfDetailPage = {$schooldirectory.pidOfDetailPage}
+    pidOfSearchPage = {$schooldirectory.pidOfSearchPage}
     list {
       image {
         width = 50c
@@ -46,7 +46,7 @@ plugin.tx_schooldirectory {
     }
 
     pageBrowser {
-      itemsPerPage = {$plugin.tx_schooldirectory.settings.pageBrowser.itemsPerPage}
+      itemsPerPage = {$schooldirectory.pageBrowser.itemsPerPage}
     }
   }
 }

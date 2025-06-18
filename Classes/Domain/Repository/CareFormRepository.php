@@ -11,6 +11,7 @@ declare(strict_types=1);
 
 namespace JWeiland\Schooldirectory\Domain\Repository;
 
+use Doctrine\DBAL\ParameterType;
 use JWeiland\Schooldirectory\Domain\Model\CareForm;
 use JWeiland\Schooldirectory\Domain\Repository\Traits\QueryBuilderTrait;
 use TYPO3\CMS\Extbase\Persistence\Repository;
@@ -68,14 +69,14 @@ class CareFormRepository extends Repository
             ->where(
                 $queryBuilder->expr()->eq(
                     'st_mm.uid_foreign',
-                    $queryBuilder->createNamedParameter($type, \PDO::PARAM_INT)
+                    $queryBuilder->createNamedParameter($type, ParameterType::INTEGER)
                 )
             )
             ->orderBy('c.title', 'ASC')
-            ->execute();
+            ->executeQuery();
 
         $careFormRecords = [];
-        while ($careFormRecord = $statement->fetch()) {
+        while ($careFormRecord = $statement->fetchAssociative()) {
             $careFormRecords[] = $careFormRecord;
         }
 

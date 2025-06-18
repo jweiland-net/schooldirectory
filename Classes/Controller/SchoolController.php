@@ -46,11 +46,7 @@ class SchoolController extends ActionController
      */
     public function listAction(string $letter = ''): ResponseInterface
     {
-        if ($letter === '') {
-            $schools = $this->schoolRepository->findAll();
-        } else {
-            $schools = $this->schoolRepository->findByStartingLetter($letter);
-        }
+        $schools = $letter === '' ? $this->schoolRepository->findAll() : $this->schoolRepository->findByStartingLetter($letter);
 
         $this->postProcessAndAssignFluidVariables([
             'schools' => $schools,

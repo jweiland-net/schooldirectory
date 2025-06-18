@@ -55,6 +55,7 @@ class StreetTest extends UnitTestCase
             $this->subject->getStreet()
         );
     }
+
     /**
      * @test
      */
