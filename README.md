@@ -43,6 +43,11 @@ Download and install `schooldirectory` with the extension manager module.
 3) Create school record and assign type, district and holder records to it.
 4) Create a plugin on a page and select at least the sysfolder as startingpoint.
 
+## 3 Support
+
+Free Support is available via [GitHub Issue Tracker](https://github.com/jweiland-net/schooldirectory/issues).
+
+For commercial support, please contact us at [support@jweiland.net](support@jweiland.net).
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
