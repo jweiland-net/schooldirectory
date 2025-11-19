@@ -7,6 +7,11 @@
 ChangeLog
 =========
 
+Version 8.0.2
+=============
+
+*   [BUGFIX] Fixed error due to request not passed to Glossary Service
+
 Version 8.0.1
 =============
 
