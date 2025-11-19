@@ -7,6 +7,11 @@
 ChangeLog
 =========
 
+Version 8.0.3
+=============
+
+*   [BUGFIX] Issue with missing annotation in SchoolDistrict Model
+
 Version 8.0.2
 =============
 
