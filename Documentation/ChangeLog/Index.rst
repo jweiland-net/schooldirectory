@@ -7,6 +7,11 @@
 ChangeLog
 =========
 
+Version 8.0.4
+=============
+
+*   [BUGFIX] TCA Migrations for tables done
+
 Version 8.0.3
 =============
 
