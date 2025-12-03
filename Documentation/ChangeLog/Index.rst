@@ -7,6 +7,11 @@
 ChangeLog
 =========
 
+Version 8.0.5
+=============
+
+*   [BUGFIX] Issue with SiteSet template paths fixed
+
 Version 8.0.4
 =============
 

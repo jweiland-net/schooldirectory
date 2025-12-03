@@ -2,15 +2,15 @@ plugin.tx_schooldirectory {
   view {
     templateRootPaths {
       0 = EXT:schooldirectory/Resources/Private/Templates/
-      1 = {$plugin.tx_schooldirectory.view.templateRootPath}
+      1 = {$schooldirectory.templateRootPath}
     }
     partialRootPaths {
       0 = EXT:schooldirectory/Resources/Private/Partials/
-      1 = {$plugin.tx_schooldirectory.view.partialRootPath}
+      1 = {$schooldirectory.partialRootPath}
     }
     layoutRootPaths {
       0 = EXT:schooldirectory/Resources/Private/Layouts/
-      1 = {$plugin.tx_schooldirectory.view.layoutRootPath}
+      1 = {$schooldirectory.layoutRootPath}
     }
   }
 
