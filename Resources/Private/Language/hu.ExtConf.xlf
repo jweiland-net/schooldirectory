@@ -5,7 +5,7 @@
     <body>
       <trans-unit id="poiCollectionPid" xml:space="preserve">
 				<source>PID for POI collections: While creating school records we will try to generate a Point of Interest. Please define a page UID where these records should be created.</source>
-			<target state="needs-translation">PID for POI collections: While creating school records we will try to generate a Point of Interest. Please define a page UID where these records should be created.</target></trans-unit>
+			<target state="translated">PID a POI-gyűjteményekhez: Iskolai rekordok létrehozásakor megpróbálunk egy érdekes pontot (POI) generálni. Kérjük, adja meg annak az oldalnak a UID-jét, ahol ezeket a rekordokat létre kell hozni.</target></trans-unit>
     </body>
   </file>
 </xliff>
