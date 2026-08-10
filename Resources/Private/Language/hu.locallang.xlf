@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2013-04-13T09:09:13Z" product-name="schooldirectory" target-language="hu">
+    <header/>
+    <body>
+      <trans-unit id="tx_schooldirectory_domain_model_school">
+        <source>School</source>
+        <target state="translated">Iskola</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.title">
+        <source>Title</source>
+        <target state="translated">Cím</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.leader">
+        <source>Leader</source>
+        <target state="translated">Vezető</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.street">
+        <source>Street</source>
+        <target state="translated">Utca</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.house_number">
+        <source>House number</source>
+        <target state="translated">Házszám</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.zip">
+        <source>Zip</source>
+        <target state="translated">Irányítószám</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.city">
+        <source>City</source>
+        <target state="translated">Város</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.telephone">
+        <source>Telephone</source>
+        <target state="translated">Telefon</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.telephone_alternative">
+        <source>Telephone alternative</source>
+        <target state="translated">Alternatív telefon</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.fax">
+        <source>Fax</source>
+        <target state="translated">Fax</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.email">
+        <source>Email</source>
+        <target state="translated">E-mail</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.email_alternative">
+        <source>Email alternative</source>
+        <target state="translated">Alternatív e-mail</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.website">
+        <source>Website</source>
+        <target state="translated">Weboldal</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.logo">
+        <source>Logo</source>
+        <target state="translated">Logó</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.images">
+        <source>Images</source>
+        <target state="translated">Képek</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.amount_of_students">
+        <source>Amount of students</source>
+        <target state="translated">Tanulók száma</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.profile_title">
+        <source>Profile title</source>
+        <target state="translated">Profilcím</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.school_way_plan">
+        <source>School way plan</source>
+        <target state="translated">Iskolai útvonalterv</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.notes">
+        <source>Notes</source>
+        <target state="translated">Megjegyzések</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.additional_informations">
+        <source>Additional Informations</source>
+        <target state="translated">További információk</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.holder">
+        <source>Holder</source>
+        <target state="translated">Fenntartó</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.types">
+        <source>Types</source>
+        <target state="translated">Típusok</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.profile_contents">
+        <source>Profile contents</source>
+        <target state="translated">Profil tartalmak</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.care_forms">
+        <source>Care forms</source>
+        <target state="translated">Gondozási formák</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.school_district">
+        <source>School District</source>
+        <target state="translated">Iskolai körzet</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.district">
+        <source>District</source>
+        <target state="translated">Körzet</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_holder">
+        <source>School holder</source>
+        <target state="translated">Iskola fenntartója</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_holder.title">
+        <source>Title</source>
+        <target state="translated">Cím</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_holder.logo">
+        <source>Logo</source>
+        <target state="translated">Logó</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_holder.website">
+        <source>Website</source>
+        <target state="translated">Weboldal</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_type">
+        <source>Type</source>
+        <target state="translated">Típus</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_type.title">
+        <source>Title</source>
+        <target state="translated">Cím</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_type.description">
+        <source>Description</source>
+        <target state="translated">Leírás</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_profilecontent">
+        <source>School profile content</source>
+        <target state="translated">Iskolai profil tartalom</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_profilecontent.title">
+        <source>Title</source>
+        <target state="translated">Cím</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_profilecontent.description">
+        <source>Description</source>
+        <target state="translated">Leírás</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_careform">
+        <source>CareForm</source>
+        <target state="translated">CareForm</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_careform.title">
+        <source>Title</source>
+        <target state="translated">Cím</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_careform.description">
+        <source>Description</source>
+        <target state="translated">Leírás</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_schooldistrict">
+        <source>District</source>
+        <target state="translated">Körzet</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_schooldistrict.title">
+        <source>Title</source>
+        <target state="translated">Cím</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_street">
+        <source>Street</source>
+        <target state="translated">Utca</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_street.street">
+        <source>Street</source>
+        <target state="translated">Utca</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_street.number_from">
+        <source>Number From</source>
+        <target state="translated">Szám (tól)</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_street.letter_from">
+        <source>Letter From</source>
+        <target state="translated">Betű (tól)</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_street.number_to">
+        <source>Number To</source>
+        <target state="translated">Szám (ig)</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_street.letter_to">
+        <source>Letter To</source>
+        <target state="translated">Betű (ig)</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_street.district">
+        <source>District</source>
+        <target state="translated">Körzet</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_district">
+        <source>District</source>
+        <target state="translated">Körzet</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_district.district">
+        <source>Title</source>
+        <target state="translated">Cím</target>
+      </trans-unit>
+      <trans-unit id="search">
+        <source>Search</source>
+        <target state="translated">Keresés</target>
+      </trans-unit>
+      <trans-unit id="noResults">
+        <source>No results found</source>
+        <target state="translated">Nincs találat</target>
+      </trans-unit>
+      <trans-unit id="street">
+        <source>Street</source>
+        <target state="translated">Utca</target>
+      </trans-unit>
+      <trans-unit id="number">
+        <source>Number</source>
+        <target state="translated">Szám</target>
+      </trans-unit>
+      <trans-unit id="letter">
+        <source>Letter</source>
+        <target state="translated">Betű</target>
+      </trans-unit>
+      <trans-unit id="altTextMapImg">
+        <source>Map</source>
+        <target state="translated">Térkép</target>
+      </trans-unit>
+      <trans-unit id="pageBrowser.first">
+        <source>First</source>
+        <target state="translated">Első</target>
+      </trans-unit>
+      <trans-unit id="pageBrowser.previous">
+        <source>Previous</source>
+        <target state="translated">Előző</target>
+      </trans-unit>
+      <trans-unit id="pageBrowser.next">
+        <source>Next</source>
+        <target state="translated">Következő</target>
+      </trans-unit>
+      <trans-unit id="pageBrowser.last">
+        <source>Last</source>
+        <target state="translated">Utolsó</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
