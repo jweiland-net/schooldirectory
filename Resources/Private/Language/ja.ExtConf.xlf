@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2013-03-28T08:36:00Z" product-name="schooldirectory" target-language="ja">
+    <header/>
+    <body>
+      <trans-unit id="poiCollectionPid" xml:space="preserve">
+				<source>PID for POI collections: While creating school records we will try to generate a Point of Interest. Please define a page UID where these records should be created.</source>
+			<target state="needs-translation">PID for POI collections: While creating school records we will try to generate a Point of Interest. Please define a page UID where these records should be created.</target></trans-unit>
+    </body>
+  </file>
+</xliff>

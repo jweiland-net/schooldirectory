@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+  <file source-language="en" datatype="plaintext" original="messages" date="2013-04-13T09:09:13Z" product-name="schooldirectory" target-language="t3">
+    <header/>
+    <body>
+      <trans-unit id="plugin.list.title">
+        <source>Schools: List</source>
+        <target>crwdns309544:0crwdne309544:0</target>
+      </trans-unit>
+      <trans-unit id="plugin.list.description">
+        <source>With this plugin you can show schools as list and in detail view</source>
+        <target>crwdns309546:0crwdne309546:0</target>
+      </trans-unit>
+      <trans-unit id="plugin.search.title">
+        <source>Schools: Search</source>
+        <target>crwdns309548:0crwdne309548:0</target>
+      </trans-unit>
+      <trans-unit id="plugin.search.description">
+        <source>This plugin displays a search form, to search for school entries</source>
+        <target>crwdns309550:0crwdne309550:0</target>
+      </trans-unit>
+      <trans-unit id="tabs.relations">
+        <source>Relations</source>
+        <target>crwdns309552:0crwdne309552:0</target>
+      </trans-unit>
+      <trans-unit id="tabs.social">
+        <source>Social Media</source>
+        <target>crwdns309554:0crwdne309554:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school">
+        <source>School</source>
+        <target>crwdns309556:0crwdne309556:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.title">
+        <source>Title</source>
+        <target>crwdns309558:0crwdne309558:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.path_segment">
+        <source>Segment for URL</source>
+        <target>crwdns309560:0crwdne309560:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.leader">
+        <source>Leader</source>
+        <target>crwdns309562:0crwdne309562:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.street">
+        <source>Street</source>
+        <target>crwdns309564:0crwdne309564:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.house_number">
+        <source>House Number</source>
+        <target>crwdns309566:0crwdne309566:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.zip">
+        <source>Zip</source>
+        <target>crwdns309568:0crwdne309568:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.city">
+        <source>City</source>
+        <target>crwdns309570:0crwdne309570:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.telephone">
+        <source>Telephone</source>
+        <target>crwdns309572:0crwdne309572:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.telephone_alternative">
+        <source>Telephone Alternative</source>
+        <target>crwdns309574:0crwdne309574:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.fax">
+        <source>Fax</source>
+        <target>crwdns309576:0crwdne309576:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.email">
+        <source>Email</source>
+        <target>crwdns309578:0crwdne309578:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.email_alternative">
+        <source>Email Alternative</source>
+        <target>crwdns309580:0crwdne309580:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.website">
+        <source>Website</source>
+        <target>crwdns309582:0crwdne309582:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.logo">
+        <source>Logo</source>
+        <target>crwdns309584:0crwdne309584:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.images">
+        <source>Images</source>
+        <target>crwdns309586:0crwdne309586:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.amount_of_students">
+        <source>Amount Of Students</source>
+        <target>crwdns309588:0crwdne309588:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.profile_title">
+        <source>Profile Title</source>
+        <target>crwdns309590:0crwdne309590:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.school_way_plan">
+        <source>School Way Plan</source>
+        <target>crwdns309592:0crwdne309592:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.notes">
+        <source>Notes</source>
+        <target>crwdns309594:0crwdne309594:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.additional_informations">
+        <source>Additional Informations</source>
+        <target>crwdns309596:0crwdne309596:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.facebook">
+        <source>Facebook</source>
+        <target>crwdns309598:0crwdne309598:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.twitter">
+        <source>Twitter</source>
+        <target>crwdns309600:0crwdne309600:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.instagram">
+        <source>Instagram</source>
+        <target>crwdns309602:0crwdne309602:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.holder">
+        <source>Holder</source>
+        <target>crwdns309604:0crwdne309604:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.types">
+        <source>Types</source>
+        <target>crwdns309606:0crwdne309606:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.profile_contents">
+        <source>Profile Contents</source>
+        <target>crwdns309608:0crwdne309608:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.care_forms">
+        <source>Care Forms</source>
+        <target>crwdns309610:0crwdne309610:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.school_district">
+        <source>School District</source>
+        <target>crwdns309612:0crwdne309612:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_school.district">
+        <source>District</source>
+        <target>crwdns309614:0crwdne309614:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_holder">
+        <source>Holder</source>
+        <target>crwdns309616:0crwdne309616:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_holder.title">
+        <source>Title</source>
+        <target>crwdns309618:0crwdne309618:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_holder.logo">
+        <source>Logo</source>
+        <target>crwdns309620:0crwdne309620:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_holder.website">
+        <source>Website</source>
+        <target>crwdns309622:0crwdne309622:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_type">
+        <source>Type</source>
+        <target>crwdns309624:0crwdne309624:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_type.title">
+        <source>Title</source>
+        <target>crwdns309626:0crwdne309626:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_type.description">
+        <source>Description</source>
+        <target>crwdns309628:0crwdne309628:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_profilecontent">
+        <source>Profile Content</source>
+        <target>crwdns309630:0crwdne309630:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_profilecontent.title">
+        <source>Title</source>
+        <target>crwdns309632:0crwdne309632:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_profilecontent.description">
+        <source>Description</source>
+        <target>crwdns309634:0crwdne309634:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_careform">
+        <source>Care Form</source>
+        <target>crwdns309636:0crwdne309636:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_careform.title">
+        <source>Title</source>
+        <target>crwdns309638:0crwdne309638:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_careform.description">
+        <source>Description</source>
+        <target>crwdns309640:0crwdne309640:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_schooldistrict">
+        <source>School District (school)</source>
+        <target>crwdns309642:0crwdne309642:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_schooldistrict.title">
+        <source>Title</source>
+        <target>crwdns309644:0crwdne309644:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_street">
+        <source>Street</source>
+        <target>crwdns309646:0crwdne309646:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_street.street">
+        <source>Street</source>
+        <target>crwdns309648:0crwdne309648:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_street.number_from">
+        <source>Number From</source>
+        <target>crwdns309650:0crwdne309650:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_street.letter_from">
+        <source>Letter From</source>
+        <target>crwdns309652:0crwdne309652:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_street.number_to">
+        <source>Number To</source>
+        <target>crwdns309654:0crwdne309654:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_street.letter_to">
+        <source>Letter To</source>
+        <target>crwdns309656:0crwdne309656:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_street.district">
+        <source>District</source>
+        <target>crwdns309658:0crwdne309658:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_district">
+        <source>District (school)</source>
+        <target>crwdns309660:0crwdne309660:0</target>
+      </trans-unit>
+      <trans-unit id="tx_schooldirectory_domain_model_district.district">
+        <source>Title</source>
+        <target>crwdns309662:0crwdne309662:0</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
